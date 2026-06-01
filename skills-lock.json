@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "juniors-best-practice": {
+      "source": "siberiacancode/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/juniors-best-practice/SKILL.md",
+      "computedHash": "33b66dd2f9d3c27367b85b5101dfa180a12c0606f684b5534435fd08d5f3abf5"
+    },
+    "reactuse": {
+      "source": "siberiacancode/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/reactuse/SKILL.md",
+      "computedHash": "29517c60f21c48246acad1e015f8b16aa01e3deee1955b3709df00cf6ac22163"
+    },
+    "vercel-react-best-practices": {
+      "source": "siberiacancode/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "c7e1faf2c2570877529e734f6052c9442a4c15aee7288c67d5c17380105b7a58"
+    },
+    "web-design-guidelines": {
+      "source": "siberiacancode/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "9b5562e3e567949397789f41cb7817e5478cce1fb6b64fe2a9c2926c4f7cea54"
+    }
+  }
+}
