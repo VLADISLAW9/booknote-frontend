@@ -4,7 +4,7 @@ import type { FetchesRequestParams, ApicraftFetchesResponse } from "@siberiacanc
 
 import type { AuthControllerRegisterData } from "../../types.gen";
 
-import { instance } from "../../instance.gen";
+import { instance } from "../../../../src/utils/api/instance";
 
 export type PostAuthRegisterRequestParams = FetchesRequestParams<AuthControllerRegisterData>;
 

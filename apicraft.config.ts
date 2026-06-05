@@ -4,7 +4,7 @@ export default apicraft([
   {
     input: 'api.yaml',
     output: 'generated/api',
-    instance: 'fetches',
+    instance: { name: 'fetches', runtimeInstancePath: './src/utils/api/instance' },
     nameBy: 'path',
     groupBy: 'tags'
   }

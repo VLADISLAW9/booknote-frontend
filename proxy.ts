@@ -1,10 +1,10 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { COOKIES, ROUTES } from './src/utils/constants';
+import { COOKIES_KEYS, ROUTES } from './src/utils/constants';
 
 const PUBLIC_PATHS: string[] = [ROUTES.LOGIN, ROUTES.REGISTER];
 
 export const proxy = ({ cookies, nextUrl }: NextRequest) => {
-  const authToken = cookies.get(COOKIES.ACCESS_TOKEN)?.value;
+  const authToken = cookies.get(COOKIES_KEYS.ACCESS_TOKEN)?.value;
 
   if (authToken || PUBLIC_PATHS.includes(nextUrl.pathname)) {
     return NextResponse.next();
