@@ -38,7 +38,7 @@ const RootLayout = ({
     )}
     lang='en'
   >
-    <body className='flex min-h-full flex-col'>{children}</body>
+    <body className='dark flex min-h-full flex-col'>{children}</body>
   </html>
 );
 

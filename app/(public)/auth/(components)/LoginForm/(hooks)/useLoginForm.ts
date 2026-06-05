@@ -1,5 +1,5 @@
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 const loginSchema = z.object({
@@ -7,8 +7,10 @@ const loginSchema = z.object({
   password: z.string().min(1, 'Обязательное поле')
 });
 
-export const useLoginPage = () => {
-  const loginForm = useForm({
+type LoginFormValues = z.infer<typeof loginSchema>;
+
+export const useLoginForm = () => {
+  const loginForm = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: '',
@@ -16,9 +18,10 @@ export const useLoginPage = () => {
     }
   });
 
-  const onSubmit = loginForm.handleSubmit((data) => {});
+  const onSubmit = loginForm.handleSubmit(() => undefined);
 
   return {
+    state: { loading: false },
     form: loginForm,
     functions: { onSubmit }
   };

@@ -13,6 +13,12 @@
       "skillPath": "skills/reactuse/SKILL.md",
       "computedHash": "29517c60f21c48246acad1e015f8b16aa01e3deee1955b3709df00cf6ac22163"
     },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "skillPath": "skills/shadcn/SKILL.md",
+      "computedHash": "8f8bcc9024aa068245fac646d654a18c80280e4b06112ccd3e691a8c96cd66bd"
+    },
     "vercel-react-best-practices": {
       "source": "siberiacancode/agent-skills",
       "sourceType": "github",
