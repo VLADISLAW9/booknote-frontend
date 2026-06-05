@@ -1,0 +1,314 @@
+openapi: 3.0.0
+paths:
+  /auth/register:
+    post:
+      operationId: AuthController_register
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterDto'
+      responses:
+        '201':
+          description: User registered and JWT returned.
+        '409':
+          description: User with this email already exists.
+      summary: Register a new user
+      tags:
+        - Auth
+  /auth/login:
+    post:
+      operationId: AuthController_login
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginDto'
+      responses:
+        '201':
+          description: JWT returned.
+        '401':
+          description: Invalid email or password.
+      summary: Login with email and password
+      tags:
+        - Auth
+  /auth/me:
+    get:
+      operationId: AuthController_me
+      parameters: []
+      responses:
+        '200':
+          description: Current user returned.
+        '401':
+          description: Bearer token is missing or invalid.
+      security:
+        - bearer: []
+      summary: Get current authenticated user
+      tags:
+        - Auth
+  /books:
+    get:
+      operationId: BooksController_findAll
+      parameters:
+        - name: title
+          required: false
+          in: query
+          schema:
+            example: architecture
+            type: string
+        - name: readingStatus
+          required: false
+          in: query
+          schema:
+            example: reading
+            type: string
+            enum:
+              - reading
+              - read
+              - not_read
+              - Читаю
+              - Прочитана
+              - Не прочитана
+        - name: genre
+          required: false
+          in: query
+          schema:
+            example: software
+            type: string
+      responses:
+        '200':
+          description: Books returned.
+        '401':
+          description: Bearer token is missing or invalid.
+      security:
+        - bearer: []
+      summary: Get current user books
+      tags:
+        - Books
+    post:
+      operationId: BooksController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBookDto'
+      responses:
+        '201':
+          description: Book created.
+        '400':
+          description: Invalid book payload.
+      security:
+        - bearer: []
+      summary: Add a book to current user library
+      tags:
+        - Books
+  /books/{id}:
+    get:
+      operationId: BooksController_findOne
+      parameters:
+        - name: id
+          required: true
+          in: path
+          description: Book id
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Book returned.
+        '404':
+          description: Book was not found.
+      security:
+        - bearer: []
+      summary: Get one current user book by id
+      tags:
+        - Books
+    delete:
+      operationId: BooksController_remove
+      parameters:
+        - name: id
+          required: true
+          in: path
+          description: Book id
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Book deleted.
+        '404':
+          description: Book was not found.
+      security:
+        - bearer: []
+      summary: Delete current user book by id
+      tags:
+        - Books
+    patch:
+      operationId: BooksController_update
+      parameters:
+        - name: id
+          required: true
+          in: path
+          description: Book id
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBookDto'
+      responses:
+        '200':
+          description: Book updated.
+        '404':
+          description: Book was not found.
+      security:
+        - bearer: []
+      summary: Partially update current user book by id
+      tags:
+        - Books
+info:
+  title: Booknote API
+  description: Backend API for tracking read books and user libraries.
+  version: '1.0'
+  contact: {}
+tags: []
+servers: []
+components:
+  securitySchemes:
+    bearer:
+      scheme: bearer
+      bearerFormat: JWT
+      type: http
+  schemas:
+    RegisterDto:
+      type: object
+      properties:
+        email:
+          type: string
+          example: reader@example.com
+        password:
+          type: string
+          example: password123
+          minLength: 8
+        name:
+          type: string
+          example: Reader Name
+          minLength: 2
+      required:
+        - email
+        - password
+        - name
+    LoginDto:
+      type: object
+      properties:
+        email:
+          type: string
+          example: reader@example.com
+        password:
+          type: string
+          example: password123
+          minLength: 8
+      required:
+        - email
+        - password
+    UpdateBookDto:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Clean Architecture
+        author:
+          type: string
+          example: Robert C. Martin
+        genre:
+          type: string
+          example: Software Engineering
+        totalPages:
+          type: number
+          example: 432
+          minimum: 1
+        currentPage:
+          type: number
+          example: 120
+          minimum: 0
+        readingStatus:
+          type: string
+          example: Прочитана
+          enum:
+            - reading
+            - read
+            - not_read
+            - Читаю
+            - Прочитана
+            - Не прочитана
+        cover:
+          type: object
+          example: https://example.com/cover.jpg
+          nullable: true
+        annotation:
+          type: object
+          example: Book about software architecture.
+          nullable: true
+        startedAt:
+          type: object
+          example: '2026-06-01'
+          nullable: true
+        finishedAt:
+          type: object
+          example: '2026-06-30'
+          nullable: true
+    CreateBookDto:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Clean Architecture
+        author:
+          type: string
+          example: Robert C. Martin
+        genre:
+          type: string
+          example: Software Engineering
+        totalPages:
+          type: number
+          example: 432
+          minimum: 1
+        currentPage:
+          type: number
+          example: 120
+          minimum: 0
+          default: 0
+        readingStatus:
+          type: string
+          example: Читаю
+          enum:
+            - reading
+            - read
+            - not_read
+            - Читаю
+            - Прочитана
+            - Не прочитана
+          default: not_read
+        cover:
+          type: string
+          example: https://example.com/cover.jpg
+        annotation:
+          type: string
+          example: Book about software architecture.
+        startedAt:
+          type: string
+          example: '2026-06-01'
+        finishedAt:
+          type: string
+          example: '2026-06-30'
+      required:
+        - title
+        - author
+        - genre
+        - totalPages
