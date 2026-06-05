@@ -11,15 +11,15 @@ Runs an effect only when dependencies change shallowly or deeply.
 ## Usage
 
 ```ts
-import { useShallowEffect } from "@siberiacancode/reactuse";
+import { useShallowEffect } from '@siberiacancode/reactuse';
 
-useShallowEffect(() => console.log("effect"), [user]);
+useShallowEffect(() => console.log('effect'), [user]);
 ```
 
 ## Example
 
 ```tsx
-import { useShallowEffect } from "@siberiacancode/reactuse";
+import { useShallowEffect } from '@siberiacancode/reactuse';
 
 interface UserCardProps {
   user: {
@@ -29,7 +29,7 @@ interface UserCardProps {
 }
 
 export const UserCard = ({ user }: UserCardProps) => {
-  useShallowEffect(() => console.log("effect"), [user]);
+  useShallowEffect(() => console.log('effect'), [user]);
 
   return <div>{user.name}</div>;
 };
@@ -42,11 +42,8 @@ export const UserCard = ({ user }: UserCardProps) => {
 ## Type Declarations
 
 ```ts
-import type { DependencyList, EffectCallback } from "react";
+import type { DependencyList, EffectCallback } from 'react';
 
 export declare const deepEqual: (a: any, b: any) => boolean;
-export declare const useShallowEffect: (
-  effect: EffectCallback,
-  deps?: DependencyList
-) => void;
+export declare const useShallowEffect: (effect: EffectCallback, deps?: DependencyList) => void;
 ```

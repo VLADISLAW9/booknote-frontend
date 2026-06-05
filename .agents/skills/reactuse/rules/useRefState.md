@@ -11,7 +11,7 @@ Creates a ref-like state that updates on assignment.
 ## Usage
 
 ```ts
-import { useRefState } from "@siberiacancode/reactuse";
+import { useRefState } from '@siberiacancode/reactuse';
 
 const ref = useRefState();
 ```
@@ -34,7 +34,5 @@ export interface StateRef<Value> {
   current: Value;
   state?: Value;
 }
-export declare const useRefState: <Value>(
-  initialValue?: Value
-) => StateRef<Value>;
+export declare const useRefState: <Value>(initialValue?: Value) => StateRef<Value>;
 ```

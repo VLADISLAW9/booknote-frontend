@@ -11,7 +11,7 @@ Returns the user's operating system based on the user agent.
 ## Usage
 
 ```ts
-import { useOperatingSystem } from "@siberiacancode/reactuse";
+import { useOperatingSystem } from '@siberiacancode/reactuse';
 
 const os = useOperatingSystem();
 ```
@@ -19,7 +19,7 @@ const os = useOperatingSystem();
 ## Example
 
 ```tsx
-import { useOperatingSystem } from "@siberiacancode/reactuse";
+import { useOperatingSystem } from '@siberiacancode/reactuse';
 
 export const OSBadge = () => {
   const os = useOperatingSystem();
@@ -30,12 +30,6 @@ export const OSBadge = () => {
 ## Type Declarations
 
 ```ts
-export type OperatingSystem =
-  | "android"
-  | "ios"
-  | "linux"
-  | "macos"
-  | "undetermined"
-  | "windows";
+export type OperatingSystem = 'android' | 'ios' | 'linux' | 'macos' | 'undetermined' | 'windows';
 export declare const useOperatingSystem: () => OperatingSystem;
 ```

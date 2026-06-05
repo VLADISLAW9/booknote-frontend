@@ -11,7 +11,7 @@ Returns the current screen orientation and lock controls.
 ## Usage
 
 ```ts
-import { useOrientation } from "@siberiacancode/reactuse";
+import { useOrientation } from '@siberiacancode/reactuse';
 
 const orientation = useOrientation();
 ```
@@ -19,7 +19,7 @@ const orientation = useOrientation();
 ## Example
 
 ```tsx
-import { useOrientation } from "@siberiacancode/reactuse";
+import { useOrientation } from '@siberiacancode/reactuse';
 
 export const ScreenOrientation = () => {
   const orientation = useOrientation();
@@ -28,7 +28,7 @@ export const ScreenOrientation = () => {
   return (
     <div>
       {orientation.value.orientationType}
-      <button onClick={() => orientation.lock("portrait")}>Lock</button>
+      <button onClick={() => orientation.lock('portrait')}>Lock</button>
       <button onClick={() => orientation.unlock()}>Unlock</button>
     </div>
   );
@@ -47,14 +47,14 @@ export interface UseOrientationValue {
   orientationType?: OrientationType;
 }
 export type OrientationLockType =
-  | "any"
-  | "landscape-primary"
-  | "landscape-secondary"
-  | "landscape"
-  | "natural"
-  | "portrait-primary"
-  | "portrait-secondary"
-  | "portrait";
+  | 'any'
+  | 'landscape-primary'
+  | 'landscape-secondary'
+  | 'landscape'
+  | 'natural'
+  | 'portrait-primary'
+  | 'portrait-secondary'
+  | 'portrait';
 export interface useOrientationReturn {
   supported: boolean;
   value: UseOrientationValue;

@@ -11,7 +11,7 @@ Allows showing an optimistic value before the async update resolves.
 ## Usage
 
 ```ts
-import { useOptimistic } from "@siberiacancode/reactuse";
+import { useOptimistic } from '@siberiacancode/reactuse';
 
 const [optimisticCount, updateOptimistic] = useOptimistic(
   count,
@@ -22,8 +22,8 @@ const [optimisticCount, updateOptimistic] = useOptimistic(
 ## Example
 
 ```tsx
-import { useOptimistic } from "@siberiacancode/reactuse";
-import { useState } from "react";
+import { useOptimistic } from '@siberiacancode/reactuse';
+import { useState } from 'react';
 
 export const LikeButton = () => {
   const [likes, setLikes] = useState(0);
@@ -33,7 +33,7 @@ export const LikeButton = () => {
   );
 
   const onLike = () => {
-    const request = fetch("/api/like", { method: "POST" }).then(() => {
+    const request = fetch('/api/like', { method: 'POST' }).then(() => {
       setLikes((value) => value + 1);
     });
 
@@ -54,8 +54,5 @@ export type UseOptimisticReturn<State> = [
 export declare const useOptimistic: <State, OptimisticState = State>(
   externalState: State,
   update: (currentState: State, optimisticState: OptimisticState) => State
-) => readonly [
-  State,
-  (optimisticValue: OptimisticState, promise: Promise<any>) => Promise<any>
-];
+) => readonly [State, (optimisticValue: OptimisticState, promise: Promise<any>) => Promise<any>];
 ```

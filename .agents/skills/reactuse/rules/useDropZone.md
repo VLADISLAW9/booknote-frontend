@@ -11,7 +11,7 @@ Creates a drag-and-drop area with file state.
 ## Usage
 
 ```ts
-import { useDropZone } from "@siberiacancode/reactuse";
+import { useDropZone } from '@siberiacancode/reactuse';
 
 const dropZone = useDropZone<HTMLDivElement>();
 // or
@@ -21,19 +21,19 @@ const dropZone = useDropZone(ref, { multiple: true });
 ## Example
 
 ```tsx
-import { useDropZone } from "@siberiacancode/reactuse";
+import { useDropZone } from '@siberiacancode/reactuse';
 
 export const AvatarDrop = () => {
   const dropZone = useDropZone<HTMLDivElement>({
-    dataTypes: ["image/jpeg", "image/png"],
+    dataTypes: ['image/jpeg', 'image/png'],
     multiple: false,
-    onDrop: (files) => console.log("files", files),
+    onDrop: (files) => console.log('files', files)
   });
   const ref = dropZone.ref;
 
   return (
     <div ref={ref}>
-      {dropZone.overed ? "Drop now" : "Drag image here"}
+      {dropZone.overed ? 'Drop now' : 'Drag image here'}
       <div>Files: {dropZone.files?.length ?? 0}</div>
     </div>
   );
@@ -45,7 +45,7 @@ export const AvatarDrop = () => {
 Allowed types.
 
 ```tsx
-const dropZone = useDropZone<HTMLDivElement>({ dataTypes: ["image/jpeg"] });
+const dropZone = useDropZone<HTMLDivElement>({ dataTypes: ['image/jpeg'] });
 ```
 
 `multiple`:
@@ -62,7 +62,7 @@ Handle drop.
 
 ```tsx
 const dropZone = useDropZone<HTMLDivElement>({
-  onDrop: (files) => console.log(files?.length ?? 0),
+  onDrop: (files) => console.log(files?.length ?? 0)
 });
 ```
 
@@ -72,7 +72,7 @@ Drag enter.
 
 ```tsx
 const dropZone = useDropZone<HTMLDivElement>({
-  onEnter: () => console.log("enter"),
+  onEnter: () => console.log('enter')
 });
 ```
 
@@ -82,7 +82,7 @@ Drag leave.
 
 ```tsx
 const dropZone = useDropZone<HTMLDivElement>({
-  onLeave: () => console.log("leave"),
+  onLeave: () => console.log('leave')
 });
 ```
 
@@ -92,15 +92,15 @@ Drag over.
 
 ```tsx
 const dropZone = useDropZone<HTMLDivElement>({
-  onOver: () => console.log("over"),
+  onOver: () => console.log('over')
 });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type DropZoneDataTypes = ((types: string[]) => boolean) | string[];
 export interface UseDropZoneOptions {

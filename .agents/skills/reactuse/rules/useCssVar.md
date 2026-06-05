@@ -11,21 +11,21 @@ Reads and writes a CSS custom property.
 ## Usage
 
 ```ts
-import { useCssVar } from "@siberiacancode/reactuse";
+import { useCssVar } from '@siberiacancode/reactuse';
 
-const cssVar = useCssVar<HTMLDivElement>("--color", "red");
+const cssVar = useCssVar<HTMLDivElement>('--color', 'red');
 // or
-const cssVar = useCssVar(ref, "--color", "red");
+const cssVar = useCssVar(ref, '--color', 'red');
 ```
 
 ## Example
 
 ```tsx
-const cssVar = useCssVar<HTMLDivElement>("--bg", "tomato");
+const cssVar = useCssVar<HTMLDivElement>('--bg', 'tomato');
 
 return (
   <div ref={cssVar.ref} style={{ background: cssVar.value }}>
-    <button onClick={() => cssVar.set("steelblue")}>Change</button>
+    <button onClick={() => cssVar.set('steelblue')}>Change</button>
   </div>
 );
 ```
@@ -33,11 +33,11 @@ return (
 Targeted element:
 
 ```tsx
-const cssVar = useCssVar<HTMLDivElement>("--panel-bg", "#111");
+const cssVar = useCssVar<HTMLDivElement>('--panel-bg', '#111');
 
 return (
   <section ref={cssVar.ref} style={{ background: cssVar.value }}>
-    <button onClick={() => cssVar.set("#333")}>Darken</button>
+    <button onClick={() => cssVar.set('#333')}>Darken</button>
     <button onClick={() => cssVar.remove()}>Reset</button>
   </section>
 );
@@ -46,8 +46,8 @@ return (
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseCssVarReturn {
   value: string;

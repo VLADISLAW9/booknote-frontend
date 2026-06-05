@@ -11,7 +11,7 @@ Tracks virtual keyboard state and exposes controls.
 ## Usage
 
 ```ts
-import { useVirtualKeyboard } from "@siberiacancode/reactuse";
+import { useVirtualKeyboard } from '@siberiacancode/reactuse';
 
 const keyboard = useVirtualKeyboard();
 ```
@@ -19,7 +19,7 @@ const keyboard = useVirtualKeyboard();
 ## Example
 
 ```tsx
-import { useVirtualKeyboard } from "@siberiacancode/reactuse";
+import { useVirtualKeyboard } from '@siberiacancode/reactuse';
 
 export const KeyboardControls = () => {
   const keyboard = useVirtualKeyboard();
@@ -55,7 +55,5 @@ export interface UseVirtualKeyboardReturn {
   hide: () => void;
   show: () => void;
 }
-export declare const useVirtualKeyboard: (
-  initialValue?: boolean
-) => UseVirtualKeyboardReturn;
+export declare const useVirtualKeyboard: (initialValue?: boolean) => UseVirtualKeyboardReturn;
 ```

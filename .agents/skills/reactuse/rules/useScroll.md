@@ -11,7 +11,7 @@ Tracks scroll state and provides scroll helpers.
 ## Usage
 
 ```ts
-import { useScroll } from "@siberiacancode/reactuse";
+import { useScroll } from '@siberiacancode/reactuse';
 
 const scroll = useScroll<HTMLDivElement>();
 // or
@@ -23,13 +23,13 @@ const scroll = useScroll(ref);
 ```tsx
 const scroll = useScroll<HTMLDivElement>({
   onScroll: ({ arrived, y }) => {
-    if (arrived.bottom) console.log("reached bottom");
-  },
+    if (arrived.bottom) console.log('reached bottom');
+  }
 });
 return (
   <div ref={scroll.ref}>
     <button onClick={() => scroll.scrollTo({ x: 0, y: 0 })}>Top</button>
-    <button onClick={() => scroll.scrollIntoView({ block: "end" })}>To end</button>
+    <button onClick={() => scroll.scrollIntoView({ block: 'end' })}>To end</button>
   </div>
 );
 ```
@@ -38,7 +38,7 @@ return (
 
 ```tsx
 const scroll = useScroll<HTMLDivElement>({
-  onStop: () => console.log("stopped"),
+  onStop: () => console.log('stopped')
 });
 ```
 
@@ -58,7 +58,7 @@ const state = scroll.watch();
 
 return (
   <div ref={scroll.ref}>
-    Scroll: {state.y}px · {state.arrived.bottom ? "Bottom" : "scrolling"}
+    Scroll: {state.y}px · {state.arrived.bottom ? 'Bottom' : 'scrolling'}
   </div>
 );
 ```
@@ -66,8 +66,8 @@ return (
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseScrollOptions {
   offset?: {

@@ -11,7 +11,7 @@ Controls the Wake Lock API state.
 ## Usage
 
 ```ts
-import { useWakeLock } from "@siberiacancode/reactuse";
+import { useWakeLock } from '@siberiacancode/reactuse';
 
 const wake = useWakeLock();
 ```
@@ -19,14 +19,14 @@ const wake = useWakeLock();
 ## Example
 
 ```tsx
-import { useWakeLock } from "@siberiacancode/reactuse";
+import { useWakeLock } from '@siberiacancode/reactuse';
 
 export const WakeLockToggle = () => {
   const wake = useWakeLock();
 
   return (
     <button onClick={() => (wake.active ? wake.release() : wake.request())}>
-      {wake.active ? "Release" : "Keep awake"}
+      {wake.active ? 'Release' : 'Keep awake'}
     </button>
   );
 };
@@ -41,7 +41,7 @@ const wake = useWakeLock({ immediately: true });
 `type`:
 
 ```tsx
-const wake = useWakeLock({ type: "screen" });
+const wake = useWakeLock({ type: 'screen' });
 ```
 
 ## Notes
@@ -61,7 +61,5 @@ export interface UseWakeLockReturn {
   release: () => Promise<void>;
   request: () => Promise<void>;
 }
-export declare const useWakeLock: (
-  options?: UseWakeLockOptions
-) => UseWakeLockReturn;
+export declare const useWakeLock: (options?: UseWakeLockOptions) => UseWakeLockReturn;
 ```

@@ -11,7 +11,7 @@ Returns the current geolocation and updates on changes.
 ## Usage
 
 ```ts
-import { useGeolocation } from "@siberiacancode/reactuse";
+import { useGeolocation } from '@siberiacancode/reactuse';
 
 const geolocation = useGeolocation();
 ```
@@ -19,7 +19,7 @@ const geolocation = useGeolocation();
 ## Example
 
 ```tsx
-import { useGeolocation } from "@siberiacancode/reactuse";
+import { useGeolocation } from '@siberiacancode/reactuse';
 
 export const Location = () => {
   const geolocation = useGeolocation();
@@ -73,7 +73,5 @@ export interface UseGeolocationReturn {
   timestamp: number | null;
 }
 export type UseGeolocationParams = PositionOptions;
-export declare const useGeolocation: (
-  params?: UseGeolocationParams
-) => UseGeolocationReturn;
+export declare const useGeolocation: (params?: UseGeolocationParams) => UseGeolocationReturn;
 ```

@@ -11,7 +11,7 @@ Creates a stepper with next/back helpers.
 ## Usage
 
 ```ts
-import { useStep } from "@siberiacancode/reactuse";
+import { useStep } from '@siberiacancode/reactuse';
 
 const stepper = useStep(5);
 ```
@@ -19,7 +19,7 @@ const stepper = useStep(5);
 ## Example
 
 ```tsx
-import { useStep } from "@siberiacancode/reactuse";
+import { useStep } from '@siberiacancode/reactuse';
 
 export const Stepper = () => {
   const stepper = useStep({ initial: 1, max: 3 });
@@ -61,7 +61,7 @@ export interface UseStepReturn {
   back: () => void;
   next: () => void;
   reset: () => void;
-  set: (value: number | "first" | "last") => void;
+  set: (value: number | 'first' | 'last') => void;
 }
 export declare const useStep: (params: number | UseStepParams) => UseStepReturn;
 ```

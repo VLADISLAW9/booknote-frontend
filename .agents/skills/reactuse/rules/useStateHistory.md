@@ -11,7 +11,7 @@ Keeps state with undo/redo history.
 ## Usage
 
 ```ts
-import { useStateHistory } from "@siberiacancode/reactuse";
+import { useStateHistory } from '@siberiacancode/reactuse';
 
 const history = useStateHistory(0);
 ```
@@ -19,10 +19,10 @@ const history = useStateHistory(0);
 ## Example
 
 ```tsx
-import { useStateHistory } from "@siberiacancode/reactuse";
+import { useStateHistory } from '@siberiacancode/reactuse';
 
 export const HistoryInput = () => {
-  const history = useStateHistory("draft");
+  const history = useStateHistory('draft');
 
   return (
     <div>
@@ -37,7 +37,7 @@ export const HistoryInput = () => {
 `initialValue`:
 
 ```tsx
-const history = useStateHistory("draft");
+const history = useStateHistory('draft');
 ```
 
 `capacity`:

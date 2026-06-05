@@ -11,7 +11,7 @@ Auto-resizes a textarea based on content.
 ## Usage
 
 ```ts
-import { useTextareaAutosize } from "@siberiacancode/reactuse";
+import { useTextareaAutosize } from '@siberiacancode/reactuse';
 
 const textarea = useTextareaAutosize<HTMLTextAreaElement>();
 // or
@@ -21,12 +21,10 @@ const textarea = useTextareaAutosize(ref);
 ## Example
 
 ```tsx
-import { useTextareaAutosize } from "@siberiacancode/reactuse";
+import { useTextareaAutosize } from '@siberiacancode/reactuse';
 
 export const Notes = () => {
-  const textarea = useTextareaAutosize<HTMLTextAreaElement>(
-    "Write your thoughts..."
-  );
+  const textarea = useTextareaAutosize<HTMLTextAreaElement>('Write your thoughts...');
   const ref = textarea.ref;
 
   return (
@@ -44,7 +42,7 @@ export const Notes = () => {
 Initial text.
 
 ```tsx
-const textarea = useTextareaAutosize<HTMLTextAreaElement>("initial");
+const textarea = useTextareaAutosize<HTMLTextAreaElement>('initial');
 ```
 
 `onResize`:
@@ -53,15 +51,15 @@ Resize callback.
 
 ```tsx
 const textarea = useTextareaAutosize<HTMLTextAreaElement>({
-  onResize: () => console.log("resize"),
+  onResize: () => console.log('resize')
 });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseTextareaAutosizeOptions {
   initialValue?: string;
@@ -73,10 +71,7 @@ export interface UseTextareaAutosizeReturn {
   set: (value: string) => void;
 }
 export interface UseTextareaAutosize {
-  (
-    target: HookTarget,
-    options?: UseTextareaAutosizeOptions
-  ): UseTextareaAutosizeReturn;
+  (target: HookTarget, options?: UseTextareaAutosizeOptions): UseTextareaAutosizeReturn;
   (target: HookTarget, initialValue: string): UseTextareaAutosizeReturn;
   <Target extends HTMLTextAreaElement = HTMLTextAreaElement>(
     initialValue: string,

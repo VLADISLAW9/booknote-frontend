@@ -11,18 +11,18 @@ Observes performance entries.
 ## Usage
 
 ```ts
-import { usePerformanceObserver } from "@siberiacancode/reactuse";
+import { usePerformanceObserver } from '@siberiacancode/reactuse';
 
-const perf = usePerformanceObserver({ entryTypes: ["measure"] });
+const perf = usePerformanceObserver({ entryTypes: ['measure'] });
 ```
 
 ## Example
 
 ```tsx
-import { usePerformanceObserver } from "@siberiacancode/reactuse";
+import { usePerformanceObserver } from '@siberiacancode/reactuse';
 
 export const PerfEntries = () => {
-  const perf = usePerformanceObserver({ entryTypes: ["resource"] });
+  const perf = usePerformanceObserver({ entryTypes: ['resource'] });
 
   return (
     <div>
@@ -36,15 +36,15 @@ export const PerfEntries = () => {
 
 ```tsx
 const perf = usePerformanceObserver({
-  entryTypes: ["resource"],
-  immediate: true,
+  entryTypes: ['resource'],
+  immediate: true
 });
 ```
 
 `entryTypes`:
 
 ```tsx
-const perf = usePerformanceObserver({ entryTypes: ["navigation"] });
+const perf = usePerformanceObserver({ entryTypes: ['navigation'] });
 ```
 
 ## Notes

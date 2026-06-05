@@ -11,7 +11,7 @@ Observes element width and height.
 ## Usage
 
 ```ts
-import { useSize } from "@siberiacancode/reactuse";
+import { useSize } from '@siberiacancode/reactuse';
 
 const size = useSize<HTMLDivElement>();
 // or
@@ -21,7 +21,7 @@ useSize(ref);
 ## Example
 
 ```tsx
-import { useSize } from "@siberiacancode/reactuse";
+import { useSize } from '@siberiacancode/reactuse';
 
 const size = useSize<HTMLDivElement>();
 return (
@@ -34,8 +34,8 @@ return (
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseSizeValue {
   height: number;
@@ -47,7 +47,9 @@ export interface UseSizeReturn {
 }
 export interface UseSize {
   (target: HookTarget): UseSizeReturn;
-  <Target extends Element>(target?: never): {
+  <Target extends Element>(
+    target?: never
+  ): {
     ref: StateRef<Target>;
   } & UseSizeReturn;
 }

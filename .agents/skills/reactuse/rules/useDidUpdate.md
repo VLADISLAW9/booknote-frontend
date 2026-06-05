@@ -11,15 +11,15 @@ Runs an effect only on updates (not on initial mount).
 ## Usage
 
 ```ts
-import { useDidUpdate } from "@siberiacancode/reactuse";
+import { useDidUpdate } from '@siberiacancode/reactuse';
 
-useDidUpdate(() => console.log("updated"), [value]);
+useDidUpdate(() => console.log('updated'), [value]);
 ```
 
 ## Example
 
 ```tsx
-import { useDidUpdate } from "@siberiacancode/reactuse";
+import { useDidUpdate } from '@siberiacancode/reactuse';
 
 interface ProfileProps {
   name: string;
@@ -27,7 +27,7 @@ interface ProfileProps {
 
 export const Profile = ({ name }: ProfileProps) => {
   useDidUpdate(() => {
-    console.log("name changed");
+    console.log('name changed');
   }, [name]);
 
   return <div>{name}</div>;
@@ -37,10 +37,7 @@ export const Profile = ({ name }: ProfileProps) => {
 ## Type Declarations
 
 ```ts
-import type { DependencyList, EffectCallback } from "react";
+import type { DependencyList, EffectCallback } from 'react';
 
-export declare const useDidUpdate: (
-  effect: EffectCallback,
-  deps?: DependencyList
-) => void;
+export declare const useDidUpdate: (effect: EffectCallback, deps?: DependencyList) => void;
 ```

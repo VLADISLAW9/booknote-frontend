@@ -10,7 +10,7 @@ We often need to check several conditions before running the main logic. Deep ne
 
 ```typescript
 const init = () => {
-  const rawAuthToken = localStorage.getItem("rawAuthToken");
+  const rawAuthToken = localStorage.getItem('rawAuthToken');
 
   if (rawAuthToken) {
     const token = JSON.parse(rawAuthToken);
@@ -26,7 +26,7 @@ Early returns make code more predictable and easier to follow. Each check is exp
 
 ```typescript
 const init = () => {
-  const rawAuthToken = localStorage.getItem("rawAuthToken");
+  const rawAuthToken = localStorage.getItem('rawAuthToken');
 
   if (!rawAuthToken) return;
 

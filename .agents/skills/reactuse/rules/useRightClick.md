@@ -11,18 +11,18 @@ Handles right-click and long press events.
 ## Usage
 
 ```ts
-import { useRightClick } from "@siberiacancode/reactuse";
+import { useRightClick } from '@siberiacancode/reactuse';
 
-const ref = useRightClick<HTMLDivElement>(() => console.log("clicked"));
+const ref = useRightClick<HTMLDivElement>(() => console.log('clicked'));
 // or
-useRightClick(ref, () => console.log("clicked"));
+useRightClick(ref, () => console.log('clicked'));
 ```
 
 ## Example
 
 ```tsx
-import { useRightClick } from "@siberiacancode/reactuse";
-import { useState } from "react";
+import { useRightClick } from '@siberiacancode/reactuse';
+import { useState } from 'react';
 
 export const Menu = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -42,7 +42,7 @@ Press start.
 
 ```tsx
 const ref = useRightClick<HTMLDivElement>(() => {}, {
-  onStart: () => console.log("start"),
+  onStart: () => console.log('start')
 });
 ```
 
@@ -52,15 +52,15 @@ Press end.
 
 ```tsx
 const ref = useRightClick<HTMLDivElement>(() => {}, {
-  onEnd: () => console.log("end"),
+  onEnd: () => console.log('end')
 });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type RightClickEvent = MouseEvent | TouchEvent;
 export interface RightClickPositions {
@@ -72,11 +72,7 @@ export interface UseRightClickOptions {
   onStart?: (event: RightClickEvent) => void;
 }
 export interface UseRightClick {
-  (
-    target: HookTarget,
-    callback: (event: Event) => void,
-    options?: UseRightClickOptions
-  ): void;
+  (target: HookTarget, callback: (event: Event) => void, options?: UseRightClickOptions): void;
   <Target extends Element>(
     callback: (positions: RightClickPositions, event: Event) => void,
     options?: UseRightClickOptions,

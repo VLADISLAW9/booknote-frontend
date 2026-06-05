@@ -11,7 +11,7 @@ Controls fullscreen state for an element.
 ## Usage
 
 ```ts
-import { useFullscreen } from "@siberiacancode/reactuse";
+import { useFullscreen } from '@siberiacancode/reactuse';
 
 const fullscreen = useFullscreen<HTMLDivElement>();
 // or
@@ -26,7 +26,7 @@ const fullscreen = useFullscreen<HTMLDivElement>();
 return (
   <div ref={fullscreen.ref}>
     <button onClick={() => fullscreen.toggle()}>
-      {fullscreen.value ? "Exit" : "Enter"} fullscreen
+      {fullscreen.value ? 'Exit' : 'Enter'} fullscreen
     </button>
   </div>
 );
@@ -46,7 +46,7 @@ Enter callback.
 
 ```tsx
 const fullscreen = useFullscreen<HTMLDivElement>({
-  onEnter: () => console.log("enter"),
+  onEnter: () => console.log('enter')
 });
 ```
 
@@ -56,15 +56,15 @@ Exit callback.
 
 ```tsx
 const fullscreen = useFullscreen<HTMLDivElement>({
-  onExit: () => console.log("exit"),
+  onExit: () => console.log('exit')
 });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseFullScreenOptions {
   initialValue?: boolean;

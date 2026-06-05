@@ -11,7 +11,7 @@ Provides reactive pointer lock controls.
 ## Usage
 
 ```ts
-import { usePointerLock } from "@siberiacancode/reactuse";
+import { usePointerLock } from '@siberiacancode/reactuse';
 
 const pointerLock = usePointerLock();
 ```
@@ -19,7 +19,7 @@ const pointerLock = usePointerLock();
 ## Example
 
 ```tsx
-import { usePointerLock } from "@siberiacancode/reactuse";
+import { usePointerLock } from '@siberiacancode/reactuse';
 
 export const Canvas = () => {
   const pointer = usePointerLock();
@@ -34,7 +34,7 @@ export const Canvas = () => {
 ## Type Declarations
 
 ```ts
-import type { MouseEvent } from "react";
+import type { MouseEvent } from 'react';
 
 interface UsePointerLockReturn {
   element?: Element;

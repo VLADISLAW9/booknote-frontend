@@ -11,9 +11,9 @@ Loads an image with query-style state.
 ## Usage
 
 ```ts
-import { useImage } from "@siberiacancode/reactuse";
+import { useImage } from '@siberiacancode/reactuse';
 
-const image = useImage("https://example.com/image.png");
+const image = useImage('https://example.com/image.png');
 ```
 
 ## Example
@@ -23,7 +23,7 @@ const image = useImage("https://example.com/image.png");
 Source of the image.
 
 ```tsx
-const image = useImage("/img.png", { srcset: "/img@2x.png 2x" });
+const image = useImage('/img.png', { srcset: '/img@2x.png 2x' });
 ```
 
 `sizes`:
@@ -31,8 +31,8 @@ const image = useImage("/img.png", { srcset: "/img@2x.png 2x" });
 Sizes of the image.
 
 ```tsx
-const image = useImage("/img.png", {
-  sizes: "(max-width: 600px) 100vw, 600px",
+const image = useImage('/img.png', {
+  sizes: '(max-width: 600px) 100vw, 600px'
 });
 ```
 
@@ -41,7 +41,7 @@ const image = useImage("/img.png", {
 Alt of the image.
 
 ```tsx
-const image = useImage("/img.png", { alt: "Preview" });
+const image = useImage('/img.png', { alt: 'Preview' });
 ```
 
 `class`:
@@ -49,7 +49,7 @@ const image = useImage("/img.png", { alt: "Preview" });
 Class of the image.
 
 ```tsx
-const image = useImage("/img.png", { class: "rounded" });
+const image = useImage('/img.png', { class: 'rounded' });
 ```
 
 `loading`:
@@ -57,7 +57,7 @@ const image = useImage("/img.png", { class: "rounded" });
 Loading of the image.
 
 ```tsx
-const image = useImage("/img.png", { loading: "lazy" });
+const image = useImage('/img.png', { loading: 'lazy' });
 ```
 
 `crossorigin`:
@@ -65,7 +65,7 @@ const image = useImage("/img.png", { loading: "lazy" });
 Crossorigin of the image.
 
 ```tsx
-const image = useImage("/img.png", { crossorigin: "anonymous" });
+const image = useImage('/img.png', { crossorigin: 'anonymous' });
 ```
 
 `referrerPolicy`:
@@ -73,7 +73,7 @@ const image = useImage("/img.png", { crossorigin: "anonymous" });
 Referrer policy of the image.
 
 ```tsx
-const image = useImage("/img.png", { referrerPolicy: "no-referrer" });
+const image = useImage('/img.png', { referrerPolicy: 'no-referrer' });
 ```
 
 `keys`:
@@ -81,7 +81,7 @@ const image = useImage("/img.png", { referrerPolicy: "no-referrer" });
 Keys of the image.
 
 ```tsx
-const image = useImage("/img.png", { keys: [theme] });
+const image = useImage('/img.png', { keys: [theme] });
 ```
 
 `onSuccess`:
@@ -89,7 +89,7 @@ const image = useImage("/img.png", { keys: [theme] });
 On success callback.
 
 ```tsx
-const image = useImage("/img.png", { onSuccess: (img) => console.log(img) });
+const image = useImage('/img.png', { onSuccess: (img) => console.log(img) });
 ```
 
 `onError`:
@@ -97,7 +97,7 @@ const image = useImage("/img.png", { onSuccess: (img) => console.log(img) });
 On error callback.
 
 ```tsx
-const image = useImage("/img.png", { onError: (err) => console.error(err) });
+const image = useImage('/img.png', { onError: (err) => console.error(err) });
 ```
 
 `refetchInterval`:
@@ -105,7 +105,7 @@ const image = useImage("/img.png", { onError: (err) => console.error(err) });
 Refetch interval of the image.
 
 ```tsx
-const image = useImage("/img.png", { refetchInterval: 5000 });
+const image = useImage('/img.png', { refetchInterval: 5000 });
 ```
 
 `retry`:
@@ -113,20 +113,20 @@ const image = useImage("/img.png", { refetchInterval: 5000 });
 Retry count of the image.
 
 ```tsx
-const image = useImage("/img.png", { retry: 2 });
+const image = useImage('/img.png', { retry: 2 });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { UseQueryOptions, UseQueryReturn } from "@siberiacancode/reactuse";
+import type { UseQueryOptions, UseQueryReturn } from '@siberiacancode/reactuse';
 
 export interface UseImageOptions {
   alt?: string;
   class?: string;
   crossorigin?: string;
-  loading?: HTMLImageElement["loading"];
-  referrerPolicy?: HTMLImageElement["referrerPolicy"];
+  loading?: HTMLImageElement['loading'];
+  referrerPolicy?: HTMLImageElement['referrerPolicy'];
   sizes?: string;
   srcset?: string;
 }
@@ -136,7 +136,7 @@ export declare const useImage: (
   options?: UseImageOptions &
     Omit<
       UseQueryOptions<HTMLImageElement, HTMLImageElement>,
-      "initialData" | "placeholderData" | "select"
+      'initialData' | 'placeholderData' | 'select'
     >
 ) => UseImageReturn;
 ```

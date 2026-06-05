@@ -11,7 +11,7 @@ Returns a stable ref that always points to the latest value.
 ## Usage
 
 ```ts
-import { useLatest } from "@siberiacancode/reactuse";
+import { useLatest } from '@siberiacancode/reactuse';
 
 const latest = useLatest(value);
 ```
@@ -25,7 +25,7 @@ const latest = useLatest(value);
 ## Type Declarations
 
 ```ts
-import type { RefObject } from "react";
+import type { RefObject } from 'react';
 
 export interface UseLatestReturn<Value> {
   ref: RefObject<Value>;

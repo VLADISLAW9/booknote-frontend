@@ -11,7 +11,7 @@ Tracks whether the user is idle and last active time.
 ## Usage
 
 ```ts
-import { useIdle } from "@siberiacancode/reactuse";
+import { useIdle } from '@siberiacancode/reactuse';
 
 const idle = useIdle();
 ```
@@ -19,13 +19,13 @@ const idle = useIdle();
 ## Example
 
 ```tsx
-import { useIdle } from "@siberiacancode/reactuse";
+import { useIdle } from '@siberiacancode/reactuse';
 
 const idle = useIdle(60000);
 
 return (
   <div>
-    {idle.idle ? "Idle" : "Active"} (last: {idle.lastActive})
+    {idle.idle ? 'Idle' : 'Active'} (last: {idle.lastActive})
   </div>
 );
 ```
@@ -51,7 +51,7 @@ const idle = useIdle(60000, { initialValue: true });
 Events that reset idle state.
 
 ```tsx
-const idle = useIdle(60000, { events: ["mousemove", "keydown"] });
+const idle = useIdle(60000, { events: ['mousemove', 'keydown'] });
 ```
 
 ## Type Declarations
@@ -65,8 +65,5 @@ export interface UseIdleReturn {
   idle: boolean;
   lastActive: number;
 }
-export declare const useIdle: (
-  milliseconds?: number,
-  options?: UseIdleOptions
-) => UseIdleReturn;
+export declare const useIdle: (milliseconds?: number, options?: UseIdleOptions) => UseIdleReturn;
 ```

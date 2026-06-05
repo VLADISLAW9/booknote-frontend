@@ -11,9 +11,9 @@ Provides render count and timing info, with optional logging.
 ## Usage
 
 ```ts
-import { useRenderInfo } from "@siberiacancode/reactuse";
+import { useRenderInfo } from '@siberiacancode/reactuse';
 
-const info = useRenderInfo("Component");
+const info = useRenderInfo('Component');
 ```
 
 ## Example
@@ -21,7 +21,7 @@ const info = useRenderInfo("Component");
 `name` (custom component name):
 
 ```tsx
-const info = useRenderInfo("ProfileCard");
+const info = useRenderInfo('ProfileCard');
 return (
   <div>
     Renders: {info.renders}, Since last: {info.sinceLast}ms
@@ -32,7 +32,7 @@ return (
 `log` (disable console output):
 
 ```tsx
-const info = useRenderInfo("ProfileCard", false);
+const info = useRenderInfo('ProfileCard', false);
 ```
 
 ## Type Declarations
@@ -44,8 +44,5 @@ export interface UseRenderInfoReturn {
   sinceLast: number;
   timestamp: number | null;
 }
-export declare const useRenderInfo: (
-  name?: string,
-  log?: boolean
-) => UseRenderInfoReturn;
+export declare const useRenderInfo: (name?: string, log?: boolean) => UseRenderInfoReturn;
 ```

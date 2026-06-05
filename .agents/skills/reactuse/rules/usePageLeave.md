@@ -11,7 +11,7 @@ Detects when the mouse leaves the page.
 ## Usage
 
 ```ts
-import { usePageLeave } from "@siberiacancode/reactuse";
+import { usePageLeave } from '@siberiacancode/reactuse';
 
 const left = usePageLeave();
 ```
@@ -20,7 +20,7 @@ const left = usePageLeave();
 
 ```tsx
 const left = usePageLeave();
-return <div>{left ? "Leaving" : "Here"}</div>;
+return <div>{left ? 'Leaving' : 'Here'}</div>;
 ```
 
 ## Type Declarations

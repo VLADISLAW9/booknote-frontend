@@ -11,7 +11,7 @@ Requests and connects to Bluetooth devices.
 ## Usage
 
 ```ts
-import { useBluetooth } from "@siberiacancode/reactuse";
+import { useBluetooth } from '@siberiacancode/reactuse';
 
 const bluetooth = useBluetooth();
 ```
@@ -19,7 +19,7 @@ const bluetooth = useBluetooth();
 ## Example
 
 ```tsx
-import { useBluetooth } from "@siberiacancode/reactuse";
+import { useBluetooth } from '@siberiacancode/reactuse';
 
 export const BluetoothStatus = () => {
   const bluetooth = useBluetooth({ acceptAllDevices: true });
@@ -49,7 +49,7 @@ Filter devices by name/service.
 
 ```tsx
 const bluetooth = useBluetooth({
-  filters: [{ namePrefix: "Device" }],
+  filters: [{ namePrefix: 'Device' }]
 });
 ```
 
@@ -59,7 +59,7 @@ Request additional GATT services.
 
 ```tsx
 const bluetooth = useBluetooth({
-  optionalServices: ["battery_service"],
+  optionalServices: ['battery_service']
 });
 ```
 
@@ -70,13 +70,13 @@ This sample illustrates the use of the Web Bluetooth API to read battery level a
 Here, we use the characteristicvaluechanged event listener to handle reading battery level characteristic value. This event listener will optionally handle upcoming notifications as well.
 
 ```tsx
-import { useBluetooth } from "@siberiacancode/reactuse";
-import { useEffect, useRef, useState } from "react";
+import { useBluetooth } from '@siberiacancode/reactuse';
+import { useEffect, useRef, useState } from 'react';
 
 export const BatteryMonitor = () => {
   const bluetooth = useBluetooth({
     acceptAllDevices: true,
-    optionalServices: ["battery_service"],
+    optionalServices: ['battery_service']
   });
 
   const [battery, setBattery] = useState<number | undefined>();
@@ -93,12 +93,12 @@ export const BatteryMonitor = () => {
     };
 
     const connect = async () => {
-      const service = await server.getPrimaryService("battery_service");
-      const characteristic = await service.getCharacteristic("battery_level");
+      const service = await server.getPrimaryService('battery_service');
+      const characteristic = await service.getCharacteristic('battery_level');
 
       characteristicRef.current = characteristic;
 
-      characteristic.addEventListener("characteristicvaluechanged", onChange);
+      characteristic.addEventListener('characteristicvaluechanged', onChange);
       await characteristic.startNotifications();
 
       const initial = await characteristic.readValue();
@@ -111,10 +111,7 @@ export const BatteryMonitor = () => {
       const characteristic = characteristicRef.current;
       if (!characteristic) return;
 
-      characteristic.removeEventListener(
-        "characteristicvaluechanged",
-        onChange
-      );
+      characteristic.removeEventListener('characteristicvaluechanged', onChange);
       characteristic.stopNotifications();
       characteristicRef.current = null;
     };
@@ -125,7 +122,7 @@ export const BatteryMonitor = () => {
       <button onClick={() => bluetooth.requestDevice()}>Request device</button>
 
       <p>Connected: {String(bluetooth.connected)}</p>
-      <p>Battery: {battery != null ? `${battery}%` : "—"}</p>
+      <p>Battery: {battery != null ? `${battery}%` : '—'}</p>
     </div>
   );
 };
@@ -150,7 +147,5 @@ export interface UseBluetoothOptions {
   filters?: BluetoothLEScanFilter[];
   optionalServices?: BluetoothServiceUUID[];
 }
-export declare const useBluetooth: (
-  options?: UseBluetoothOptions
-) => UseBluetoothReturn;
+export declare const useBluetooth: (options?: UseBluetoothOptions) => UseBluetoothReturn;
 ```

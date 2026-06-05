@@ -11,10 +11,10 @@ Runs async side effects.
 ## Usage
 
 ```ts
-import { useAsyncEffect } from "@siberiacancode/reactuse";
+import { useAsyncEffect } from '@siberiacancode/reactuse';
 
 useAsyncEffect(async () => {
-  console.log("async effect");
+  console.log('async effect');
 }, deps);
 ```
 
@@ -22,7 +22,7 @@ useAsyncEffect(async () => {
 
 ```tsx
 useAsyncEffect(async () => {
-  const response = await fetch("/api/me").then((response) => response.json());
+  const response = await fetch('/api/me').then((response) => response.json());
   console.log(response.data);
 }, [message.id]);
 
@@ -32,10 +32,7 @@ useAsyncEffect(async () => {
 ## Type Declarations
 
 ```ts
-import type { DependencyList } from "react";
+import type { DependencyList } from 'react';
 
-export declare const useAsyncEffect: (
-  callback: () => Promise<any>,
-  deps?: DependencyList
-) => void;
+export declare const useAsyncEffect: (callback: () => Promise<any>, deps?: DependencyList) => void;
 ```

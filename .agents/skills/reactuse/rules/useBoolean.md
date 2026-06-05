@@ -11,7 +11,7 @@ Manages a boolean state with a toggle helper.
 ## Usage
 
 ```ts
-import { useBoolean } from "@siberiacancode/reactuse";
+import { useBoolean } from '@siberiacancode/reactuse';
 
 const [value, toggle] = useBoolean();
 ```
@@ -19,7 +19,7 @@ const [value, toggle] = useBoolean();
 ## Example
 
 ```tsx
-import { useBoolean } from "@siberiacancode/reactuse";
+import { useBoolean } from '@siberiacancode/reactuse';
 
 export const Toggle = () => {
   const [value, toggle] = useBoolean();
@@ -36,9 +36,6 @@ const [value, toggle] = useBoolean(true);
 ## Type Declarations
 
 ```ts
-export type UseBooleanReturn = [
-  value: boolean,
-  toggle: (value?: boolean) => void
-];
+export type UseBooleanReturn = [value: boolean, toggle: (value?: boolean) => void];
 export declare const useBoolean: (initialValue?: boolean) => UseBooleanReturn;
 ```

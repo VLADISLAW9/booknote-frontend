@@ -11,34 +11,29 @@ Supports controlled and uncontrolled state patterns.
 ## Usage
 
 ```ts
-import { useControllableState } from "@siberiacancode/reactuse";
+import { useControllableState } from '@siberiacancode/reactuse';
 
 const [value, setValue, isControlled] = useControllableState({
-  initialValue: "draft",
+  initialValue: 'draft'
 });
 ```
 
 ## Example
 
 ```tsx
-import type { ComponentProps } from "react";
-import { useControllableState } from "@siberiacancode/reactuse";
+import type { ComponentProps } from 'react';
+import { useControllableState } from '@siberiacancode/reactuse';
 
-type NameFieldProps = ComponentProps<"input">;
+type NameFieldProps = ComponentProps<'input'>;
 
 export const NameField = ({ value, onChange }: NameFieldProps) => {
   const [current, setCurrent] = useControllableState({
     value,
-    initialValue: "",
-    onChange,
+    initialValue: '',
+    onChange
   });
 
-  return (
-    <input
-      value={current}
-      onChange={(event) => setCurrent(event.target.value)}
-    />
-  );
+  return <input value={current} onChange={(event) => setCurrent(event.target.value)} />;
 };
 ```
 
@@ -51,15 +46,15 @@ const [value, setValue] = useControllableState({ value: props.value });
 `initialValue`:
 
 ```tsx
-const [value, setValue] = useControllableState({ initialValue: "draft" });
+const [value, setValue] = useControllableState({ initialValue: 'draft' });
 ```
 
 `onChange`:
 
 ```tsx
 const [value, setValue] = useControllableState({
-  initialValue: "draft",
-  onChange: (value) => console.log(value),
+  initialValue: 'draft',
+  onChange: (value) => console.log(value)
 });
 ```
 

@@ -11,7 +11,7 @@ Tracks the currently focused element.
 ## Usage
 
 ```ts
-import { useActiveElement } from "@siberiacancode/reactuse";
+import { useActiveElement } from '@siberiacancode/reactuse';
 
 const activeElement = useActiveElement<HTMLDivElement>();
 // or
@@ -26,12 +26,10 @@ const activeElement = useActiveElement<HTMLDivElement>();
 return (
   <>
     <div ref={activeElement.ref}>
-      <input data-id="name" placeholder="Name" />
-      <input data-id="email" placeholder="Email" />
+      <input data-id='name' placeholder='Name' />
+      <input data-id='email' placeholder='Email' />
     </div>
-    <p>
-      Active element: {activeElement.value?.getAttribute("data-id") ?? "none"}
-    </p>
+    <p>Active element: {activeElement.value?.getAttribute('data-id') ?? 'none'}</p>
   </>
 );
 ```
@@ -39,12 +37,10 @@ return (
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
-export interface UseActiveElementReturn<
-  ActiveElement extends HTMLElement = HTMLElement
-> {
+export interface UseActiveElementReturn<ActiveElement extends HTMLElement = HTMLElement> {
   value: ActiveElement | null;
 }
 export interface UseActiveElement {

@@ -11,19 +11,19 @@ Runs a callback once when the component mounts.
 ## Usage
 
 ```ts
-import { useMount } from "@siberiacancode/reactuse";
+import { useMount } from '@siberiacancode/reactuse';
 
-useMount(() => console.log("mounted"));
+useMount(() => console.log('mounted'));
 ```
 
 ## Example
 
 ```tsx
-import { useMount } from "@siberiacancode/reactuse";
+import { useMount } from '@siberiacancode/reactuse';
 
 export const Tracker = () => {
   useMount(() => {
-    console.log("track mount");
+    console.log('track mount');
   });
 
   return <div>Mounted</div>;
@@ -33,7 +33,7 @@ export const Tracker = () => {
 ## Type Declarations
 
 ```ts
-import type { EffectCallback } from "react";
+import type { EffectCallback } from 'react';
 
 export declare const useMount: (effect: EffectCallback) => void;
 ```

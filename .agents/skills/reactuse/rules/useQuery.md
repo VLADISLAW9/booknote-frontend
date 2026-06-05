@@ -11,11 +11,9 @@ Defines query logic with loading, error, success, and refetch state.
 ## Usage
 
 ```ts
-import { useQuery } from "@siberiacancode/reactuse";
+import { useQuery } from '@siberiacancode/reactuse';
 
-const query = useQuery(({ signal }) =>
-  fetch("/api/user", { signal }).then((res) => res.json())
-);
+const query = useQuery(({ signal }) => fetch('/api/user', { signal }).then((res) => res.json()));
 ```
 
 ## Example
@@ -36,7 +34,7 @@ const query = useQuery(fetchUser, { keys: [userId] });
 
 ```tsx
 const query = useQuery(fetchUser, {
-  placeholderData: { name: "Loading..." },
+  placeholderData: { name: 'Loading...' }
 });
 ```
 
@@ -56,7 +54,7 @@ const query = useQuery(fetchUser, { retry: 2 });
 
 ```tsx
 const query = useQuery(fetchUser, {
-  retryDelay: (attempt) => attempt * 300,
+  retryDelay: (attempt) => attempt * 300
 });
 ```
 
@@ -64,7 +62,7 @@ const query = useQuery(fetchUser, {
 
 ```tsx
 const query = useQuery(fetchUser, {
-  onSuccess: (data) => console.log(data),
+  onSuccess: (data) => console.log(data)
 });
 ```
 
@@ -72,7 +70,7 @@ const query = useQuery(fetchUser, {
 
 ```tsx
 const query = useQuery(fetchUser, {
-  onError: (error) => console.error(error),
+  onError: (error) => console.error(error)
 });
 ```
 
@@ -80,7 +78,7 @@ const query = useQuery(fetchUser, {
 
 ```tsx
 const query = useQuery(fetchUser, {
-  select: (data) => data.profile,
+  select: (data) => data.profile
 });
 ```
 
@@ -92,7 +90,7 @@ const query = useQuery(fetchUser, {
 ## Type Declarations
 
 ```ts
-import type { DependencyList } from "react";
+import type { DependencyList } from 'react';
 
 export interface UseQueryOptions<QueryData, Data> {
   enabled?: boolean;
@@ -110,7 +108,7 @@ interface UseQueryCallbackParams {
   signal: AbortSignal;
 }
 export interface UseQueryReturn<Data> {
-  abort: AbortController["abort"];
+  abort: AbortController['abort'];
   data?: Data;
   error?: Error;
   isError: boolean;

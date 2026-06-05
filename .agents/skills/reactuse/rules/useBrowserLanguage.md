@@ -11,7 +11,7 @@ Returns the current browser language.
 ## Usage
 
 ```ts
-import { useBrowserLanguage } from "@siberiacancode/reactuse";
+import { useBrowserLanguage } from '@siberiacancode/reactuse';
 
 const language = useBrowserLanguage();
 ```

@@ -11,7 +11,7 @@ Creates a external store with state, subscriptions, and a hook.
 ## Usage
 
 ```ts
-import { createStore } from "@siberiacancode/reactuse";
+import { createStore } from '@siberiacancode/reactuse';
 
 const store = createStore({ count: 0 });
 ```
@@ -19,13 +19,13 @@ const store = createStore({ count: 0 });
 ## Example
 
 ```tsx
-import { createStore } from "@siberiacancode/reactuse";
+import { createStore } from '@siberiacancode/reactuse';
 
 const counter = createStore((set) => ({
   count: 0,
   inc: () => set((state) => ({ count: state.count + 1 })),
   dec: () => set((state) => ({ count: state.count - 1 })),
-  reset: () => set({ count: 0 }),
+  reset: () => set({ count: 0 })
 }));
 
 export const Counter = () => {
@@ -46,7 +46,7 @@ Subscriptions:
 
 ```tsx
 const unsubscribe = counter.subscribe((state) => {
-  console.log("count", state.count);
+  console.log('count', state.count);
 });
 ```
 

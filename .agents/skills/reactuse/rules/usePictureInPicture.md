@@ -11,7 +11,7 @@ Controls Picture-in-Picture mode for video elements.
 ## Usage
 
 ```ts
-import { usePictureInPicture } from "@siberiacancode/reactuse";
+import { usePictureInPicture } from '@siberiacancode/reactuse';
 
 const pip = usePictureInPicture<HTMLVideoElement>();
 // or
@@ -21,15 +21,13 @@ const pip = usePictureInPicture(ref, { onEnter: () => {} });
 ## Example
 
 ```tsx
-import { usePictureInPicture } from "@siberiacancode/reactuse";
+import { usePictureInPicture } from '@siberiacancode/reactuse';
 
 const pip = usePictureInPicture<HTMLVideoElement>();
 return (
   <div>
-    <video ref={pip.ref} src="/video.mp4" controls />
-    <button onClick={() => pip.toggle()}>
-      {pip.open ? "Exit" : "Enter"} PiP
-    </button>
+    <video ref={pip.ref} src='/video.mp4' controls />
+    <button onClick={() => pip.toggle()}>{pip.open ? 'Exit' : 'Enter'} PiP</button>
   </div>
 );
 ```
@@ -40,7 +38,7 @@ Enter callback.
 
 ```tsx
 const pip = usePictureInPicture<HTMLVideoElement>({
-  onEnter: () => console.log("enter"),
+  onEnter: () => console.log('enter')
 });
 ```
 
@@ -50,7 +48,7 @@ Exit callback.
 
 ```tsx
 const pip = usePictureInPicture<HTMLVideoElement>({
-  onExit: () => console.log("exit"),
+  onExit: () => console.log('exit')
 });
 ```
 
@@ -61,8 +59,8 @@ const pip = usePictureInPicture<HTMLVideoElement>({
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UsePictureInPictureOptions {
   onEnter?: () => void;
@@ -76,10 +74,7 @@ export interface UsePictureInPictureReturn {
   toggle: () => Promise<void>;
 }
 export interface UsePictureInPicture {
-  (
-    target: HookTarget,
-    options?: UsePictureInPictureOptions
-  ): UsePictureInPictureReturn;
+  (target: HookTarget, options?: UsePictureInPictureOptions): UsePictureInPictureReturn;
   (options?: UsePictureInPictureOptions): UsePictureInPictureReturn & {
     ref: StateRef<HTMLVideoElement>;
   };

@@ -11,7 +11,7 @@ Returns whether the user is online.
 ## Usage
 
 ```ts
-import { useOnline } from "@siberiacancode/reactuse";
+import { useOnline } from '@siberiacancode/reactuse';
 
 const online = useOnline();
 ```
@@ -19,13 +19,13 @@ const online = useOnline();
 ## Example
 
 ```tsx
-import { useOnline } from "@siberiacancode/reactuse";
+import { useOnline } from '@siberiacancode/reactuse';
 
 export const Status = () => {
   const online = useOnline();
   return (
     <div>
-      {online ? "Online" : "Offline"}
+      {online ? 'Online' : 'Offline'}
       {!online && <div>Changes will sync when you reconnect.</div>}
     </div>
   );

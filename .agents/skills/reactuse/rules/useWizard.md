@@ -11,31 +11,31 @@ Manages wizard steps and history.
 ## Usage
 
 ```ts
-import { useWizard } from "@siberiacancode/reactuse";
+import { useWizard } from '@siberiacancode/reactuse';
 
 const wizard = useWizard([
-  { id: "step1", nodes: ["step2"] },
-  { id: "step2", nodes: [] },
+  { id: 'step1', nodes: ['step2'] },
+  { id: 'step2', nodes: [] }
 ]);
 ```
 
 ## Example
 
 ```tsx
-import { useWizard } from "@siberiacancode/reactuse";
+import { useWizard } from '@siberiacancode/reactuse';
 
 export const Checkout = () => {
   const wizard = useWizard([
-    { id: "shipping", nodes: ["payment"] },
-    { id: "payment", nodes: ["review"] },
-    { id: "review", nodes: [] },
+    { id: 'shipping', nodes: ['payment'] },
+    { id: 'payment', nodes: ['review'] },
+    { id: 'review', nodes: [] }
   ]);
 
   return (
     <div>
       Step: {wizard.currentStepId}
       <button onClick={() => wizard.back()}>Back</button>
-      <button onClick={() => wizard.set("review")}>Skip</button>
+      <button onClick={() => wizard.set('review')}>Skip</button>
     </div>
   );
 };
@@ -45,9 +45,9 @@ export const Checkout = () => {
 
 ```tsx
 const wizard = useWizard([
-  { id: "step1", nodes: ["step2", "step3"] },
-  { id: "step2", nodes: ["step3"] },
-  { id: "step3", nodes: [] },
+  { id: 'step1', nodes: ['step2', 'step3'] },
+  { id: 'step2', nodes: ['step3'] },
+  { id: 'step3', nodes: [] }
 ]);
 ```
 
@@ -56,10 +56,10 @@ const wizard = useWizard([
 ```tsx
 const wizard = useWizard(
   [
-    { id: "step1", nodes: ["step2"] },
-    { id: "step2", nodes: [] },
+    { id: 'step1', nodes: ['step2'] },
+    { id: 'step2', nodes: [] }
   ],
-  "step2"
+  'step2'
 );
 ```
 

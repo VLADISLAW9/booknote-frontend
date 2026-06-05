@@ -11,7 +11,7 @@ Manages pagination state for offset-based lists.
 ## Usage
 
 ```ts
-import { useOffsetPagination } from "@siberiacancode/reactuse";
+import { useOffsetPagination } from '@siberiacancode/reactuse';
 
 const pagination = useOffsetPagination({ total: 100, initialPageSize: 10 });
 ```
@@ -19,7 +19,7 @@ const pagination = useOffsetPagination({ total: 100, initialPageSize: 10 });
 ## Example
 
 ```tsx
-import { useOffsetPagination } from "@siberiacancode/reactuse";
+import { useOffsetPagination } from '@siberiacancode/reactuse';
 
 export const Pager = () => {
   const pagination = useOffsetPagination({ total: 200, initialPageSize: 20 });
@@ -56,7 +56,7 @@ const pagination = useOffsetPagination({ initialPage: 2 });
 
 ```tsx
 const pagination = useOffsetPagination({
-  onChange: ({ page, pageSize }) => console.log(page, pageSize),
+  onChange: ({ page, pageSize }) => console.log(page, pageSize)
 });
 ```
 

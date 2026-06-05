@@ -11,7 +11,7 @@ Defines mutation logic with loading, error, and success state.
 ## Usage
 
 ```ts
-import { useMutation } from "@siberiacancode/reactuse";
+import { useMutation } from '@siberiacancode/reactuse';
 
 const mutation = useMutation((name: string) => Promise.resolve(name));
 ```
@@ -28,7 +28,7 @@ const mutation = useMutation(saveProfile, { retry: 3 });
 
 ```tsx
 const mutation = useMutation(saveProfile, {
-  retryDelay: (attempt) => attempt * 500,
+  retryDelay: (attempt) => attempt * 500
 });
 ```
 
@@ -36,7 +36,7 @@ const mutation = useMutation(saveProfile, {
 
 ```tsx
 const mutation = useMutation(saveProfile, {
-  onSuccess: (data) => console.log("Saved", data),
+  onSuccess: (data) => console.log('Saved', data)
 });
 ```
 
@@ -44,7 +44,7 @@ const mutation = useMutation(saveProfile, {
 
 ```tsx
 const mutation = useMutation(saveProfile, {
-  onError: (error) => console.error(error),
+  onError: (error) => console.error(error)
 });
 ```
 
@@ -64,10 +64,7 @@ interface UseMutationReturn<Body, Data> {
   isLoading: boolean;
   isSuccess: boolean;
   mutate: (body?: Body, options?: UseMutationOptions<Data>) => void;
-  mutateAsync: (
-    body?: Body,
-    options?: UseMutationOptions<Data>
-  ) => Promise<Data>;
+  mutateAsync: (body?: Body, options?: UseMutationOptions<Data>) => Promise<Data>;
 }
 export declare const useMutation: <Body, Data>(
   callback: (body: Body) => Promise<Data>,

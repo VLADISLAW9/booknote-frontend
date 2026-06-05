@@ -11,7 +11,7 @@ Returns the user's preferred languages.
 ## Usage
 
 ```ts
-import { usePreferredLanguages } from "@siberiacancode/reactuse";
+import { usePreferredLanguages } from '@siberiacancode/reactuse';
 
 const languages = usePreferredLanguages();
 ```
@@ -20,7 +20,7 @@ const languages = usePreferredLanguages();
 
 ```tsx
 const languages = usePreferredLanguages();
-return <div>Languages: {languages.join(", ")}</div>;
+return <div>Languages: {languages.join(', ')}</div>;
 ```
 
 ## Notes

@@ -11,23 +11,23 @@ Manages an array with helper methods.
 ## Usage
 
 ```ts
-import { useList } from "@siberiacancode/reactuse";
+import { useList } from '@siberiacancode/reactuse';
 
-const list = useList(["a", "b"]);
+const list = useList(['a', 'b']);
 ```
 
 ## Example
 
 ```tsx
-import { useList } from "@siberiacancode/reactuse";
+import { useList } from '@siberiacancode/reactuse';
 
 export const TodoList = () => {
-  const list = useList(["a", "b"]);
+  const list = useList(['a', 'b']);
 
   return (
     <div>
-      <button onClick={() => list.push("c")}>Add</button>
-      <div>{list.value.join(", ")}</div>
+      <button onClick={() => list.push('c')}>Add</button>
+      <div>{list.value.join(', ')}</div>
     </div>
   );
 };

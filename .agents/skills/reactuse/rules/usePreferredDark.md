@@ -11,7 +11,7 @@ Returns whether the user prefers dark mode.
 ## Usage
 
 ```ts
-import { usePreferredDark } from "@siberiacancode/reactuse";
+import { usePreferredDark } from '@siberiacancode/reactuse';
 
 const isDark = usePreferredDark();
 ```
@@ -20,7 +20,7 @@ const isDark = usePreferredDark();
 
 ```tsx
 const isDark = usePreferredDark();
-return <div>{isDark ? "Dark mode" : "Light mode"}</div>;
+return <div>{isDark ? 'Dark mode' : 'Light mode'}</div>;
 ```
 
 ## Type Declarations

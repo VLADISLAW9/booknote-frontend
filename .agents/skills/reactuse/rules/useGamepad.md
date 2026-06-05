@@ -11,7 +11,7 @@ Returns connected gamepads and active status.
 ## Usage
 
 ```ts
-import { useGamepad } from "@siberiacancode/reactuse";
+import { useGamepad } from '@siberiacancode/reactuse';
 
 const gamepad = useGamepad();
 ```
@@ -19,7 +19,7 @@ const gamepad = useGamepad();
 ## Example
 
 ```tsx
-import { useGamepad } from "@siberiacancode/reactuse";
+import { useGamepad } from '@siberiacancode/reactuse';
 
 export const GamepadList = () => {
   const gamepad = useGamepad();
@@ -31,7 +31,7 @@ export const GamepadList = () => {
     <div>
       Connected: {gamepad.gamepads.length}
       <div>Active: {String(gamepad.active)}</div>
-      <div>First: {first ? first.id : "none"}</div>
+      <div>First: {first ? first.id : 'none'}</div>
     </div>
   );
 };

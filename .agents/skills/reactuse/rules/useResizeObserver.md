@@ -11,17 +11,17 @@ Observes size changes for an element.
 ## Usage
 
 ```ts
-import { useResizeObserver } from "@siberiacancode/reactuse";
+import { useResizeObserver } from '@siberiacancode/reactuse';
 
 const observer = useResizeObserver<HTMLDivElement>();
 // or
-const observer = useResizeObserver(ref, { box: "border-box" });
+const observer = useResizeObserver(ref, { box: 'border-box' });
 ```
 
 ## Example
 
 ```tsx
-import { useResizeObserver } from "@siberiacancode/reactuse";
+import { useResizeObserver } from '@siberiacancode/reactuse';
 
 const observer = useResizeObserver<HTMLDivElement>();
 const entry = observer.entry;
@@ -46,7 +46,7 @@ const observer = useResizeObserver<HTMLDivElement>({ enabled: false });
 Box sizing.
 
 ```tsx
-const observer = useResizeObserver<HTMLDivElement>({ box: "border-box" });
+const observer = useResizeObserver<HTMLDivElement>({ box: 'border-box' });
 ```
 
 `onChange`:
@@ -55,7 +55,7 @@ Resize callback.
 
 ```tsx
 const observer = useResizeObserver<HTMLDivElement>({
-  onChange: (entry) => console.log(entry),
+  onChange: (entry) => console.log(entry)
 });
 ```
 
@@ -66,8 +66,8 @@ const observer = useResizeObserver<HTMLDivElement>({
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type UseResizeObserverCallback = (
   entry: ResizeObserverEntry,
@@ -86,18 +86,12 @@ export interface UseResizeObserver {
     options?: UseResizeObserverOptions,
     target?: never
   ): UseResizeObserverReturn & { ref: StateRef<Target> };
-  (
-    target: HookTarget,
-    options?: UseResizeObserverOptions
-  ): UseResizeObserverReturn;
+  (target: HookTarget, options?: UseResizeObserverOptions): UseResizeObserverReturn;
   <Target extends Element>(
     callback: UseResizeObserverCallback,
     target?: never
   ): UseResizeObserverReturn & { ref: StateRef<Target> };
-  (
-    target: HookTarget,
-    callback: UseResizeObserverCallback
-  ): UseResizeObserverReturn;
+  (target: HookTarget, callback: UseResizeObserverCallback): UseResizeObserverReturn;
 }
 export declare const useResizeObserver: UseResizeObserver;
 ```

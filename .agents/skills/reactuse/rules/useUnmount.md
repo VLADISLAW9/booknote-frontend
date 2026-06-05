@@ -11,19 +11,19 @@ Runs a callback when the component unmounts.
 ## Usage
 
 ```ts
-import { useUnmount } from "@siberiacancode/reactuse";
+import { useUnmount } from '@siberiacancode/reactuse';
 
-useUnmount(() => console.log("unmounted"));
+useUnmount(() => console.log('unmounted'));
 ```
 
 ## Example
 
 ```tsx
-import { useUnmount } from "@siberiacancode/reactuse";
+import { useUnmount } from '@siberiacancode/reactuse';
 
 export const Cleanup = () => {
   useUnmount(() => {
-    console.log("cleanup");
+    console.log('cleanup');
   });
 
   return <div>Unmount me</div>;

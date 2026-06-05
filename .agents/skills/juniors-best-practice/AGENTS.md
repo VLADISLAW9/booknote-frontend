@@ -18,40 +18,33 @@ Juniors-focused best practices for React and TypeScript projects, organized by p
 ## Table of Contents
 
 1. [Beginner Foundations](#1-beginner-foundations)
-
    - 1.1 [Early return](#11-early-return)
    - 1.2 [Avoid double negation](#12-avoid-double-negation)
    - 1.3 [Avoid unnecessary destructuring](#13-avoid-unnecessary-destructuring)
 
 2. [TypeScript](#2-typescript)
-
    - 2.1 [TypeScript path alias naming](#21-typescript-path-alias-naming)
    - 2.2 [Flat translation keys](#22-flat-translation-keys)
 
 3. [React](#3-react)
-
    - 3.1 [React string props](#31-react-string-props)
    - 3.2 [Children prop](#32-children-prop)
    - 3.3 [Scalable components](#33-scalable-components)
    - 3.4 [Props typing](#34-props-typing)
 
 4. [Styling](#4-styling)
-
    - 4.1 [Classnames helper](#41-classnames-helper)
    - 4.2 [CSS selectors for component states](#42-css-selectors-for-component-states)
 
 5. [Devtools](#5-devtools)
-
    - 5.1 [Formatter and linter](#51-formatter-and-linter)
    - 5.2 [Sorting imports](#52-sorting-imports)
    - 5.3 [Single package manager](#53-single-package-manager)
 
 6. [Assets](#6-assets)
-
    - 6.1 [SVG assets](#61-svg-assets)
 
 7. [Git](#7-git)
-
    - 7.1 [Commit conventions](#71-commit-conventions)
 
 8. [REST](#8-rest)

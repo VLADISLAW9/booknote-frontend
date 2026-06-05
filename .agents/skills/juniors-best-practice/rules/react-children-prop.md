@@ -9,15 +9,13 @@ tags: react, props, composition
 When building React components, we often need to pass content into them. React provides the `children` prop for this, allowing any content between the opening and closing tags. This makes components more flexible and reusable.
 
 ```tsx
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from 'react';
 
-interface ButtonProps extends ComponentProps<"button"> {
+interface ButtonProps extends ComponentProps<'button'> {
   children: ReactNode;
 }
 
-const Button = ({ children, ...props }: ButtonProps) => (
-  <button {...props}>{children}</button>
-);
+const Button = ({ children, ...props }: ButtonProps) => <button {...props}>{children}</button>;
 
 export const App = () => <Button>Click</Button>;
 ```

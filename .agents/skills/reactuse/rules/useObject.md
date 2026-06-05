@@ -11,27 +11,25 @@ Manages object state with helper methods for updates and key operations.
 ## Usage
 
 ```ts
-import { useObject } from "@siberiacancode/reactuse";
+import { useObject } from '@siberiacancode/reactuse';
 
-const user = useObject({ name: "John", age: 30, active: true });
+const user = useObject({ name: 'John', age: 30, active: true });
 ```
 
 ## Example
 
 ```tsx
-import { useObject } from "@siberiacancode/reactuse";
+import { useObject } from '@siberiacancode/reactuse';
 
 export const UserCard = () => {
-  const user = useObject({ name: "John", age: 30, active: true });
+  const user = useObject({ name: 'John', age: 30, active: true });
 
   return (
     <div>
       <p>{user.value.name}</p>
       <p>Fields: {user.size}</p>
-      <button onClick={() => user.set({ active: !user.value.active })}>
-        Toggle active
-      </button>
-      <button onClick={() => user.remove("age")}>Remove age</button>
+      <button onClick={() => user.set({ active: !user.value.active })}>Toggle active</button>
+      <button onClick={() => user.remove('age')}>Remove age</button>
       <button onClick={() => user.reset()}>Reset</button>
     </div>
   );

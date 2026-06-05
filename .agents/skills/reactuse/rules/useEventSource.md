@@ -11,80 +11,80 @@ Provides a reactive wrapper around EventSource.
 ## Usage
 
 ```ts
-import { useEventSource } from "@siberiacancode/reactuse";
+import { useEventSource } from '@siberiacancode/reactuse';
 
-const stream = useEventSource("/sse", ["message"]);
+const stream = useEventSource('/sse', ['message']);
 ```
 
 ## Example
 
 ```tsx
-import { useEventSource } from "@siberiacancode/reactuse";
+import { useEventSource } from '@siberiacancode/reactuse';
 
 export const Feed = () => {
-  const stream = useEventSource("/sse", ["message"]);
+  const stream = useEventSource('/sse', ['message']);
 
-  return <div>Last: {stream.data ?? "waiting"}</div>;
+  return <div>Last: {stream.data ?? 'waiting'}</div>;
 };
 ```
 
 `immediately` (auto-open):
 
 ```tsx
-const stream = useEventSource("/sse", [], { immediately: true });
+const stream = useEventSource('/sse', [], { immediately: true });
 ```
 
 `placeholderData`:
 
 ```tsx
-const stream = useEventSource("/sse", [], {
-  placeholderData: { status: "idle" },
+const stream = useEventSource('/sse', [], {
+  placeholderData: { status: 'idle' }
 });
 ```
 
 `retry`:
 
 ```tsx
-const stream = useEventSource("/sse", [], { retry: 3 });
+const stream = useEventSource('/sse', [], { retry: 3 });
 ```
 
 `retryDelay`:
 
 ```tsx
-const stream = useEventSource("/sse", [], {
-  retryDelay: (attempt) => attempt * 500,
+const stream = useEventSource('/sse', [], {
+  retryDelay: (attempt) => attempt * 500
 });
 ```
 
 `onOpen`:
 
 ```tsx
-const stream = useEventSource("/sse", [], {
-  onOpen: () => console.log("open"),
+const stream = useEventSource('/sse', [], {
+  onOpen: () => console.log('open')
 });
 ```
 
 `onMessage`:
 
 ```tsx
-const stream = useEventSource("/sse", [], {
-  onMessage: (event) => console.log(event.data),
+const stream = useEventSource('/sse', [], {
+  onMessage: (event) => console.log(event.data)
 });
 ```
 
 `onError`:
 
 ```tsx
-const stream = useEventSource("/sse", [], {
-  onError: (event) => console.error(event),
+const stream = useEventSource('/sse', [], {
+  onError: (event) => console.error(event)
 });
 ```
 
 `select`:
 
 ```tsx
-const stream = useEventSource<string, { value: string }>("/sse", [], {
-  select: (data) => JSON.parse(data),
+const stream = useEventSource<string, { value: string }>('/sse', [], {
+  select: (data) => JSON.parse(data)
 });
 ```
 
@@ -95,8 +95,7 @@ const stream = useEventSource<string, { value: string }>("/sse", [], {
 ## Type Declarations
 
 ```ts
-export interface UseEventSourceOptions<QueryData, Data>
-  extends EventSourceInit {
+export interface UseEventSourceOptions<QueryData, Data> extends EventSourceInit {
   immediately?: boolean;
   placeholderData?: (() => Data) | Data;
   retry?: boolean | number;

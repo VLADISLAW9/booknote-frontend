@@ -11,27 +11,22 @@ Detects double-clicks with optional single-click handler.
 ## Usage
 
 ```ts
-import { useDoubleClick } from "@siberiacancode/reactuse";
+import { useDoubleClick } from '@siberiacancode/reactuse';
 
-const doubleClickRef = useDoubleClick<HTMLButtonElement>(() =>
-  console.log("double")
-);
+const doubleClickRef = useDoubleClick<HTMLButtonElement>(() => console.log('double'));
 // or
-useDoubleClick(ref, () => console.log("double"));
+useDoubleClick(ref, () => console.log('double'));
 ```
 
 ## Example
 
 ```tsx
-import { useDoubleClick } from "@siberiacancode/reactuse";
+import { useDoubleClick } from '@siberiacancode/reactuse';
 
 export const LikeButton = () => {
-  const doubleClickRef = useDoubleClick<HTMLButtonElement>(
-    () => console.log("double"),
-    {
-      onSingleClick: () => console.log("single"),
-    }
-  );
+  const doubleClickRef = useDoubleClick<HTMLButtonElement>(() => console.log('double'), {
+    onSingleClick: () => console.log('single')
+  });
 
   return <button ref={doubleClickRef}>Like</button>;
 };
@@ -43,7 +38,7 @@ Max time between clicks.
 
 ```tsx
 const doubleClickRef = useDoubleClick<HTMLButtonElement>(() => {}, {
-  threshold: 400,
+  threshold: 400
 });
 ```
 
@@ -53,15 +48,15 @@ Single-click handler.
 
 ```tsx
 const doubleClickRef = useDoubleClick<HTMLButtonElement>(() => {}, {
-  onSingleClick: () => console.log("single"),
+  onSingleClick: () => console.log('single')
 });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type DoubleClickEvents = MouseEvent | TouchEvent;
 export interface UseDoubleClickOptions {

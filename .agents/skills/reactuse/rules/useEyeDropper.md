@@ -11,7 +11,7 @@ Provides access to the EyeDropper API.
 ## Usage
 
 ```ts
-import { useEyeDropper } from "@siberiacancode/reactuse";
+import { useEyeDropper } from '@siberiacancode/reactuse';
 
 const eyeDropper = useEyeDropper();
 ```
@@ -19,15 +19,15 @@ const eyeDropper = useEyeDropper();
 ## Example
 
 ```tsx
-const eye = useEyeDropper("#ffffff");
+const eye = useEyeDropper('#ffffff');
 
-return <button onClick={() => eye.open()}>{eye.value ?? "Pick color"}</button>;
+return <button onClick={() => eye.open()}>{eye.value ?? 'Pick color'}</button>;
 ```
 
 `initialValue`:
 
 ```tsx
-const eye = useEyeDropper("#ffffff");
+const eye = useEyeDropper('#ffffff');
 ```
 
 ## Notes
@@ -46,11 +46,7 @@ export interface ColorSelectionResult {
 export interface UseEyeDropperReturn {
   supported: boolean;
   value?: string;
-  open: (
-    colorSelectionOptions?: ColorSelectionOptions
-  ) => Promise<ColorSelectionResult>;
+  open: (colorSelectionOptions?: ColorSelectionOptions) => Promise<ColorSelectionResult>;
 }
-export declare const useEyeDropper: (
-  initialValue?: string
-) => UseEyeDropperReturn;
+export declare const useEyeDropper: (initialValue?: string) => UseEyeDropperReturn;
 ```

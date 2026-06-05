@@ -11,7 +11,7 @@ Returns battery status and support state.
 ## Usage
 
 ```ts
-import { useBattery } from "@siberiacancode/reactuse";
+import { useBattery } from '@siberiacancode/reactuse';
 
 const battery = useBattery();
 ```
@@ -19,7 +19,7 @@ const battery = useBattery();
 ## Example
 
 ```tsx
-import { useBattery } from "@siberiacancode/reactuse";
+import { useBattery } from '@siberiacancode/reactuse';
 
 export const BatteryStatus = () => {
   const battery = useBattery();
@@ -27,8 +27,7 @@ export const BatteryStatus = () => {
 
   return (
     <div>
-      Level: {Math.round(battery.value.level * 100)}%{" "}
-      {battery.value.charging ? "(charging)" : ""}
+      Level: {Math.round(battery.value.level * 100)}% {battery.value.charging ? '(charging)' : ''}
     </div>
   );
 };

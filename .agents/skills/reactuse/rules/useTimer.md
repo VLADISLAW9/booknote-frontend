@@ -11,7 +11,7 @@ Creates a countdown timer with controls and callbacks.
 ## Usage
 
 ```ts
-import { useTimer } from "@siberiacancode/reactuse";
+import { useTimer } from '@siberiacancode/reactuse';
 
 const timer = useTimer(60);
 ```
@@ -19,7 +19,7 @@ const timer = useTimer(60);
 ## Example
 
 ```tsx
-import { useTimer } from "@siberiacancode/reactuse";
+import { useTimer } from '@siberiacancode/reactuse';
 
 export const Countdown = () => {
   const timer = useTimer(10);
@@ -27,9 +27,7 @@ export const Countdown = () => {
   return (
     <div>
       {timer.seconds}s
-      <button onClick={() => timer.toggle()}>
-        {timer.active ? "Pause" : "Resume"}
-      </button>
+      <button onClick={() => timer.toggle()}>{timer.active ? 'Pause' : 'Resume'}</button>
     </div>
   );
 };
@@ -57,7 +55,7 @@ When timer ends.
 
 ```tsx
 const timer = useTimer(10, {
-  onExpire: () => console.log("done"),
+  onExpire: () => console.log('done')
 });
 ```
 
@@ -67,7 +65,7 @@ When timer starts.
 
 ```tsx
 const timer = useTimer(10, {
-  onStart: () => console.log("start"),
+  onStart: () => console.log('start')
 });
 ```
 
@@ -77,16 +75,14 @@ On each second.
 
 ```tsx
 const timer = useTimer(10, {
-  onTick: (seconds) => console.log(seconds),
+  onTick: (seconds) => console.log(seconds)
 });
 ```
 
 ## Type Declarations
 
 ```ts
-export type PositiveInteger<Value extends number> = `${Value}` extends
-  | `-${any}`
-  | `${any}.${any}`
+export type PositiveInteger<Value extends number> = `${Value}` extends `-${any}` | `${any}.${any}`
   ? never
   : Value;
 export interface UseTimerOptions {

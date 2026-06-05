@@ -11,7 +11,7 @@ Triggers vibration with optional intervals.
 ## Usage
 
 ```ts
-import { useVibrate } from "@siberiacancode/reactuse";
+import { useVibrate } from '@siberiacancode/reactuse';
 
 const vibrate = useVibrate(1000);
 ```
@@ -19,7 +19,7 @@ const vibrate = useVibrate(1000);
 ## Example
 
 ```tsx
-import { useVibrate } from "@siberiacancode/reactuse";
+import { useVibrate } from '@siberiacancode/reactuse';
 
 export const HapticButton = () => {
   const vibrate = useVibrate(200);

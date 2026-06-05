@@ -11,7 +11,7 @@ Manages a queue with add/remove helpers.
 ## Usage
 
 ```ts
-import { useQueue } from "@siberiacancode/reactuse";
+import { useQueue } from '@siberiacancode/reactuse';
 
 const queue = useQueue([1, 2, 3]);
 ```
@@ -19,11 +19,11 @@ const queue = useQueue([1, 2, 3]);
 ## Example
 
 ```tsx
-const queue = useQueue(["a", "b"]);
+const queue = useQueue(['a', 'b']);
 
 return (
   <div>
-    <button onClick={() => queue.add("c")}>Add</button>
+    <button onClick={() => queue.add('c')}>Add</button>
     <button onClick={() => queue.remove()}>Next</button>
     <div>Size: {queue.size}</div>
   </div>
@@ -33,7 +33,7 @@ return (
 `initialValue`:
 
 ```tsx
-const queue = useQueue(["a", "b"]);
+const queue = useQueue(['a', 'b']);
 ```
 
 ## Type Declarations
@@ -48,7 +48,5 @@ export interface UseQueueReturn<Value> {
   clear: () => void;
   remove: () => Value;
 }
-export declare const useQueue: <Value>(
-  initialValue?: Value[]
-) => UseQueueReturn<Value>;
+export declare const useQueue: <Value>(initialValue?: Value[]) => UseQueueReturn<Value>;
 ```

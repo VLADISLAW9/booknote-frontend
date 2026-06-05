@@ -11,9 +11,9 @@ Manages URL hash value.
 ## Usage
 
 ```ts
-import { useHash } from "@siberiacancode/reactuse";
+import { useHash } from '@siberiacancode/reactuse';
 
-const hash = useHash("section");
+const hash = useHash('section');
 ```
 
 ## Example
@@ -23,7 +23,7 @@ const hash = useHash("section");
 Initial hash value.
 
 ```tsx
-const hash = useHash("intro");
+const hash = useHash('intro');
 ```
 
 `enabled`:
@@ -39,7 +39,7 @@ const hash = useHash({ enabled: false });
 Controls how the hash is written ("initial" preserves existing hash, "replace" updates it).
 
 ```tsx
-const hash = useHash({ mode: "initial" });
+const hash = useHash({ mode: 'initial' });
 ```
 
 `onChange`:
@@ -55,7 +55,7 @@ const hash = useHash({ onChange: (value) => console.log(value) });
 ```ts
 export interface UseHashOptions {
   enabled?: boolean;
-  mode?: "initial" | "replace";
+  mode?: 'initial' | 'replace';
   onChange?: (hash: string) => void;
 }
 type UseHashReturn = [string, (value: string) => void];

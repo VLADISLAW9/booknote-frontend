@@ -11,7 +11,7 @@ Tracks focus state and provides focus/blur controls.
 ## Usage
 
 ```ts
-import { useFocus } from "@siberiacancode/reactuse";
+import { useFocus } from '@siberiacancode/reactuse';
 
 const focus = useFocus<HTMLInputElement>();
 // or
@@ -21,7 +21,7 @@ const focus = useFocus(ref, { enabled: true });
 ## Example
 
 ```tsx
-import { useFocus } from "@siberiacancode/reactuse";
+import { useFocus } from '@siberiacancode/reactuse';
 
 export const FocusInput = () => {
   const focus = useFocus<HTMLInputElement>();
@@ -58,7 +58,7 @@ Focus callback.
 
 ```tsx
 const focus = useFocus<HTMLInputElement>({
-  onFocus: () => console.log("focus"),
+  onFocus: () => console.log('focus')
 });
 ```
 
@@ -67,14 +67,14 @@ const focus = useFocus<HTMLInputElement>({
 Blur callback.
 
 ```tsx
-const focus = useFocus<HTMLInputElement>({ onBlur: () => console.log("blur") });
+const focus = useFocus<HTMLInputElement>({ onBlur: () => console.log('blur') });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseFocusOptions {
   enabled?: boolean;

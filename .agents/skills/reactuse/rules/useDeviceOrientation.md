@@ -11,7 +11,7 @@ Provides the current device orientation.
 ## Usage
 
 ```ts
-import { useDeviceOrientation } from "@siberiacancode/reactuse";
+import { useDeviceOrientation } from '@siberiacancode/reactuse';
 
 const orientation = useDeviceOrientation();
 ```

@@ -11,7 +11,7 @@ Measures frames per second.
 ## Usage
 
 ```ts
-import { useFps } from "@siberiacancode/reactuse";
+import { useFps } from '@siberiacancode/reactuse';
 
 const fps = useFps();
 ```
@@ -19,7 +19,7 @@ const fps = useFps();
 `callback`:
 
 ```ts
-const fps = useFps((value) => console.log("fps", value));
+const fps = useFps((value) => console.log('fps', value));
 ```
 
 ## Example

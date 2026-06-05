@@ -11,9 +11,9 @@ Flexible helper to reference DOM targets for hooks.
 ## Usage
 
 ```ts
-import { target, useClickOutside } from "@siberiacancode/reactuse";
+import { target, useClickOutside } from '@siberiacancode/reactuse';
 
-useClickOutside(target("#container"), () => console.log("outside"));
+useClickOutside(target('#container'), () => console.log('outside'));
 ```
 
 ## Example
@@ -21,12 +21,10 @@ useClickOutside(target("#container"), () => console.log("outside"));
 Selector and element targets:
 
 ```tsx
-import { target, useClickOutside } from "@siberiacancode/reactuse";
+import { target, useClickOutside } from '@siberiacancode/reactuse';
 
-useClickOutside(target("#container"), () => console.log("outside"));
-useClickOutside(target(document.getElementById("container")!), () =>
-  console.log("outside")
-);
+useClickOutside(target('#container'), () => console.log('outside'));
+useClickOutside(target(document.getElementById('container')!), () => console.log('outside'));
 ```
 
 ### Parameters

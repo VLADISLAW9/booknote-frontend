@@ -11,7 +11,7 @@ Opens a file picker and returns selected files.
 ## Usage
 
 ```ts
-import { useFileDialog } from "@siberiacancode/reactuse";
+import { useFileDialog } from '@siberiacancode/reactuse';
 
 const dialog = useFileDialog();
 ```
@@ -19,13 +19,9 @@ const dialog = useFileDialog();
 ## Example
 
 ```tsx
-const dialog = useFileDialog({ accept: "image/*" });
+const dialog = useFileDialog({ accept: 'image/*' });
 
-return (
-  <button onClick={() => dialog.open()}>
-    Selected: {dialog.value?.length ?? 0}
-  </button>
-);
+return <button onClick={() => dialog.open()}>Selected: {dialog.value?.length ?? 0}</button>;
 ```
 
 `multiple`:
@@ -37,7 +33,7 @@ const dialog = useFileDialog({ multiple: false });
 `accept`:
 
 ```tsx
-const dialog = useFileDialog({ accept: "image/*" });
+const dialog = useFileDialog({ accept: 'image/*' });
 ```
 
 `reset`:
@@ -49,16 +45,15 @@ const dialog = useFileDialog({ reset: true });
 `capture`:
 
 ```tsx
-const dialog = useFileDialog({ capture: "environment" });
+const dialog = useFileDialog({ capture: 'environment' });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { ComponentProps } from "react";
+import type { ComponentProps } from 'react';
 
-export interface UseFileDialogOptions
-  extends Pick<ComponentProps<"input">, "accept" | "multiple"> {
+export interface UseFileDialogOptions extends Pick<ComponentProps<'input'>, 'accept' | 'multiple'> {
   capture?: string;
   reset?: boolean;
 }

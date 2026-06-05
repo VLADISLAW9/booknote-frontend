@@ -11,7 +11,7 @@ Manages all cookies as a single object.
 ## Usage
 
 ```ts
-import { useCookies } from "@siberiacancode/reactuse";
+import { useCookies } from '@siberiacancode/reactuse';
 
 const cookies = useCookies();
 ```
@@ -22,8 +22,8 @@ const cookies = useCookies();
 const cookies = useCookies<{ theme: string }>();
 
 return (
-  <button onClick={() => cookies.set("theme", "dark")}>
-    Theme: {cookies.value.theme ?? "none"}
+  <button onClick={() => cookies.set('theme', 'dark')}>
+    Theme: {cookies.value.theme ?? 'none'}
   </button>
 );
 ```
@@ -32,7 +32,7 @@ return (
 
 ```tsx
 const cookies = useCookies({
-  deserializer: (value) => JSON.parse(value),
+  deserializer: (value) => JSON.parse(value)
 });
 ```
 
@@ -40,7 +40,7 @@ const cookies = useCookies({
 
 ```tsx
 const cookies = useCookies({
-  serializer: (value) => JSON.stringify(value),
+  serializer: (value) => JSON.stringify(value)
 });
 ```
 
@@ -56,15 +56,8 @@ export declare const useCookies: <Value extends CookieParams>(
   options?: UseCookiesOptions<Value>
 ) => {
   value: Value;
-  set: <Key extends keyof Value>(
-    key: Key,
-    value: Value[Key],
-    options?: SetCookieParams
-  ) => void;
-  remove: <Key extends keyof Value>(
-    key: Key,
-    options?: RemoveCookieParams
-  ) => void;
+  set: <Key extends keyof Value>(key: Key, value: Value[Key], options?: SetCookieParams) => void;
+  remove: <Key extends keyof Value>(key: Key, options?: RemoveCookieParams) => void;
   getAll: () => Value;
   clear: () => void;
 };

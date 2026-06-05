@@ -11,7 +11,7 @@ Copies text and resets status after a delay.
 ## Usage
 
 ```ts
-import { useCopy } from "@siberiacancode/reactuse";
+import { useCopy } from '@siberiacancode/reactuse';
 
 const copyState = useCopy();
 ```
@@ -22,8 +22,8 @@ const copyState = useCopy();
 const linkCopy = useCopy(1500);
 
 return (
-  <button onClick={() => linkCopy.copy("https://reactuse.org")}>
-    {linkCopy.copied ? "Copied!" : "Copy link"}
+  <button onClick={() => linkCopy.copy('https://reactuse.org')}>
+    {linkCopy.copied ? 'Copied!' : 'Copy link'}
   </button>
 );
 ```

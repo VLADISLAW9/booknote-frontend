@@ -11,7 +11,7 @@ Tracks whether an element is visible in the viewport.
 ## Usage
 
 ```ts
-import { useVisibility } from "@siberiacancode/reactuse";
+import { useVisibility } from '@siberiacancode/reactuse';
 
 const visibility = useVisibility<HTMLDivElement>();
 // or
@@ -21,16 +21,12 @@ const visibility = useVisibility<HTMLDivElement>(ref, { threshold: 0.5 });
 ## Example
 
 ```tsx
-import { useVisibility } from "@siberiacancode/reactuse";
+import { useVisibility } from '@siberiacancode/reactuse';
 
 export const VisibilityBadge = () => {
   const visibility = useVisibility<HTMLDivElement>();
 
-  return (
-    <div ref={visibility.ref}>
-      {visibility.inView ? "In view" : "Out of view"}
-    </div>
-  );
+  return <div ref={visibility.ref}>{visibility.inView ? 'In view' : 'Out of view'}</div>;
 };
 ```
 
@@ -44,7 +40,7 @@ const visibility = useVisibility<HTMLDivElement>({ enabled: false });
 
 ```tsx
 const visibility = useVisibility<HTMLDivElement>({
-  onChange: (entry) => console.log(entry),
+  onChange: (entry) => console.log(entry)
 });
 ```
 
@@ -57,7 +53,7 @@ const visibility = useVisibility<HTMLDivElement>({ root: containerRef });
 `rootMargin`:
 
 ```tsx
-const visibility = useVisibility<HTMLDivElement>({ rootMargin: "10px" });
+const visibility = useVisibility<HTMLDivElement>({ rootMargin: '10px' });
 ```
 
 `threshold`:
@@ -73,15 +69,14 @@ const visibility = useVisibility<HTMLDivElement>({ threshold: 0.5 });
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type UseVisibilityCallback = (
   entry: IntersectionObserverEntry,
   observer: IntersectionObserver
 ) => void;
-export interface UseVisibilityOptions
-  extends Omit<IntersectionObserverInit, "root"> {
+export interface UseVisibilityOptions extends Omit<IntersectionObserverInit, 'root'> {
   enabled?: boolean;
   onChange?: UseVisibilityCallback;
   root?: HookTarget;

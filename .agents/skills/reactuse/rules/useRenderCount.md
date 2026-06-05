@@ -11,7 +11,7 @@ Returns how many times a component has rendered.
 ## Usage
 
 ```ts
-import { useRenderCount } from "@siberiacancode/reactuse";
+import { useRenderCount } from '@siberiacancode/reactuse';
 
 const count = useRenderCount();
 ```
@@ -19,8 +19,8 @@ const count = useRenderCount();
 ## Example
 
 ```tsx
-import { useRenderCount } from "@siberiacancode/reactuse";
-import { useState } from "react";
+import { useRenderCount } from '@siberiacancode/reactuse';
+import { useState } from 'react';
 
 export const RenderCounter = () => {
   const renders = useRenderCount();

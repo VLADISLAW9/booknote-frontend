@@ -11,24 +11,20 @@ Runs a handler when specific keys are pressed.
 ## Usage
 
 ```ts
-import { useKeyPressEvent } from "@siberiacancode/reactuse";
+import { useKeyPressEvent } from '@siberiacancode/reactuse';
 
-const keyPressEventRef = useKeyPressEvent<HTMLDivElement>("Enter", () =>
-  console.log("pressed")
-);
+const keyPressEventRef = useKeyPressEvent<HTMLDivElement>('Enter', () => console.log('pressed'));
 // or
-useKeyPressEvent(ref, "Enter", () => console.log("pressed"));
+useKeyPressEvent(ref, 'Enter', () => console.log('pressed'));
 ```
 
 ## Example
 
 ```tsx
-import { useKeyPressEvent } from "@siberiacancode/reactuse";
+import { useKeyPressEvent } from '@siberiacancode/reactuse';
 
 export const SubmitShortcut = () => {
-  const keyPressEventRef = useKeyPressEvent<HTMLDivElement>("Enter", () =>
-    console.log("submit")
-  );
+  const keyPressEventRef = useKeyPressEvent<HTMLDivElement>('Enter', () => console.log('submit'));
   return <div ref={keyPressEventRef}>Submit</div>;
 };
 ```
@@ -36,26 +32,26 @@ export const SubmitShortcut = () => {
 `capture`:
 
 ```tsx
-useKeyPressEvent<HTMLDivElement>("Enter", () => {}, { capture: true });
+useKeyPressEvent<HTMLDivElement>('Enter', () => {}, { capture: true });
 ```
 
 `once`:
 
 ```tsx
-useKeyPressEvent<HTMLDivElement>("Enter", () => {}, { once: true });
+useKeyPressEvent<HTMLDivElement>('Enter', () => {}, { once: true });
 ```
 
 `passive`:
 
 ```tsx
-useKeyPressEvent<HTMLDivElement>("Enter", () => {}, { passive: true });
+useKeyPressEvent<HTMLDivElement>('Enter', () => {}, { passive: true });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type UseKeyPressEventKey = string | string[];
 export interface UseKeyPressEventOptions {

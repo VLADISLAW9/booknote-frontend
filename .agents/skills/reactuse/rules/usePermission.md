@@ -11,22 +11,22 @@ Returns the state of a given permission.
 ## Usage
 
 ```ts
-import { usePermission } from "@siberiacancode/reactuse";
+import { usePermission } from '@siberiacancode/reactuse';
 
-const permission = usePermission("microphone");
+const permission = usePermission('microphone');
 ```
 
 ## Example
 
 ```tsx
-const permission = usePermission("camera");
+const permission = usePermission('camera');
 return <div>{permission.state}</div>;
 ```
 
 `enabled`:
 
 ```tsx
-const permission = usePermission("camera", { enabled: false });
+const permission = usePermission('camera', { enabled: false });
 ```
 
 ## Notes
@@ -37,21 +37,21 @@ const permission = usePermission("camera", { enabled: false });
 
 ```ts
 export type UsePermissionName =
-  | "accelerometer"
-  | "accessibility-events"
-  | "ambient-light-sensor"
-  | "background-sync"
-  | "camera"
-  | "clipboard-read"
-  | "clipboard-write"
-  | "gyroscope"
-  | "magnetometer"
-  | "microphone"
-  | "notifications"
-  | "payment-handler"
-  | "persistent-storage"
-  | "push"
-  | "speaker"
+  | 'accelerometer'
+  | 'accessibility-events'
+  | 'ambient-light-sensor'
+  | 'background-sync'
+  | 'camera'
+  | 'clipboard-read'
+  | 'clipboard-write'
+  | 'gyroscope'
+  | 'magnetometer'
+  | 'microphone'
+  | 'notifications'
+  | 'payment-handler'
+  | 'persistent-storage'
+  | 'push'
+  | 'speaker'
   | PermissionName;
 export interface UsePermissionOptions {
   enabled: boolean;

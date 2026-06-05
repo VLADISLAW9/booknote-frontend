@@ -11,44 +11,39 @@ Tracks whether specific keys are pressed.
 ## Usage
 
 ```ts
-import { useKeyPress } from "@siberiacancode/reactuse";
+import { useKeyPress } from '@siberiacancode/reactuse';
 
-const keyPress = useKeyPress<HTMLDivElement>("a");
+const keyPress = useKeyPress<HTMLDivElement>('a');
 // or
-const keyPress = useKeyPress(ref, "a");
+const keyPress = useKeyPress(ref, 'a');
 ```
 
 ## Example
 
 ```tsx
-import { useKeyPress } from "@siberiacancode/reactuse";
+import { useKeyPress } from '@siberiacancode/reactuse';
 
 export const Spacebar = () => {
-  const keyPress = useKeyPress<HTMLDivElement>("a");
+  const keyPress = useKeyPress<HTMLDivElement>('a');
 
-  return (
-    <div ref={keyPress.ref}>{keyPress.pressed ? "Pressed" : "Released"}</div>
-  );
+  return <div ref={keyPress.ref}>{keyPress.pressed ? 'Pressed' : 'Released'}</div>;
 };
 ```
 
 `key` as array (match any):
 
 ```tsx
-const keyPress = useKeyPress<HTMLDivElement>(["ArrowLeft", "ArrowRight"]);
+const keyPress = useKeyPress<HTMLDivElement>(['ArrowLeft', 'ArrowRight']);
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type UseKeyPressKey = string | string[];
-export type UseKeyPressCallback = (
-  pressed: boolean,
-  event: KeyboardEvent
-) => void;
+export type UseKeyPressCallback = (pressed: boolean, event: KeyboardEvent) => void;
 export interface UseKeyPressReturn {
   pressed: boolean;
 }

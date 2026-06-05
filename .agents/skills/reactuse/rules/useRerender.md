@@ -11,7 +11,7 @@ Forces a component rerender on demand.
 ## Usage
 
 ```ts
-import { useRerender } from "@siberiacancode/reactuse";
+import { useRerender } from '@siberiacancode/reactuse';
 
 const rerender = useRerender();
 ```
@@ -19,8 +19,8 @@ const rerender = useRerender();
 ## Example
 
 ```tsx
-import { useRerender } from "@siberiacancode/reactuse";
-import { useState } from "react";
+import { useRerender } from '@siberiacancode/reactuse';
+import { useState } from 'react';
 
 export const ManualRefresh = () => {
   const rerender = useRerender();

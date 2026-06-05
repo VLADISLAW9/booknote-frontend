@@ -11,7 +11,7 @@ Measures an element's size and position.
 ## Usage
 
 ```ts
-import { useMeasure } from "@siberiacancode/reactuse";
+import { useMeasure } from '@siberiacancode/reactuse';
 
 const rect = useMeasure<HTMLDivElement>();
 // or
@@ -34,16 +34,18 @@ return (
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type UseMeasureReturn = Pick<
   DOMRectReadOnly,
-  "bottom" | "height" | "left" | "right" | "top" | "width" | "x" | "y"
+  'bottom' | 'height' | 'left' | 'right' | 'top' | 'width' | 'x' | 'y'
 >;
 export interface UseMeasure {
   (target: HookTarget): UseMeasureReturn;
-  <Target extends Element>(target?: never): UseMeasureReturn & {
+  <Target extends Element>(
+    target?: never
+  ): UseMeasureReturn & {
     ref: StateRef<Target>;
   };
 }

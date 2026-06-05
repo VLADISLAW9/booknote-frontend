@@ -11,7 +11,7 @@ Creates a type-safe event emitter with a subscription hook.
 ## Usage
 
 ```ts
-import { createEventEmitter } from "@siberiacancode/reactuse";
+import { createEventEmitter } from '@siberiacancode/reactuse';
 
 const emitter = createEventEmitter<{
   foo: number;
@@ -24,12 +24,12 @@ const emitter = createEventEmitter<{
 const emitter = createEventEmitter<{ message: string }>();
 
 export const Listener = () => {
-  const value = emitter.useSubscribe("message");
-  return <div>{value ?? "none"}</div>;
+  const value = emitter.useSubscribe('message');
+  return <div>{value ?? 'none'}</div>;
 };
 
-emitter.subscribe("message", (value) => console.log(value));
-emitter.push("message", "hello");
+emitter.subscribe('message', (value) => console.log(value));
+emitter.push('message', 'hello');
 ```
 
 ## Type Declarations

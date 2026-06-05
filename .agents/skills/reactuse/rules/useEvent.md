@@ -11,16 +11,16 @@ Returns a stable callback reference that always calls the latest handler.
 ## Usage
 
 ```ts
-import { useEvent } from "@siberiacancode/reactuse";
+import { useEvent } from '@siberiacancode/reactuse';
 
-const onClick = useEvent(() => console.log("clicked"));
+const onClick = useEvent(() => console.log('clicked'));
 ```
 
 ## Example
 
 ```tsx
-import { useEvent } from "@siberiacancode/reactuse";
-import { useState, useEffect } from "react";
+import { useEvent } from '@siberiacancode/reactuse';
+import { useState, useEffect } from 'react';
 
 export const Button = () => {
   const [count, setCount] = useState(0);

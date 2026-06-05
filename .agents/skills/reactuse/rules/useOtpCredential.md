@@ -11,7 +11,7 @@ Requests an OTP credential from the user agent.
 ## Usage
 
 ```ts
-import { useOtpCredential } from "@siberiacancode/reactuse";
+import { useOtpCredential } from '@siberiacancode/reactuse';
 
 const otp = useOtpCredential();
 ```
@@ -22,9 +22,7 @@ const otp = useOtpCredential();
 const otp = useOtpCredential();
 
 return (
-  <button onClick={() => otp.get()}>
-    {otp.supported ? "Read SMS code" : "Not supported"}
-  </button>
+  <button onClick={() => otp.get()}>{otp.supported ? 'Read SMS code' : 'Not supported'}</button>
 );
 ```
 
@@ -32,7 +30,7 @@ return (
 
 ```tsx
 const otp = useOtpCredential({
-  onSuccess: (credential) => console.log(credential),
+  onSuccess: (credential) => console.log(credential)
 });
 ```
 
@@ -40,7 +38,7 @@ const otp = useOtpCredential({
 
 ```tsx
 const otp = useOtpCredential({
-  onError: (error) => console.error(error),
+  onError: (error) => console.error(error)
 });
 ```
 
@@ -57,7 +55,7 @@ export interface UseOtpCredentialParams {
   onSuccess?: (credential: Credential | null) => void;
 }
 export interface UseOtpCredentialReturn {
-  abort: AbortController["abort"];
+  abort: AbortController['abort'];
   supported: boolean;
   get: () => Promise<Credential | null>;
 }

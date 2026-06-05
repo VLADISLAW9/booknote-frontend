@@ -11,7 +11,7 @@ Provides screen sharing controls and stream state.
 ## Usage
 
 ```ts
-import { useDisplayMedia } from "@siberiacancode/reactuse";
+import { useDisplayMedia } from '@siberiacancode/reactuse';
 
 const displayMedia = useDisplayMedia<HTMLVideoElement>();
 // or
@@ -21,7 +21,7 @@ const displayMedia = useDisplayMedia(ref);
 ## Example
 
 ```tsx
-import { useDisplayMedia } from "@siberiacancode/reactuse";
+import { useDisplayMedia } from '@siberiacancode/reactuse';
 
 export const ScreenShare = () => {
   const displayMedia = useDisplayMedia<HTMLVideoElement>({ video: true });
@@ -67,8 +67,8 @@ const displayMedia = useDisplayMedia<HTMLVideoElement>({ immediately: true });
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseDisplayMediaReturn {
   sharing: boolean;

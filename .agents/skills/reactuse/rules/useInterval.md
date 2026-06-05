@@ -11,16 +11,16 @@ Creates an interval with controls to pause and resume it.
 ## Usage
 
 ```ts
-import { useInterval } from "@siberiacancode/reactuse";
+import { useInterval } from '@siberiacancode/reactuse';
 
-const interval = useInterval(() => console.log("tick"), 2500);
+const interval = useInterval(() => console.log('tick'), 2500);
 ```
 
 ## Example
 
 ```tsx
-import { useInterval } from "@siberiacancode/reactuse";
-import { useState } from "react";
+import { useInterval } from '@siberiacancode/reactuse';
+import { useState } from 'react';
 
 export const Ticker = () => {
   const [count, setCount] = useState(0);
@@ -28,7 +28,7 @@ export const Ticker = () => {
 
   return (
     <button onClick={() => interval.toggle()}>
-      {interval.active ? "Pause" : "Resume"} ({count})
+      {interval.active ? 'Pause' : 'Resume'} ({count})
     </button>
   );
 };
@@ -37,15 +37,15 @@ export const Ticker = () => {
 `interval` (milliseconds):
 
 ```tsx
-const interval = useInterval(() => console.log("tick"), 2000);
+const interval = useInterval(() => console.log('tick'), 2000);
 ```
 
 `immediately` (start right away):
 
 ```tsx
-const interval = useInterval(() => console.log("tick"), {
+const interval = useInterval(() => console.log('tick'), {
   interval: 1000,
-  immediately: false,
+  immediately: false
 });
 ```
 
@@ -62,15 +62,8 @@ export interface UseIntervalReturn {
   toggle: () => void;
 }
 interface UseInterval {
-  (
-    callback: () => void,
-    interval?: number,
-    options?: UseIntervalOptions
-  ): UseIntervalReturn;
-  (
-    callback: () => void,
-    options?: UseIntervalOptions & { interval?: number }
-  ): UseIntervalReturn;
+  (callback: () => void, interval?: number, options?: UseIntervalOptions): UseIntervalReturn;
+  (callback: () => void, options?: UseIntervalOptions & { interval?: number }): UseIntervalReturn;
 }
 export declare const useInterval: UseInterval;
 ```

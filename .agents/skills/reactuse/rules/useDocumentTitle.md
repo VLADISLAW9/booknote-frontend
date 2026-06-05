@@ -11,38 +11,33 @@ Reads and updates the document title.
 ## Usage
 
 ```ts
-import { useDocumentTitle } from "@siberiacancode/reactuse";
+import { useDocumentTitle } from '@siberiacancode/reactuse';
 
-const title = useDocumentTitle("My App");
+const title = useDocumentTitle('My App');
 ```
 
 ## Example
 
 ```tsx
-import { useDocumentTitle } from "@siberiacancode/reactuse";
+import { useDocumentTitle } from '@siberiacancode/reactuse';
 
 export const TitleEditor = () => {
-  const title = useDocumentTitle("Dashboard");
+  const title = useDocumentTitle('Dashboard');
 
-  return (
-    <input
-      value={title.value}
-      onChange={(event) => title.set(event.target.value)}
-    />
-  );
+  return <input value={title.value} onChange={(event) => title.set(event.target.value)} />;
 };
 ```
 
 `initialValue`:
 
 ```tsx
-const title = useDocumentTitle("Dashboard");
+const title = useDocumentTitle('Dashboard');
 ```
 
 `restore`:
 
 ```tsx
-const title = useDocumentTitle("Profile", { restore: true });
+const title = useDocumentTitle('Profile', { restore: true });
 ```
 
 ## Notes

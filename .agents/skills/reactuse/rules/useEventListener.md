@@ -11,23 +11,21 @@ Attaches an event listener to a target.
 ## Usage
 
 ```ts
-import { useEventListener } from "@siberiacancode/reactuse";
+import { useEventListener } from '@siberiacancode/reactuse';
 
-useEventListener(window, "click", () => console.log("click"));
+useEventListener(window, 'click', () => console.log('click'));
 // or
-const eventListenerRef = useEventListener<HTMLButtonElement>("click", () =>
-  console.log("click")
-);
+const eventListenerRef = useEventListener<HTMLButtonElement>('click', () => console.log('click'));
 ```
 
 ## Example
 
 ```tsx
-import { useEventListener } from "@siberiacancode/reactuse";
+import { useEventListener } from '@siberiacancode/reactuse';
 
 export const ClickTracker = () => {
-  const eventListenerRef = useEventListener<HTMLButtonElement>("click", () => {
-    console.log("clicked");
+  const eventListenerRef = useEventListener<HTMLButtonElement>('click', () => {
+    console.log('clicked');
   });
 
   return <button ref={eventListenerRef}>Track clicks</button>;
@@ -39,14 +37,14 @@ export const ClickTracker = () => {
 Toggle listener.
 
 ```tsx
-useEventListener(window, "scroll", () => {}, { enabled: false });
+useEventListener(window, 'scroll', () => {}, { enabled: false });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type UseEventListenerOptions = {
   enabled?: boolean;
@@ -71,10 +69,7 @@ export interface UseEventListener {
     listener: (this: Element, event: HTMLElementEventMap[Event]) => void,
     options?: UseEventListenerOptions
   ): void;
-  <
-    Target extends Element,
-    Event extends keyof HTMLElementEventMap = keyof HTMLElementEventMap
-  >(
+  <Target extends Element, Event extends keyof HTMLElementEventMap = keyof HTMLElementEventMap>(
     event: Event,
     listener: (this: Target, event: HTMLElementEventMap[Event]) => void,
     options?: UseEventListenerOptions,

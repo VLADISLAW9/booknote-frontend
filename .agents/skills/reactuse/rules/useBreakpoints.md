@@ -11,7 +11,7 @@ Manages responsive breakpoints and helper predicates.
 ## Usage
 
 ```ts
-import { useBreakpoints } from "@siberiacancode/reactuse";
+import { useBreakpoints } from '@siberiacancode/reactuse';
 
 const breakpoints = useBreakpoints({ mobile: 0, tablet: 640, desktop: 1024 });
 ```
@@ -26,7 +26,7 @@ const active = breakpoints.active();
 return (
   <div>
     Active: {active}
-    <div>Is large: {String(breakpoints.greaterOrEqual("lg"))}</div>
+    <div>Is large: {String(breakpoints.greaterOrEqual('lg'))}</div>
   </div>
 );
 ```
@@ -47,7 +47,7 @@ The strategy option controls how the shortcut properties behave:
 - max-width (desktop-first): breakpoints.lg is true when viewport is < xl
 
 ```tsx
-const breakpoints = useBreakpoints({ sm: 640, md: 768 }, "desktop-first");
+const breakpoints = useBreakpoints({ sm: 640, md: 768 }, 'desktop-first');
 ```
 
 `between`:
@@ -56,7 +56,7 @@ Check if width is between two breakpoints.
 
 ```tsx
 const breakpoints = useBreakpoints({ sm: 640, md: 768, lg: 1024 });
-const isTablet = breakpoints.between("sm", "lg");
+const isTablet = breakpoints.between('sm', 'lg');
 ```
 
 ## Presets
@@ -72,7 +72,7 @@ const isTablet = breakpoints.between("sm", "lg");
 - Prime Flex: `BREAKPOINTS_PRIME_FLEX`
 
 ```ts
-import { BREAKPOINTS_TAILWIND } from "@siberiacancode/reactuse";
+import { BREAKPOINTS_TAILWIND } from '@siberiacancode/reactuse';
 ```
 
 ## Notes
@@ -82,11 +82,8 @@ import { BREAKPOINTS_TAILWIND } from "@siberiacancode/reactuse";
 ## Type Declarations
 
 ```ts
-export type Breakpoints<Breakpoint extends string = string> = Record<
-  Breakpoint,
-  number
->;
-export type UseBreakpointsStrategy = "desktop-first" | "mobile-first";
+export type Breakpoints<Breakpoint extends string = string> = Record<Breakpoint, number>;
+export type UseBreakpointsStrategy = 'desktop-first' | 'mobile-first';
 export type UseBreakpointsReturn<Breakpoint extends string = string> = {
   greater: (breakpoint: Breakpoint) => boolean;
   greaterOrEqual: (breakpoint: Breakpoint) => boolean;

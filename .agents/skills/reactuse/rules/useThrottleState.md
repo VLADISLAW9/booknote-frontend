@@ -11,7 +11,7 @@ Creates a throttled state setter.
 ## Usage
 
 ```ts
-import { useThrottleState } from "@siberiacancode/reactuse";
+import { useThrottleState } from '@siberiacancode/reactuse';
 
 const [throttled, setThrottled] = useThrottleState(value, 500);
 ```
@@ -19,11 +19,11 @@ const [throttled, setThrottled] = useThrottleState(value, 500);
 ## Example
 
 ```tsx
-import { useThrottleState } from "@siberiacancode/reactuse";
-import { useState } from "react";
+import { useThrottleState } from '@siberiacancode/reactuse';
+import { useState } from 'react';
 
 export const ThrottledInput = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const [throttled, setThrottled] = useThrottleState(value, 300);
 
   return (

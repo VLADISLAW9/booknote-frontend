@@ -11,7 +11,7 @@ Returns the previous value.
 ## Usage
 
 ```ts
-import { usePrevious } from "@siberiacancode/reactuse";
+import { usePrevious } from '@siberiacancode/reactuse';
 
 const prev = usePrevious(value);
 ```
@@ -24,7 +24,7 @@ Custom compare.
 
 ```tsx
 const prev = usePrevious(value, {
-  equality: (a, b) => a.id === b.id,
+  equality: (a, b) => a.id === b.id
 });
 console.log(prev);
 ```

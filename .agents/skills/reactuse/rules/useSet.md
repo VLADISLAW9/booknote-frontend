@@ -11,7 +11,7 @@ Manages a Set with helper methods.
 ## Usage
 
 ```ts
-import { useSet } from "@siberiacancode/reactuse";
+import { useSet } from '@siberiacancode/reactuse';
 
 const set = useSet([1, 2, 3]);
 ```
@@ -19,14 +19,14 @@ const set = useSet([1, 2, 3]);
 ## Example
 
 ```tsx
-const set = useSet(["a"]);
-return <button onClick={() => set.toggle("b")}>Size: {set.size}</button>;
+const set = useSet(['a']);
+return <button onClick={() => set.toggle('b')}>Size: {set.size}</button>;
 ```
 
 `values`:
 
 ```tsx
-const set = useSet(["a", "b"]);
+const set = useSet(['a', 'b']);
 ```
 
 ## Type Declarations

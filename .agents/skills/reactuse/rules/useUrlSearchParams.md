@@ -11,7 +11,7 @@ Syncs multiple URL search params with state.
 ## Usage
 
 ```ts
-import { useUrlSearchParams } from "@siberiacancode/reactuse";
+import { useUrlSearchParams } from '@siberiacancode/reactuse';
 
 const params = useUrlSearchParams({ initialValue: { page: 1 } });
 ```
@@ -19,11 +19,11 @@ const params = useUrlSearchParams({ initialValue: { page: 1 } });
 ## Example
 
 ```tsx
-import { useUrlSearchParams } from "@siberiacancode/reactuse";
+import { useUrlSearchParams } from '@siberiacancode/reactuse';
 
 export const SearchFilters = () => {
   const params = useUrlSearchParams({
-    initialValue: { page: 1, q: "" },
+    initialValue: { page: 1, q: '' }
   });
 
   return (
@@ -37,26 +37,26 @@ export const SearchFilters = () => {
 `initialValue`:
 
 ```tsx
-const params = useUrlSearchParams({ initialValue: { page: 1, q: "" } });
-params.set({ q: "react" });
+const params = useUrlSearchParams({ initialValue: { page: 1, q: '' } });
+params.set({ q: 'react' });
 ```
 
 `mode`:
 
 ```tsx
 const params = useUrlSearchParams({
-  mode: "hash",
-  initialValue: { tab: "all" },
+  mode: 'hash',
+  initialValue: { tab: 'all' }
 });
-params.set({ tab: "open" });
+params.set({ tab: 'open' });
 ```
 
 `write`:
 
 ```tsx
 const params = useUrlSearchParams({
-  write: "push",
-  initialValue: { page: 1 },
+  write: 'push',
+  initialValue: { page: 1 }
 });
 params.set({ page: 2 });
 ```
@@ -66,7 +66,7 @@ params.set({ page: 2 });
 ```tsx
 const params = useUrlSearchParams({
   deserializer: (value) => JSON.parse(value) as number,
-  initialValue: { page: 1 },
+  initialValue: { page: 1 }
 });
 params.set({ page: 3 });
 ```
@@ -76,7 +76,7 @@ params.set({ page: 3 });
 ```tsx
 const params = useUrlSearchParams({
   serializer: (value) => JSON.stringify(value),
-  initialValue: { page: 1 },
+  initialValue: { page: 1 }
 });
 params.set({ page: 4 });
 ```
@@ -85,24 +85,22 @@ params.set({ page: 4 });
 
 ```tsx
 const params = useUrlSearchParams({ initialValue: { page: 1 } });
-params.set({ page: 2 }, { write: "replace" });
+params.set({ page: 2 }, { write: 'replace' });
 ```
 
 ## Type Declarations
 
 ```ts
 export type UrlParams = Record<string, any>;
-export type UrlSearchParamsMode = "hash-params" | "hash" | "history";
+export type UrlSearchParamsMode = 'hash-params' | 'hash' | 'history';
 export interface UseUrlSearchParamsSetOptions {
-  write?: "push" | "replace";
+  write?: 'push' | 'replace';
 }
 export type UseUrlSearchParamsInitialValue<Value> = (() => Value) | Value;
 export interface UseUrlSearchParamsOptions<Value> {
-  initialValue?: UseUrlSearchParamsInitialValue<
-    string | URLSearchParams | Value
-  >;
+  initialValue?: UseUrlSearchParamsInitialValue<string | URLSearchParams | Value>;
   mode?: UrlSearchParamsMode;
-  write?: "push" | "replace";
+  write?: 'push' | 'replace';
   deserializer?: (value: string) => Value[keyof Value];
   serializer?: (value: Value[keyof Value]) => string;
 }
@@ -117,12 +115,8 @@ export interface UseUrlSearchParams {
       initialValue: UseUrlSearchParamsInitialValue<Value>;
     }
   ): UseUrlSearchParamsReturn<Value>;
-  <Value>(options?: UseUrlSearchParamsOptions<Value>): UseUrlSearchParamsReturn<
-    Value | undefined
-  >;
-  <Value>(
-    initialValue: UseUrlSearchParamsInitialValue<Value>
-  ): UseUrlSearchParamsReturn<Value>;
+  <Value>(options?: UseUrlSearchParamsOptions<Value>): UseUrlSearchParamsReturn<Value | undefined>;
+  <Value>(initialValue: UseUrlSearchParamsInitialValue<Value>): UseUrlSearchParamsReturn<Value>;
   <Value>(key: string): UseUrlSearchParamsReturn<Value | undefined>;
 }
 export declare const useUrlSearchParams: UseUrlSearchParams;

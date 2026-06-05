@@ -11,7 +11,7 @@ Creates a typed context with provider and selector hook.
 ## Usage
 
 ```ts
-import { createContext } from "@siberiacancode/reactuse";
+import { createContext } from '@siberiacancode/reactuse';
 
 const context = createContext(0);
 ```
@@ -19,17 +19,17 @@ const context = createContext(0);
 ## Example
 
 ```tsx
-import { createContext } from "@siberiacancode/reactuse";
-import type { ReactNode } from "react";
+import { createContext } from '@siberiacancode/reactuse';
+import type { ReactNode } from 'react';
 
-const themeContext = createContext("light");
+const themeContext = createContext('light');
 
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => (
-  <themeContext.Provider initialValue="light">{children}</themeContext.Provider>
+  <themeContext.Provider initialValue='light'>{children}</themeContext.Provider>
 );
 
 export const CounterValue = () => {
@@ -49,7 +49,7 @@ const CounterContext = createContext(0);
 Debug display name.
 
 ```tsx
-const CounterContext = createContext(0, { name: "CounterContext" });
+const CounterContext = createContext(0, { name: 'CounterContext' });
 ```
 
 `strict`:
@@ -63,7 +63,7 @@ const CounterContext = createContext(0, { strict: true });
 ## Type Declarations
 
 ```ts
-import type { JSX, ReactNode } from "react";
+import type { JSX, ReactNode } from 'react';
 
 export interface CreateContextOptions {
   name?: string;

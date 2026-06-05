@@ -11,24 +11,24 @@ Manages a value in localStorage.
 ## Usage
 
 ```ts
-import { useLocalStorage } from "@siberiacancode/reactuse";
+import { useLocalStorage } from '@siberiacancode/reactuse';
 
-const storage = useLocalStorage("key", "value");
+const storage = useLocalStorage('key', 'value');
 ```
 
 ## Example
 
 ```tsx
-import { useLocalStorage } from "@siberiacancode/reactuse";
+import { useLocalStorage } from '@siberiacancode/reactuse';
 
 export const DraftNote = () => {
-  const draft = useLocalStorage("draft-note", "");
+  const draft = useLocalStorage('draft-note', '');
 
   return (
     <textarea
       value={draft.value}
       onChange={(event) => draft.set(event.target.value)}
-      placeholder="Type your note..."
+      placeholder='Type your note...'
     />
   );
 };
@@ -37,18 +37,18 @@ export const DraftNote = () => {
 `initialValue`:
 
 ```tsx
-const storage = useLocalStorage("key", "value");
-storage.set("next");
+const storage = useLocalStorage('key', 'value');
+storage.set('next');
 ```
 
 `deserializer`:
 
 ```tsx
 const storage = useLocalStorage(
-  "settings",
+  'settings',
   { compact: false },
   {
-    deserializer: (value) => JSON.parse(value) as { compact: boolean },
+    deserializer: (value) => JSON.parse(value) as { compact: boolean }
   }
 );
 storage.set({ compact: true });
@@ -58,13 +58,13 @@ storage.set({ compact: true });
 
 ```tsx
 const storage = useLocalStorage(
-  "filters",
-  { query: "" },
+  'filters',
+  { query: '' },
   {
-    serializer: (value) => JSON.stringify(value),
+    serializer: (value) => JSON.stringify(value)
   }
 );
-storage.set({ query: "react" });
+storage.set({ query: 'react' });
 ```
 
 ## Notes
@@ -74,15 +74,12 @@ storage.set({ query: "react" });
 ## Type Declarations
 
 ```ts
-import type {
-  UseStorageInitialValue,
-  UseStorageOptions,
-} from "@siberiacancode/reactuse";
+import type { UseStorageInitialValue, UseStorageOptions } from '@siberiacancode/reactuse';
 
 export declare const useLocalStorage: <Value>(
   key: string,
   initialValue?: UseStorageInitialValue<Value>,
-  options?: Omit<UseStorageOptions<Value>, "initialValue" | "storage">
+  options?: Omit<UseStorageOptions<Value>, 'initialValue' | 'storage'>
 ) => {
   value: Value;
   set: (value: Value) => void;

@@ -11,7 +11,7 @@ Tracks intersection state for an element.
 ## Usage
 
 ```ts
-import { useIntersectionObserver } from "@siberiacancode/reactuse";
+import { useIntersectionObserver } from '@siberiacancode/reactuse';
 
 const observer = useIntersectionObserver<HTMLDivElement>();
 // or
@@ -21,13 +21,13 @@ const observer = useIntersectionObserver(ref, { threshold: 0.5 });
 ## Example
 
 ```tsx
-import { useIntersectionObserver } from "@siberiacancode/reactuse";
+import { useIntersectionObserver } from '@siberiacancode/reactuse';
 
 export const LazyItem = () => {
   const observer = useIntersectionObserver<HTMLDivElement>({ threshold: 0.5 });
   const isVisible = observer.entries?.[0]?.isIntersecting ?? false;
 
-  return <div ref={observer.ref}>{isVisible ? "Visible" : "Hidden"}</div>;
+  return <div ref={observer.ref}>{isVisible ? 'Visible' : 'Hidden'}</div>;
 };
 ```
 
@@ -45,7 +45,7 @@ Observer callback.
 
 ```tsx
 const observer = useIntersectionObserver<HTMLDivElement>({
-  onChange: (entries) => console.log(entries),
+  onChange: (entries) => console.log(entries)
 });
 ```
 
@@ -55,7 +55,7 @@ Scroll container.
 
 ```tsx
 const observer = useIntersectionObserver<HTMLDivElement>({
-  root: containerRef,
+  root: containerRef
 });
 ```
 
@@ -65,7 +65,7 @@ Root offset.
 
 ```tsx
 const observer = useIntersectionObserver<HTMLDivElement>({
-  rootMargin: "10px",
+  rootMargin: '10px'
 });
 ```
 
@@ -84,15 +84,14 @@ const observer = useIntersectionObserver<HTMLDivElement>({ threshold: 0.5 });
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type UseIntersectionObserverCallback = (
   entries: IntersectionObserverEntry[],
   observer: IntersectionObserver
 ) => void;
-export interface UseIntersectionObserverOptions
-  extends Omit<IntersectionObserverInit, "root"> {
+export interface UseIntersectionObserverOptions extends Omit<IntersectionObserverInit, 'root'> {
   enabled?: boolean;
   onChange?: UseIntersectionObserverCallback;
   root?: HookTarget;
@@ -106,18 +105,12 @@ export interface UseIntersectionObserver {
     options?: UseIntersectionObserverOptions,
     target?: never
   ): UseIntersectionObserverReturn & { ref: StateRef<Target> };
-  (
-    target: HookTarget,
-    options?: UseIntersectionObserverOptions
-  ): UseIntersectionObserverReturn;
+  (target: HookTarget, options?: UseIntersectionObserverOptions): UseIntersectionObserverReturn;
   <Target extends Element>(
     callback: UseIntersectionObserverCallback,
     target?: never
   ): UseIntersectionObserverReturn & { ref: StateRef<Target> };
-  (
-    target: HookTarget,
-    callback: UseIntersectionObserverCallback
-  ): UseIntersectionObserverReturn;
+  (target: HookTarget, callback: UseIntersectionObserverCallback): UseIntersectionObserverReturn;
 }
 export declare const useIntersectionObserver: UseIntersectionObserver;
 ```

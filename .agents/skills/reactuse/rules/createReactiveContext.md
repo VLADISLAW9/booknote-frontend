@@ -11,7 +11,7 @@ Creates a typed context selector with optimized updates.
 ## Usage
 
 ```ts
-import { createReactiveContext } from "@siberiacancode/reactuse";
+import { createReactiveContext } from '@siberiacancode/reactuse';
 
 const context = createReactiveContext({ count: 0 });
 ```
@@ -19,17 +19,17 @@ const context = createReactiveContext({ count: 0 });
 ## Example
 
 ```tsx
-import { createReactiveContext } from "@siberiacancode/reactuse";
-import type { ReactNode } from "react";
+import { createReactiveContext } from '@siberiacancode/reactuse';
+import type { ReactNode } from 'react';
 
 interface UserProviderProps {
   children: ReactNode;
 }
 
-const userContext = createReactiveContext({ name: "", email: "" });
+const userContext = createReactiveContext({ name: '', email: '' });
 
 export const UserProvider = ({ children }: UserProviderProps) => (
-  <userContext.Provider value={{ name: "Ada", email: "ada@example.com" }}>
+  <userContext.Provider value={{ name: 'Ada', email: 'ada@example.com' }}>
     {children}
   </userContext.Provider>
 );
@@ -51,10 +51,7 @@ const CounterContext = createReactiveContext({ count: 0 });
 Debug display name.
 
 ```tsx
-const CounterContext = createReactiveContext(
-  { count: 0 },
-  { name: "CounterContext" }
-);
+const CounterContext = createReactiveContext({ count: 0 }, { name: 'CounterContext' });
 ```
 
 `strict`:
@@ -72,7 +69,7 @@ const CounterContext = createReactiveContext({ count: 0 }, { strict: true });
 ## Type Declarations
 
 ```ts
-import type { Context, Provider, RefObject } from "react";
+import type { Context, Provider, RefObject } from 'react';
 
 export interface CreateReactiveContextOptions {
   name?: string;

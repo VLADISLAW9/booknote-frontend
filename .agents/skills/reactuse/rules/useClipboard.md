@@ -11,7 +11,7 @@ Reads and copies text from the clipboard.
 ## Usage
 
 ```ts
-import { useClipboard } from "@siberiacancode/reactuse";
+import { useClipboard } from '@siberiacancode/reactuse';
 
 const clipboard = useClipboard();
 ```
@@ -24,8 +24,8 @@ Copy button:
 const clipboard = useClipboard();
 
 return (
-  <button onClick={() => clipboard.copy("team@example.com")}>
-    {clipboard.value ?? "Copy email"}
+  <button onClick={() => clipboard.copy('team@example.com')}>
+    {clipboard.value ?? 'Copy email'}
   </button>
 );
 ```
@@ -50,7 +50,5 @@ export interface UseCopyToClipboardReturn {
 export interface UseCopyToClipboardParams {
   enabled: boolean;
 }
-export declare const useClipboard: (
-  params?: UseCopyToClipboardParams
-) => UseCopyToClipboardReturn;
+export declare const useClipboard: (params?: UseCopyToClipboardParams) => UseCopyToClipboardReturn;
 ```

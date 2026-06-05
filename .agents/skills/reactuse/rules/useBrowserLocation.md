@@ -11,7 +11,7 @@ Returns reactive browser location state with navigation controls.
 ## Usage
 
 ```ts
-import { useBrowserLocation } from "@siberiacancode/reactuse";
+import { useBrowserLocation } from '@siberiacancode/reactuse';
 
 const location = useBrowserLocation();
 ```
@@ -19,7 +19,7 @@ const location = useBrowserLocation();
 ## Example
 
 ```tsx
-import { useBrowserLocation } from "@siberiacancode/reactuse";
+import { useBrowserLocation } from '@siberiacancode/reactuse';
 
 export const BrowserLocationControls = () => {
   const location = useBrowserLocation();
@@ -27,12 +27,8 @@ export const BrowserLocationControls = () => {
   return (
     <div>
       <p>Path: {location.value.pathname}</p>
-      <button onClick={() => location.push("/dashboard?tab=overview")}>
-        Push
-      </button>
-      <button onClick={() => location.replace("/dashboard?tab=settings")}>
-        Replace
-      </button>
+      <button onClick={() => location.push('/dashboard?tab=overview')}>Push</button>
+      <button onClick={() => location.replace('/dashboard?tab=settings')}>Replace</button>
       <button onClick={() => location.back()}>Back</button>
       <button onClick={() => location.forward()}>Forward</button>
     </div>

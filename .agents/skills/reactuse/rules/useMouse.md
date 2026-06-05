@@ -11,23 +11,21 @@ Tracks mouse coordinates relative to page and element. State is stored in a snap
 ## Usage
 
 ```ts
-import { useMouse } from "@siberiacancode/reactuse";
+import { useMouse } from '@siberiacancode/reactuse';
 
 const mouse = useMouse<HTMLDivElement>();
 // or
 const mouse = useMouse(ref);
 // with callback (no re-render needed for side effects)
-const mouse = useMouse<HTMLDivElement>((value, event) =>
-  console.log(value.x, value.y)
-);
+const mouse = useMouse<HTMLDivElement>((value, event) => console.log(value.x, value.y));
 ```
 
 ## Example
 
 ```tsx
 const mouse = useMouse<HTMLDivElement>((value) => {
-  document.body.style.setProperty("--mouse-x", String(value.clientX));
-  document.body.style.setProperty("--mouse-y", String(value.clientY));
+  document.body.style.setProperty('--mouse-x', String(value.clientX));
+  document.body.style.setProperty('--mouse-y', String(value.clientY));
 });
 return <div ref={mouse.ref}>Cursor position → CSS vars</div>;
 ```
@@ -37,10 +35,7 @@ Reading `snapshot` without re-renders (e.g. in a handler):
 ```tsx
 const mouse = useMouse<HTMLDivElement>();
 return (
-  <div
-    ref={mouse.ref}
-    onClick={() => console.log(mouse.snapshot.clientX, mouse.snapshot.clientY)}
-  >
+  <div ref={mouse.ref} onClick={() => console.log(mouse.snapshot.clientX, mouse.snapshot.clientY)}>
     Click to log position
   </div>
 );
@@ -61,8 +56,8 @@ return (
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseMouseValue {
   clientX: number;

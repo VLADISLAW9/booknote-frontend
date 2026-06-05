@@ -11,7 +11,7 @@ Tracks online status and connection information.
 ## Usage
 
 ```ts
-import { useNetwork } from "@siberiacancode/reactuse";
+import { useNetwork } from '@siberiacancode/reactuse';
 
 const network = useNetwork();
 ```
@@ -19,16 +19,16 @@ const network = useNetwork();
 ## Example
 
 ```tsx
-import { useNetwork } from "@siberiacancode/reactuse";
+import { useNetwork } from '@siberiacancode/reactuse';
 
 export const NetworkInfo = () => {
   const network = useNetwork();
   return (
     <div>
-      {network.online ? "Online" : "Offline"}
+      {network.online ? 'Online' : 'Offline'}
       {network.online && (
         <div>
-          Type: {network.type ?? "unknown"} ({network.effectiveType ?? "n/a"})
+          Type: {network.type ?? 'unknown'} ({network.effectiveType ?? 'n/a'})
         </div>
       )}
     </div>
@@ -46,20 +46,20 @@ export const NetworkInfo = () => {
 export interface UseNetworkReturn {
   downlink?: number;
   downlinkMax?: number;
-  effectiveType?: "2g" | "3g" | "4g" | "slow-2g";
+  effectiveType?: '2g' | '3g' | '4g' | 'slow-2g';
   online: boolean;
   rtt?: number;
   saveData?: boolean;
   type?:
-    | "bluetooth"
-    | "cellular"
-    | "ethernet"
-    | "mixed"
-    | "none"
-    | "other"
-    | "unknown"
-    | "wifi"
-    | "wimax";
+    | 'bluetooth'
+    | 'cellular'
+    | 'ethernet'
+    | 'mixed'
+    | 'none'
+    | 'other'
+    | 'unknown'
+    | 'wifi'
+    | 'wimax';
 }
 export declare const useNetwork: () => UseNetworkReturn;
 ```

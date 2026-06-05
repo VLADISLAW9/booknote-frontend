@@ -11,7 +11,7 @@ Provides text-to-speech controls and state.
 ## Usage
 
 ```ts
-import { useSpeechSynthesis } from "@siberiacancode/reactuse";
+import { useSpeechSynthesis } from '@siberiacancode/reactuse';
 
 const speech = useSpeechSynthesis();
 ```
@@ -19,31 +19,27 @@ const speech = useSpeechSynthesis();
 ## Example
 
 ```tsx
-import { useSpeechSynthesis } from "@siberiacancode/reactuse";
+import { useSpeechSynthesis } from '@siberiacancode/reactuse';
 
 export const Reader = () => {
-  const speech = useSpeechSynthesis({ text: "Hello from Reactuse" });
+  const speech = useSpeechSynthesis({ text: 'Hello from Reactuse' });
 
   if (!speech.supported) return <div>Not supported</div>;
 
-  return (
-    <button onClick={() => speech.speak()}>
-      {speech.playing ? "Speaking..." : "Speak"}
-    </button>
-  );
+  return <button onClick={() => speech.speak()}>{speech.playing ? 'Speaking...' : 'Speak'}</button>;
 };
 ```
 
 `text`:
 
 ```tsx
-const speech = useSpeechSynthesis({ text: "Hello" });
+const speech = useSpeechSynthesis({ text: 'Hello' });
 ```
 
 `lang`:
 
 ```tsx
-const speech = useSpeechSynthesis({ lang: "en-US" });
+const speech = useSpeechSynthesis({ lang: 'en-US' });
 ```
 
 `pitch`:
@@ -77,7 +73,7 @@ const speech = useSpeechSynthesis({ volume: 0.6 });
 ## Type Declarations
 
 ```ts
-export type UseSpeechSynthesisStatus = "end" | "init" | "pause" | "play";
+export type UseSpeechSynthesisStatus = 'end' | 'init' | 'pause' | 'play';
 export interface UseSpeechSynthesisOptions {
   lang?: string;
   pitch?: number;

@@ -11,7 +11,7 @@ Returns the current JS heap memory usage.
 ## Usage
 
 ```ts
-import { useMemory } from "@siberiacancode/reactuse";
+import { useMemory } from '@siberiacancode/reactuse';
 
 const memory = useMemory();
 ```
@@ -19,14 +19,13 @@ const memory = useMemory();
 ## Example
 
 ```tsx
-import { useMemory } from "@siberiacancode/reactuse";
+import { useMemory } from '@siberiacancode/reactuse';
 
 export const Memory = () => {
   const memory = useMemory();
   if (!memory.supported) return <div>Not supported</div>;
 
-  const used =
-    Math.round((memory.value.usedJSHeapSize / 1024 / 1024) * 10) / 10;
+  const used = Math.round((memory.value.usedJSHeapSize / 1024 / 1024) * 10) / 10;
 
   return <div>Heap used: {used} MB</div>;
 };
@@ -41,7 +40,7 @@ export const Memory = () => {
 ```ts
 export interface UseMemoryReturn {
   supported: boolean;
-  value: Performance["memory"];
+  value: Performance['memory'];
 }
 export declare const useMemory: () => UseMemoryReturn;
 ```

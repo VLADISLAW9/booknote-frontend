@@ -11,7 +11,7 @@ Uses `useLayoutEffect` on the client and `useEffect` on the server.
 ## Usage
 
 ```ts
-import { useIsomorphicLayoutEffect } from "@siberiacancode/reactuse";
+import { useIsomorphicLayoutEffect } from '@siberiacancode/reactuse';
 
 useIsomorphicLayoutEffect(() => {}, []);
 ```
@@ -25,7 +25,7 @@ useIsomorphicLayoutEffect(() => {}, []);
 ## Type Declarations
 
 ```ts
-import type { useEffect } from "react";
+import type { useEffect } from 'react';
 
 export declare const useIsomorphicLayoutEffect: typeof useEffect;
 ```

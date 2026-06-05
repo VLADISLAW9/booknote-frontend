@@ -11,7 +11,7 @@ Returns the document visibility state.
 ## Usage
 
 ```ts
-import { useDocumentVisibility } from "@siberiacancode/reactuse";
+import { useDocumentVisibility } from '@siberiacancode/reactuse';
 
 const documentVisibility = useDocumentVisibility();
 ```
@@ -20,14 +20,14 @@ const documentVisibility = useDocumentVisibility();
 
 ```tsx
 const documentVisibility = useDocumentVisibility();
-return <div>{documentVisibility === "hidden" ? "Hidden" : "Visible"}</div>;
+return <div>{documentVisibility === 'hidden' ? 'Hidden' : 'Visible'}</div>;
 ```
 
 `callback`:
 
 ```tsx
 const documentVisibility = useDocumentVisibility((state) => {
-  if (state === "hidden") console.log("user left tab");
+  if (state === 'hidden') console.log('user left tab');
 });
 ```
 

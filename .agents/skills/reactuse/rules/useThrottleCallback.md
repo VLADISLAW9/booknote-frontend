@@ -11,18 +11,18 @@ Creates a throttled callback with a cancel method.
 ## Usage
 
 ```ts
-import { useThrottleCallback } from "@siberiacancode/reactuse";
+import { useThrottleCallback } from '@siberiacancode/reactuse';
 
-const throttled = useThrottleCallback(() => console.log("callback"), 500);
+const throttled = useThrottleCallback(() => console.log('callback'), 500);
 ```
 
 ## Example
 
 ```tsx
-import { useThrottleCallback } from "@siberiacancode/reactuse";
+import { useThrottleCallback } from '@siberiacancode/reactuse';
 
 export const ScrollLogger = () => {
-  const onScroll = useThrottleCallback(() => console.log("scroll"), 200);
+  const onScroll = useThrottleCallback(() => console.log('scroll'), 200);
 
   return (
     <div onScroll={onScroll}>
@@ -36,9 +36,7 @@ export const ScrollLogger = () => {
 ## Type Declarations
 
 ```ts
-export type ThrottledCallback<Params extends unknown[]> = ((
-  ...args: Params
-) => void) & {
+export type ThrottledCallback<Params extends unknown[]> = ((...args: Params) => void) & {
   cancel: () => void;
 };
 export declare const useThrottleCallback: <Params extends unknown[], Return>(

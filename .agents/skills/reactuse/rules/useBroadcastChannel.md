@@ -11,23 +11,19 @@ Enables cross-tab/window messaging.
 ## Usage
 
 ```ts
-import { useBroadcastChannel } from "@siberiacancode/reactuse";
+import { useBroadcastChannel } from '@siberiacancode/reactuse';
 
-const channel = useBroadcastChannel("channel");
+const channel = useBroadcastChannel('channel');
 ```
 
 ## Example
 
 ```tsx
-const channel = useBroadcastChannel<string>("sync", (message) => {
+const channel = useBroadcastChannel<string>('sync', (message) => {
   console.log(message);
 });
 
-return (
-  <button onClick={() => channel.post("ping")}>
-    Last: {channel.data ?? "none"}
-  </button>
-);
+return <button onClick={() => channel.post('ping')}>Last: {channel.data ?? 'none'}</button>;
 ```
 
 ## Notes

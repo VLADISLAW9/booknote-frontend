@@ -11,7 +11,7 @@ Records the timestamp of the last change.
 ## Usage
 
 ```ts
-import { useLastChanged } from "@siberiacancode/reactuse";
+import { useLastChanged } from '@siberiacancode/reactuse';
 
 const lastChanged = useLastChanged(value);
 ```

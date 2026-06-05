@@ -11,7 +11,7 @@ Creates a debounced state setter.
 ## Usage
 
 ```ts
-import { useDebounceState } from "@siberiacancode/reactuse";
+import { useDebounceState } from '@siberiacancode/reactuse';
 
 const [debounced, setDebounced] = useDebounceState(value, 500);
 ```
@@ -19,11 +19,11 @@ const [debounced, setDebounced] = useDebounceState(value, 500);
 ## Example
 
 ```tsx
-import { useDebounceState } from "@siberiacancode/reactuse";
-import { useState } from "react";
+import { useDebounceState } from '@siberiacancode/reactuse';
+import { useState } from 'react';
 
 export const DebouncedInput = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const [debounced, setDebounced] = useDebounceState(value, 300);
 
   return (

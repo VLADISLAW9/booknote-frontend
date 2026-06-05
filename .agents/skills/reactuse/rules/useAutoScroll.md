@@ -11,7 +11,7 @@ Automatically scrolls a container to the bottom.
 ## Usage
 
 ```ts
-import { useAutoScroll } from "@siberiacancode/reactuse";
+import { useAutoScroll } from '@siberiacancode/reactuse';
 
 const autoScrollRef = useAutoScroll<HTMLDivElement>();
 // or
@@ -50,8 +50,8 @@ const autoScrollRef = useAutoScroll<HTMLDivElement>({ force: true });
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseAutoScrollOptions {
   enabled?: boolean;

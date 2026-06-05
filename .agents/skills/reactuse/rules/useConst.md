@@ -11,9 +11,9 @@ Returns a constant value initialized once.
 ## Usage
 
 ```ts
-import { useConst } from "@siberiacancode/reactuse";
+import { useConst } from '@siberiacancode/reactuse';
 
-const value = useConst("value");
+const value = useConst('value');
 ```
 
 ## Example
@@ -31,7 +31,5 @@ return (
 ## Type Declarations
 
 ```ts
-export declare const useConst: <Value>(
-  initialValue: (() => Value) | Value
-) => Value;
+export declare const useConst: <Value>(initialValue: (() => Value) | Value) => Value;
 ```

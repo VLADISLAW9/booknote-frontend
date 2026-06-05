@@ -11,7 +11,7 @@ Returns current window width and height.
 ## Usage
 
 ```ts
-import { useWindowSize } from "@siberiacancode/reactuse";
+import { useWindowSize } from '@siberiacancode/reactuse';
 
 const size = useWindowSize();
 ```
@@ -19,7 +19,7 @@ const size = useWindowSize();
 ## Example
 
 ```tsx
-import { useWindowSize } from "@siberiacancode/reactuse";
+import { useWindowSize } from '@siberiacancode/reactuse';
 
 export const Banner = () => {
   const size = useWindowSize();
@@ -49,7 +49,5 @@ export interface UseWindowSizeReturn {
   height: number;
   width: number;
 }
-export declare const useWindowSize: (
-  params?: UseWindowSizeParams
-) => UseWindowSizeReturn;
+export declare const useWindowSize: (params?: UseWindowSizeParams) => UseWindowSizeReturn;
 ```

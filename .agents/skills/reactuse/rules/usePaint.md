@@ -11,20 +11,20 @@ Draws on a canvas and exposes drawing controls.
 ## Usage
 
 ```ts
-import { usePaint } from "@siberiacancode/reactuse";
+import { usePaint } from '@siberiacancode/reactuse';
 
 const paint = usePaint<HTMLCanvasElement>();
 // or
-const paint = usePaint(ref, { color: "red" });
+const paint = usePaint(ref, { color: 'red' });
 ```
 
 ## Example
 
 ```tsx
-import { usePaint } from "@siberiacancode/reactuse";
+import { usePaint } from '@siberiacancode/reactuse';
 
 export const Sketch = () => {
-  const paint = usePaint<HTMLCanvasElement>({ color: "red", radius: 4 });
+  const paint = usePaint<HTMLCanvasElement>({ color: 'red', radius: 4 });
   const ref = paint.ref;
 
   return (
@@ -41,7 +41,7 @@ export const Sketch = () => {
 Brush color.
 
 ```tsx
-const paint = usePaint<HTMLCanvasElement>({ color: "red" });
+const paint = usePaint<HTMLCanvasElement>({ color: 'red' });
 ```
 
 `opacity`:
@@ -82,7 +82,7 @@ Start drawing.
 
 ```tsx
 const paint = usePaint<HTMLCanvasElement>({
-  onMouseDown: () => console.log("down"),
+  onMouseDown: () => console.log('down')
 });
 ```
 
@@ -92,7 +92,7 @@ During drawing.
 
 ```tsx
 const paint = usePaint<HTMLCanvasElement>({
-  onMouseMove: () => console.log("move"),
+  onMouseMove: () => console.log('move')
 });
 ```
 
@@ -102,15 +102,15 @@ Stop drawing.
 
 ```tsx
 const paint = usePaint<HTMLCanvasElement>({
-  onMouseUp: () => console.log("up"),
+  onMouseUp: () => console.log('up')
 });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface Point {
   x: number;
@@ -133,14 +133,9 @@ export interface UsePaintOptions {
 }
 export interface UsePaintReturn {
   drawing: boolean;
-  lines: Paint["lines"];
+  lines: Paint['lines'];
   clear: () => void;
-  draw: (
-    points: Point[],
-    color: string,
-    opacity: number,
-    radius: number
-  ) => void;
+  draw: (points: Point[], color: string, opacity: number, radius: number) => void;
   undo: () => void;
 }
 export interface UsePaint {

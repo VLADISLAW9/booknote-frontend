@@ -11,26 +11,26 @@ Manages audio playback (play/pause/stop), volume, rate, and sprite segments.
 ## Usage
 
 ```ts
-import { useAudio } from "@siberiacancode/reactuse";
+import { useAudio } from '@siberiacancode/reactuse';
 
-const audio = useAudio("/sounds/pop.mp3");
+const audio = useAudio('/sounds/pop.mp3');
 ```
 
 ```ts
-import { useAudio } from "@siberiacancode/reactuse";
+import { useAudio } from '@siberiacancode/reactuse';
 
-const audio = useAudio("/sounds/sprite.mp3", {
+const audio = useAudio('/sounds/sprite.mp3', {
   sprite: {
     click: [0, 0.25],
-    success: [0.6, 1.1],
-  },
+    success: [0.6, 1.1]
+  }
 });
 ```
 
 ## Example
 
 ```tsx
-const audio = useAudio("/sounds/track.mp3");
+const audio = useAudio('/sounds/track.mp3');
 
 return (
   <div>
@@ -46,7 +46,7 @@ return (
 Try to autoplay on mount.
 
 ```tsx
-const audio = useAudio("/sounds/alert.mp3", { immediately: true });
+const audio = useAudio('/sounds/alert.mp3', { immediately: true });
 ```
 
 `interrupt`:
@@ -54,7 +54,7 @@ const audio = useAudio("/sounds/alert.mp3", { immediately: true });
 Stop current playback before starting.
 
 ```tsx
-const audio = useAudio("/sounds/click.mp3", { interrupt: true });
+const audio = useAudio('/sounds/click.mp3', { interrupt: true });
 
 <button onClick={() => audio.play()}>Play</button>;
 ```
@@ -64,7 +64,7 @@ const audio = useAudio("/sounds/click.mp3", { interrupt: true });
 Speed from 0.5 to 2.
 
 ```tsx
-const audio = useAudio("/sounds/typing.mp3", { playbackRate: 1.5 });
+const audio = useAudio('/sounds/typing.mp3', { playbackRate: 1.5 });
 ```
 
 `sprite`:
@@ -72,14 +72,14 @@ const audio = useAudio("/sounds/typing.mp3", { playbackRate: 1.5 });
 Play named segment.
 
 ```tsx
-const audio = useAudio("/sounds/ui-sprite.mp3", {
+const audio = useAudio('/sounds/ui-sprite.mp3', {
   sprite: {
     open: [0, 0.2],
-    close: [0.3, 0.5],
-  },
+    close: [0.3, 0.5]
+  }
 });
 
-<button onClick={() => audio.play("open")}>Open</button>;
+<button onClick={() => audio.play('open')}>Open</button>;
 ```
 
 `volume`:
@@ -87,7 +87,7 @@ const audio = useAudio("/sounds/ui-sprite.mp3", {
 Level from 0 to 1.
 
 ```tsx
-const audio = useAudio("/sounds/ambient.mp3", { volume: 0.3 });
+const audio = useAudio('/sounds/ambient.mp3', { volume: 0.3 });
 ```
 
 ## Notes
@@ -97,11 +97,7 @@ const audio = useAudio("/sounds/ambient.mp3", { volume: 0.3 });
 ## Type Declarations
 
 ```ts
-import type {
-  SpriteMap,
-  UseAudioOptions,
-  UseAudioReturn,
-} from "@siberiacancode/reactuse";
+import type { SpriteMap, UseAudioOptions, UseAudioReturn } from '@siberiacancode/reactuse';
 
 export interface SpriteMap {
   [key: string]: [number, number];
@@ -123,8 +119,5 @@ export interface UseAudioReturn {
   setVolume: (value: number) => void;
   stop: () => void;
 }
-export declare const useAudio: (
-  src: string,
-  options?: UseAudioOptions
-) => UseAudioReturn;
+export declare const useAudio: (src: string, options?: UseAudioOptions) => UseAudioReturn;
 ```

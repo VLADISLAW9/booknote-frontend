@@ -11,13 +11,11 @@ Calls a callback when clicking outside the target element.
 ## Usage
 
 ```ts
-import { useClickOutside } from "@siberiacancode/reactuse";
+import { useClickOutside } from '@siberiacancode/reactuse';
 
-const clickOutsideRef = useClickOutside<HTMLDivElement>(() =>
-  console.log("outside")
-);
+const clickOutsideRef = useClickOutside<HTMLDivElement>(() => console.log('outside'));
 // or
-useClickOutside(ref, () => console.log("outside"));
+useClickOutside(ref, () => console.log('outside'));
 ```
 
 ## Example
@@ -34,8 +32,8 @@ return <div ref={clickOutsideRef}>Modal</div>;
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseClickOutside {
   (target: HookTarget, callback: (event: Event) => void): void;

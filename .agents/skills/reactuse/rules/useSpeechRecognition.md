@@ -11,7 +11,7 @@ Provides speech-to-text recognition controls and state.
 ## Usage
 
 ```ts
-import { useSpeechRecognition } from "@siberiacancode/reactuse";
+import { useSpeechRecognition } from '@siberiacancode/reactuse';
 
 const speech = useSpeechRecognition();
 ```
@@ -19,18 +19,16 @@ const speech = useSpeechRecognition();
 ## Example
 
 ```tsx
-import { useSpeechRecognition } from "@siberiacancode/reactuse";
+import { useSpeechRecognition } from '@siberiacancode/reactuse';
 
 export const VoiceNote = () => {
-  const speech = useSpeechRecognition({ language: "en-US" });
+  const speech = useSpeechRecognition({ language: 'en-US' });
 
   if (!speech.supported) return <div>Not supported</div>;
 
   return (
     <div>
-      <button onClick={() => speech.toggle()}>
-        {speech.listening ? "Stop" : "Start"}
-      </button>
+      <button onClick={() => speech.toggle()}>{speech.listening ? 'Stop' : 'Start'}</button>
       <div>Transcript: {speech.transcript}</div>
     </div>
   );
@@ -52,7 +50,7 @@ const speech = useSpeechRecognition({ interimResults: true });
 `language`:
 
 ```tsx
-const speech = useSpeechRecognition({ language: "ru-RU" });
+const speech = useSpeechRecognition({ language: 'ru-RU' });
 ```
 
 `maxAlternatives`:
@@ -70,20 +68,20 @@ const speech = useSpeechRecognition({ grammars });
 `onStart`:
 
 ```tsx
-const speech = useSpeechRecognition({ onStart: () => console.log("start") });
+const speech = useSpeechRecognition({ onStart: () => console.log('start') });
 ```
 
 `onEnd`:
 
 ```tsx
-const speech = useSpeechRecognition({ onEnd: () => console.log("end") });
+const speech = useSpeechRecognition({ onEnd: () => console.log('end') });
 ```
 
 `onError`:
 
 ```tsx
 const speech = useSpeechRecognition({
-  onError: (error) => console.error(error),
+  onError: (error) => console.error(error)
 });
 ```
 
@@ -91,7 +89,7 @@ const speech = useSpeechRecognition({
 
 ```tsx
 const speech = useSpeechRecognition({
-  onResult: (event) => console.log(event),
+  onResult: (event) => console.log(event)
 });
 ```
 
@@ -103,11 +101,11 @@ const speech = useSpeechRecognition({
 
 ```ts
 interface UseSpeechRecognitionOptions {
-  continuous?: SpeechRecognition["continuous"];
-  grammars?: SpeechRecognition["grammars"];
-  interimResults?: SpeechRecognition["interimResults"];
-  language?: SpeechRecognition["lang"];
-  maxAlternatives?: SpeechRecognition["maxAlternatives"];
+  continuous?: SpeechRecognition['continuous'];
+  grammars?: SpeechRecognition['grammars'];
+  interimResults?: SpeechRecognition['interimResults'];
+  language?: SpeechRecognition['lang'];
+  maxAlternatives?: SpeechRecognition['maxAlternatives'];
   onEnd?: () => void;
   onError?: (error: SpeechRecognitionErrorEvent) => void;
   onResult?: (event: SpeechRecognitionEvent) => void;

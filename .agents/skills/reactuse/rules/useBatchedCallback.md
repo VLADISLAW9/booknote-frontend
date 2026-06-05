@@ -11,7 +11,7 @@ Batches calls and forwards them to a callback.
 ## Usage
 
 ```ts
-import { useBatchedCallback } from "@siberiacancode/reactuse";
+import { useBatchedCallback } from '@siberiacancode/reactuse';
 
 const batched = useBatchedCallback((batch) => console.log(batch), { size: 5 });
 ```
@@ -19,16 +19,19 @@ const batched = useBatchedCallback((batch) => console.log(batch), { size: 5 });
 ## Example
 
 ```tsx
-import { useBatchedCallback } from "@siberiacancode/reactuse";
+import { useBatchedCallback } from '@siberiacancode/reactuse';
 
 export const Logger = () => {
-  const batched = useBatchedCallback((batch) => {
-    console.log("batch", batch);
-  }, { size: 3, delay: 1000 });
+  const batched = useBatchedCallback(
+    (batch) => {
+      console.log('batch', batch);
+    },
+    { size: 3, delay: 1000 }
+  );
 
   return (
     <div>
-      <button onClick={() => batched("click")}>Queue</button>
+      <button onClick={() => batched('click')}>Queue</button>
       <button onClick={() => batched.flush()}>Flush</button>
     </div>
   );
@@ -43,9 +46,7 @@ export const Logger = () => {
 ## Type Declarations
 
 ```ts
-export type BatchedCallback<Params extends unknown[]> = ((
-  ...args: Params
-) => void) & {
+export type BatchedCallback<Params extends unknown[]> = ((...args: Params) => void) & {
   flush: () => void;
   cancel: () => void;
 };

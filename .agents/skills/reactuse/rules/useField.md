@@ -11,20 +11,20 @@ Manages input state, validation, and helpers.
 ## Usage
 
 ```ts
-import { useField } from "@siberiacancode/reactuse";
+import { useField } from '@siberiacancode/reactuse';
 
 const field = useField();
 // or with initial value and options
-const field = useField("", { validateOnBlur: true });
+const field = useField('', { validateOnBlur: true });
 ```
 
 ## Example
 
 ```tsx
-import { useField } from "@siberiacancode/reactuse";
+import { useField } from '@siberiacancode/reactuse';
 
 export const EmailField = () => {
-  const field = useField("", { validateOnBlur: true });
+  const field = useField('', { validateOnBlur: true });
 
   return (
     <form
@@ -33,9 +33,9 @@ export const EmailField = () => {
         console.log(field.getValue());
       }}
     >
-      <input {...field.register({ required: "Required" })} />
+      <input {...field.register({ required: 'Required' })} />
       {field.error && <span>{field.error}</span>}
-      <button type="submit">Submit</button>
+      <button type='submit'>Submit</button>
     </form>
   );
 };
@@ -52,10 +52,10 @@ const fieldChecked = useField(false);
 `initialTouched`, `autoFocus`, `validateOnChange`, `validateOnBlur`, `validateOnMount` (second argument):
 
 ```tsx
-const field = useField("", {
+const field = useField('', {
   initialTouched: true,
   autoFocus: true,
-  validateOnBlur: true,
+  validateOnBlur: true
 });
 ```
 
@@ -66,8 +66,8 @@ const field = useField();
 return (
   <input
     {...field.register({
-      required: "Required",
-      minLength: { value: 3, message: "Too short" },
+      required: 'Required',
+      minLength: { value: 3, message: 'Too short' }
     })}
   />
 );
@@ -91,7 +91,7 @@ return (
 ## Type Declarations
 
 ```ts
-import type { RefObject } from "react";
+import type { RefObject } from 'react';
 
 export interface UseFieldOptions {
   autoFocus?: boolean;
@@ -112,9 +112,7 @@ export interface UseFieldRegisterParams {
 export interface UseFieldReturn<Value> {
   dirty: boolean;
   error?: string;
-  ref: RefObject<
-    HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null
-  >;
+  ref: RefObject<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null>;
   touched: boolean;
   clearError: () => void;
   focus: () => void;
@@ -123,12 +121,7 @@ export interface UseFieldReturn<Value> {
     onBlur: () => void;
     onChange: () => void;
     ref: (
-      node:
-        | HTMLInputElement
-        | HTMLSelectElement
-        | HTMLTextAreaElement
-        | null
-        | undefined
+      node: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null | undefined
     ) => void;
   };
   reset: () => void;
@@ -138,13 +131,9 @@ export interface UseFieldReturn<Value> {
 }
 export declare const useField: <
   Value extends boolean | number | string = string,
-  Type = Value extends string
-    ? string
-    : Value extends boolean
-    ? boolean
-    : number
+  Type = Value extends string ? string : Value extends boolean ? boolean : number
 >(
-  initialValue: Value = "" as Value,
+  initialValue: Value = '' as Value,
   options?: UseFieldOptions
 ) => UseFieldReturn<Type>;
 ```

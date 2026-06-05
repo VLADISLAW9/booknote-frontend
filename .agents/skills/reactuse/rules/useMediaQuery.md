@@ -11,18 +11,18 @@ Returns whether a media query matches.
 ## Usage
 
 ```ts
-import { useMediaQuery } from "@siberiacancode/reactuse";
+import { useMediaQuery } from '@siberiacancode/reactuse';
 
-const matches = useMediaQuery("(max-width: 768px)");
+const matches = useMediaQuery('(max-width: 768px)');
 ```
 
 ## Example
 
 ```tsx
-import { useMediaQuery } from "@siberiacancode/reactuse";
+import { useMediaQuery } from '@siberiacancode/reactuse';
 
 export const MobileOnly = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery('(max-width: 768px)');
   return isMobile ? <div>Mobile layout</div> : <div>Desktop layout</div>;
 };
 ```

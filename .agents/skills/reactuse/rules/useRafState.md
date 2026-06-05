@@ -11,7 +11,7 @@ Updates state inside `requestAnimationFrame`.
 ## Usage
 
 ```ts
-import { useRafState } from "@siberiacancode/reactuse";
+import { useRafState } from '@siberiacancode/reactuse';
 
 const [value, setValue] = useRafState(0);
 ```

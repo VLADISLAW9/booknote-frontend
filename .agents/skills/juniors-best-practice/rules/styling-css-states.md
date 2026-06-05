@@ -9,11 +9,11 @@ tags: styling, css, accessibility
 Most component states (disabled, hover, focus, loading) should be handled via CSS selectors. This keeps code simpler, more performant, and accessible. It also avoids extra classes or JavaScript handlers for state styling.
 
 ```tsx
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from 'react';
 
-import styles from "./Button.module.css";
+import styles from './Button.module.css';
 
-interface ButtonProps extends ComponentProps<"button"> {
+interface ButtonProps extends ComponentProps<'button'> {
   children: ReactNode;
 }
 

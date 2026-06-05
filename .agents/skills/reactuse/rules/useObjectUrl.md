@@ -11,7 +11,7 @@ Hook that creates and revokes an object URL for a Blob or MediaSource.
 ## Usage
 
 ```ts
-import { useObjectUrl } from "@siberiacancode/reactuse";
+import { useObjectUrl } from '@siberiacancode/reactuse';
 
 const { value } = useObjectUrl(blob);
 ```
@@ -19,7 +19,7 @@ const { value } = useObjectUrl(blob);
 ## Example
 
 ```tsx
-import { useObjectUrl } from "@siberiacancode/reactuse";
+import { useObjectUrl } from '@siberiacancode/reactuse';
 
 interface PreviewProps {
   blob: Blob;
@@ -27,7 +27,7 @@ interface PreviewProps {
 
 export const Preview = ({ blob }: PreviewProps) => {
   const objectUrl = useObjectUrl(blob);
-  return <img src={objectUrl.value} alt="" />;
+  return <img src={objectUrl.value} alt='' />;
 };
 ```
 
@@ -43,9 +43,7 @@ export interface UseObjectUrlReturn {
   revoke: () => void;
   set: (object: Blob | MediaSource) => void;
 }
-export declare const useObjectUrl: <
-  Value extends Blob | MediaSource | undefined
->(
+export declare const useObjectUrl: <Value extends Blob | MediaSource | undefined>(
   object?: Value
 ) => UseObjectUrlReturn;
 ```

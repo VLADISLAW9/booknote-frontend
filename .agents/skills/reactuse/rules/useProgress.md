@@ -11,20 +11,20 @@ Creates a lightweight progress state with auto-increment behavior.
 ## Usage
 
 ```ts
-import { useProgress } from "@siberiacancode/reactuse";
+import { useProgress } from '@siberiacancode/reactuse';
 
 const { value, active, start, done, inc, remove } = useProgress(0, {
   immediately: false,
   maximum: 0.98,
   speed: 250,
-  rate: 0.02,
+  rate: 0.02
 });
 ```
 
 ## Example
 
 ```tsx
-import { useProgress } from "@siberiacancode/reactuse";
+import { useProgress } from '@siberiacancode/reactuse';
 
 export const LoadingBar = () => {
   const progress = useProgress(0);
@@ -42,18 +42,18 @@ export const LoadingBar = () => {
       {active && (
         <div
           style={{
-            width: "100%",
+            width: '100%',
             height: 4,
-            background: "#e5e7eb",
-            marginTop: 12,
+            background: '#e5e7eb',
+            marginTop: 12
           }}
         >
           <div
             style={{
               width: `${Math.round(value * 100)}%`,
-              height: "100%",
-              background: "#2563eb",
-              transition: "width 200ms ease",
+              height: '100%',
+              background: '#2563eb',
+              transition: 'width 200ms ease'
             }}
           />
         </div>

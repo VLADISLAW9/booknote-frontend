@@ -11,15 +11,15 @@ A boolean switcher with utility functions.
 ## Usage
 
 ```ts
-import { useToggle } from "@siberiacancode/reactuse";
+import { useToggle } from '@siberiacancode/reactuse';
 
 const [on, toggle] = useToggle();
 // or
-const [value, toggle] = useToggle(["light", "dark"] as const);
+const [value, toggle] = useToggle(['light', 'dark'] as const);
 ```
 
 ```tsx
-import { useToggle } from "@siberiacancode/reactuse";
+import { useToggle } from '@siberiacancode/reactuse';
 
 export const Toggle = () => {
   const [value, toggle] = useToggle();
@@ -31,10 +31,10 @@ export const Toggle = () => {
 Example in a component with array toggle:
 
 ```tsx
-import { useToggle } from "@siberiacancode/reactuse";
+import { useToggle } from '@siberiacancode/reactuse';
 
 export const UserTypeToggle = () => {
-  const [type, toggle] = useToggle(["user", "admin"] as const);
+  const [type, toggle] = useToggle(['user', 'admin'] as const);
 
   return <button onClick={() => toggle()}>Current: {userType}</button>;
 };

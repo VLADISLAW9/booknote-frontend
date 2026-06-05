@@ -4,7 +4,7 @@ description: Practical playbook for React teams to choose and apply reactuse hoo
 license: MIT
 metadata:
   author: siberiacancode
-  version: "1.0.0"
+  version: '1.0.0'
 compatibility: Requires React 18+ (or Next.js 13+)
 ---
 
@@ -97,7 +97,7 @@ IMPORTANT: Each hook entry includes a short `Description` and a detailed `Refere
 | useBluetooth          | Requests and connects to Bluetooth devices.                                  | LOW        |
 | useBreakpoints        | Manages responsive breakpoints and helper predicates.                        | MEDIUM     |
 | useBroadcastChannel   | Enables cross-tab/window messaging.                                          | LOW        |
-| useBrowserLocation    | Returns reactive location state and history navigation controls.              | MEDIUM     |
+| useBrowserLocation    | Returns reactive location state and history navigation controls.             | MEDIUM     |
 | useClipboard          | Reads and copies text from the clipboard.                                    | MEDIUM     |
 | useCopy               | Copies text and resets status after a delay.                                 | MEDIUM     |
 | useCssVar             | Reads and writes a CSS custom property.                                      | LOW        |

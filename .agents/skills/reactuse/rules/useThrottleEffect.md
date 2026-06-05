@@ -11,15 +11,15 @@ Runs an effect at most once per delay period when dependencies change.
 ## Usage
 
 ```ts
-import { useThrottleEffect } from "@siberiacancode/reactuse";
+import { useThrottleEffect } from '@siberiacancode/reactuse';
 
-useThrottleEffect(() => console.log("effect"), 500, [value]);
+useThrottleEffect(() => console.log('effect'), 500, [value]);
 ```
 
 ## Example
 
 ```tsx
-import { useThrottleEffect } from "@siberiacancode/reactuse";
+import { useThrottleEffect } from '@siberiacancode/reactuse';
 
 export const Tracker = ({ value }: { value: number }) => {
   useThrottleEffect(
@@ -37,7 +37,7 @@ export const Tracker = ({ value }: { value: number }) => {
 ## Type Declarations
 
 ```ts
-import type { DependencyList, EffectCallback } from "react";
+import type { DependencyList, EffectCallback } from 'react';
 
 export declare const useThrottleEffect: (
   effect: EffectCallback,

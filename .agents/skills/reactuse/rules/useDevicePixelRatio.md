@@ -11,7 +11,7 @@ Returns the current device pixel ratio.
 ## Usage
 
 ```ts
-import { useDevicePixelRatio } from "@siberiacancode/reactuse";
+import { useDevicePixelRatio } from '@siberiacancode/reactuse';
 
 const devicePixelRatio = useDevicePixelRatio();
 ```

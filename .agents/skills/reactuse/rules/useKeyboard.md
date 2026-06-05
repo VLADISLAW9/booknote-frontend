@@ -11,11 +11,9 @@ Registers keydown/keyup listeners on a target.
 ## Usage
 
 ```ts
-import { useKeyboard } from "@siberiacancode/reactuse";
+import { useKeyboard } from '@siberiacancode/reactuse';
 
-const keyboardRef = useKeyboard<HTMLInputElement>((event) =>
-  console.log(event.key)
-);
+const keyboardRef = useKeyboard<HTMLInputElement>((event) => console.log(event.key));
 // or
 useKeyboard(ref, (event) => console.log(event.key));
 ```
@@ -23,14 +21,14 @@ useKeyboard(ref, (event) => console.log(event.key));
 ## Example
 
 ```tsx
-import { useKeyboard } from "@siberiacancode/reactuse";
+import { useKeyboard } from '@siberiacancode/reactuse';
 
 export const SearchInput = () => {
   const keyboardRef = useKeyboard<HTMLInputElement>({
-    onKeyDown: (event) => console.log(event.key),
+    onKeyDown: (event) => console.log(event.key)
   });
 
-  return <input ref={keyboardRef} placeholder="Type..." />;
+  return <input ref={keyboardRef} placeholder='Type...' />;
 };
 ```
 
@@ -53,8 +51,8 @@ useKeyboard<HTMLInputElement>({ onKeyUp: (event) => console.log(event.key) });
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export type KeyboardEventHandler = (event: KeyboardEvent) => void;
 export interface UseKeyboardEventOptions {
@@ -64,14 +62,8 @@ export interface UseKeyboardEventOptions {
 export interface UseKeyboard {
   (target: HookTarget, callback: KeyboardEventHandler): void;
   (target: HookTarget, options: UseKeyboardEventOptions): void;
-  <Target extends HTMLElement>(
-    callback: KeyboardEventHandler,
-    target?: never
-  ): StateRef<Target>;
-  <Target extends HTMLElement>(
-    options: UseKeyboardEventOptions,
-    target?: never
-  ): StateRef<Target>;
+  <Target extends HTMLElement>(callback: KeyboardEventHandler, target?: never): StateRef<Target>;
+  <Target extends HTMLElement>(options: UseKeyboardEventOptions, target?: never): StateRef<Target>;
 }
 export declare const useKeyboard: UseKeyboard;
 ```

@@ -11,7 +11,7 @@ Manages open/close state with helpers.
 ## Usage
 
 ```ts
-import { useDisclosure } from "@siberiacancode/reactuse";
+import { useDisclosure } from '@siberiacancode/reactuse';
 
 const disclosure = useDisclosure();
 ```
@@ -19,7 +19,7 @@ const disclosure = useDisclosure();
 ## Example
 
 ```tsx
-import { useDisclosure } from "@siberiacancode/reactuse";
+import { useDisclosure } from '@siberiacancode/reactuse';
 
 export const Modal = () => {
   const disclosure = useDisclosure();
@@ -42,14 +42,14 @@ const disclosure = useDisclosure(true);
 `onOpen`:
 
 ```tsx
-const disclosure = useDisclosure(false, { onOpen: () => console.log("open") });
+const disclosure = useDisclosure(false, { onOpen: () => console.log('open') });
 ```
 
 `onClose`:
 
 ```tsx
 const disclosure = useDisclosure(false, {
-  onClose: () => console.log("close"),
+  onClose: () => console.log('close')
 });
 ```
 

@@ -11,7 +11,7 @@ Provides device motion data via `snapshot` and `watch()`.
 ## Usage
 
 ```ts
-import { useDeviceMotion } from "@siberiacancode/reactuse";
+import { useDeviceMotion } from '@siberiacancode/reactuse';
 
 const motion = useDeviceMotion();
 const value = motion.watch();
@@ -25,7 +25,7 @@ const value = motion.watch();
 
 return (
   <div>
-    {Math.round(value.accelerationIncludingGravity.x ?? 0)} /{" "}
+    {Math.round(value.accelerationIncludingGravity.x ?? 0)} /{' '}
     {Math.round(value.accelerationIncludingGravity.y ?? 0)}
   </div>
 );
@@ -57,7 +57,7 @@ export interface UseDeviceMotionReturn {
 export interface UseDeviceMotionValue {
   acceleration: DeviceMotionEventAcceleration;
   accelerationIncludingGravity: DeviceMotionEventAcceleration;
-  interval: DeviceMotionEvent["interval"];
+  interval: DeviceMotionEvent['interval'];
   rotationRate: DeviceMotionEventRotationRate;
 }
 export interface UseDeviceMotionOptions {

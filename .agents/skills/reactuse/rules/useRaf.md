@@ -11,9 +11,9 @@ Runs a callback on each animation frame.
 ## Usage
 
 ```ts
-import { useRaf } from "@siberiacancode/reactuse";
+import { useRaf } from '@siberiacancode/reactuse';
 
-const raf = useRaf(() => console.log("callback"));
+const raf = useRaf(() => console.log('callback'));
 ```
 
 ## Example
@@ -28,13 +28,13 @@ return <button onClick={() => raf.pause()}>Ticks: {ticks}</button>;
 `delay`:
 
 ```tsx
-const raf = useRaf(() => console.log("callback"), { delay: 100 });
+const raf = useRaf(() => console.log('callback'), { delay: 100 });
 ```
 
 `enabled`:
 
 ```tsx
-const raf = useRaf(() => console.log("callback"), { enabled: false });
+const raf = useRaf(() => console.log('callback'), { enabled: false });
 ```
 
 ## Notes
@@ -58,8 +58,5 @@ export interface UseRafReturn {
   pause: () => void;
   resume: () => void;
 }
-export declare const useRaf: (
-  callback: UseRafCallback,
-  options?: UseRafOptions
-) => UseRafReturn;
+export declare const useRaf: (callback: UseRafCallback, options?: UseRafOptions) => UseRafReturn;
 ```

@@ -11,7 +11,7 @@ Tracks text selection details.
 ## Usage
 
 ```ts
-import { useTextSelection } from "@siberiacancode/reactuse";
+import { useTextSelection } from '@siberiacancode/reactuse';
 
 const selection = useTextSelection();
 ```
@@ -19,15 +19,11 @@ const selection = useTextSelection();
 ## Example
 
 ```tsx
-import { useTextSelection } from "@siberiacancode/reactuse";
+import { useTextSelection } from '@siberiacancode/reactuse';
 
 export const SelectedText = () => {
   const selection = useTextSelection();
-  return (
-    <span>
-      {selection.text ? `Selected: ${selection.text}` : "Select text"}
-    </span>
-  );
+  return <span>{selection.text ? `Selected: ${selection.text}` : 'Select text'}</span>;
 };
 ```
 

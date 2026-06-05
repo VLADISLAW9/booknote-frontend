@@ -11,7 +11,7 @@ Traps focus within a given element.
 ## Usage
 
 ```ts
-import { useFocusTrap } from "@siberiacancode/reactuse";
+import { useFocusTrap } from '@siberiacancode/reactuse';
 
 const trap = useFocusTrap<HTMLDivElement>(true);
 // or
@@ -21,14 +21,14 @@ const trap = useFocusTrap(ref, true);
 ## Example
 
 ```tsx
-import { useFocusTrap } from "@siberiacancode/reactuse";
+import { useFocusTrap } from '@siberiacancode/reactuse';
 
 export const Modal = () => {
   const trap = useFocusTrap<HTMLDivElement>(true);
 
   return (
     <div ref={trap.ref}>
-      <input placeholder="Search" />
+      <input placeholder='Search' />
       <button onClick={() => trap.disable()}>Close</button>
     </div>
   );
@@ -46,8 +46,8 @@ const trap = useFocusTrap(true);
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseFocusTrapReturn {
   active: boolean;

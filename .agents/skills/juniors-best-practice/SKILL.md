@@ -4,7 +4,7 @@ description: Juniors-focused React and TypeScript best practices. Use this skill
 license: MIT
 metadata:
   author: siberiacancode
-  version: "1.0.0"
+  version: '1.0.0'
 ---
 
 # Juniors Best Practice

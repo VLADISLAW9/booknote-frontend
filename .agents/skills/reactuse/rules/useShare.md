@@ -11,7 +11,7 @@ Triggers the native share dialog.
 ## Usage
 
 ```ts
-import { useShare } from "@siberiacancode/reactuse";
+import { useShare } from '@siberiacancode/reactuse';
 
 const share = useShare();
 ```
@@ -19,16 +19,16 @@ const share = useShare();
 ## Example
 
 ```tsx
-import { useShare } from "@siberiacancode/reactuse";
+import { useShare } from '@siberiacancode/reactuse';
 
 const share = useShare();
 return (
   <button
     onClick={() =>
       share.trigger({
-        title: "Design notes",
-        text: "Check this out",
-        url: "https://example.com",
+        title: 'Design notes',
+        text: 'Check this out',
+        url: 'https://example.com'
       })
     }
     disabled={!share.supported}
@@ -41,19 +41,19 @@ return (
 `text`:
 
 ```tsx
-const share = useShare({ text: "Hello" });
+const share = useShare({ text: 'Hello' });
 ```
 
 `title`:
 
 ```tsx
-const share = useShare({ title: "Article" });
+const share = useShare({ title: 'Article' });
 ```
 
 `url`:
 
 ```tsx
-const share = useShare({ url: "https://example.com" });
+const share = useShare({ url: 'https://example.com' });
 ```
 
 `files`:

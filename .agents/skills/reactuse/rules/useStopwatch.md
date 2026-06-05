@@ -11,7 +11,7 @@ Creates a stopwatch with start, pause, and reset controls.
 ## Usage
 
 ```ts
-import { useStopwatch } from "@siberiacancode/reactuse";
+import { useStopwatch } from '@siberiacancode/reactuse';
 
 const stopwatch = useStopwatch();
 ```
@@ -19,7 +19,7 @@ const stopwatch = useStopwatch();
 ## Example
 
 ```tsx
-import { useStopwatch } from "@siberiacancode/reactuse";
+import { useStopwatch } from '@siberiacancode/reactuse';
 
 export const Stopwatch = () => {
   const stopwatch = useStopwatch();
@@ -27,9 +27,7 @@ export const Stopwatch = () => {
   return (
     <div>
       {stopwatch.minutes}:{stopwatch.seconds}
-      <button onClick={() => stopwatch.toggle()}>
-        {stopwatch.paused ? "Start" : "Pause"}
-      </button>
+      <button onClick={() => stopwatch.toggle()}>{stopwatch.paused ? 'Start' : 'Pause'}</button>
     </div>
   );
 };
@@ -72,9 +70,7 @@ export interface UseStopwatchOptions {
 }
 interface UseStopwatch {
   (initialTime?: number, options?: UseStopwatchOptions): UseStopwatchReturn;
-  (
-    options?: UseStopwatchOptions & { initialTime?: number }
-  ): UseStopwatchReturn;
+  (options?: UseStopwatchOptions & { initialTime?: number }): UseStopwatchReturn;
 }
 export declare const useStopwatch: UseStopwatch;
 ```

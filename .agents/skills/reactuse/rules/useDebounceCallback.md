@@ -11,9 +11,9 @@ Creates a debounced callback with a cancel method.
 ## Usage
 
 ```ts
-import { useDebounceCallback } from "@siberiacancode/reactuse";
+import { useDebounceCallback } from '@siberiacancode/reactuse';
 
-const debounced = useDebounceCallback(() => console.log("callback"), 500);
+const debounced = useDebounceCallback(() => console.log('callback'), 500);
 ```
 
 ## Example
@@ -34,9 +34,7 @@ return (
 ## Type Declarations
 
 ```ts
-export type DebouncedCallback<Params extends unknown[]> = ((
-  ...args: Params
-) => void) & {
+export type DebouncedCallback<Params extends unknown[]> = ((...args: Params) => void) & {
   cancel: () => void;
 };
 export declare const useDebounceCallback: <Params extends unknown[], Return>(

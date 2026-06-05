@@ -25,7 +25,7 @@ interface IUser {
 Use schema names directly and derive function names from `operationId` or endpoint path.
 
 ```typescript
-import { fetches } from "@siberiacancode/fetches";
+import { fetches } from '@siberiacancode/fetches';
 
 // GET /users/{id}
 // operationId: getUserById

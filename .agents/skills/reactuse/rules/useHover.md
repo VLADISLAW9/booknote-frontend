@@ -11,7 +11,7 @@ Tracks hover state for an element.
 ## Usage
 
 ```ts
-import { useHover } from "@siberiacancode/reactuse";
+import { useHover } from '@siberiacancode/reactuse';
 
 const hover = useHover<HTMLDivElement>();
 // or
@@ -21,10 +21,10 @@ const hover = useHover(targetRef, { enabled: true });
 ## Example
 
 ```tsx
-import { useHover } from "@siberiacancode/reactuse";
+import { useHover } from '@siberiacancode/reactuse';
 
 const hover = useHover<HTMLDivElement>();
-return <div ref={hover.ref}>{hover.value ? "Hovering" : "Idle"}</div>;
+return <div ref={hover.ref}>{hover.value ? 'Hovering' : 'Idle'}</div>;
 ```
 
 `enabled`:
@@ -40,7 +40,7 @@ const hover = useHover<HTMLDivElement>({ enabled: false });
 Enter callback.
 
 ```tsx
-const hover = useHover<HTMLDivElement>({ onEntry: () => console.log("enter") });
+const hover = useHover<HTMLDivElement>({ onEntry: () => console.log('enter') });
 ```
 
 `onLeave`:
@@ -48,14 +48,14 @@ const hover = useHover<HTMLDivElement>({ onEntry: () => console.log("enter") });
 Leave callback.
 
 ```tsx
-const hover = useHover<HTMLDivElement>({ onLeave: () => console.log("leave") });
+const hover = useHover<HTMLDivElement>({ onLeave: () => console.log('leave') });
 ```
 
 ## Type Declarations
 
 ```ts
-import type { HookTarget } from "@siberiacancode/reactuse";
-import type { StateRef } from "@siberiacancode/reactuse";
+import type { HookTarget } from '@siberiacancode/reactuse';
+import type { StateRef } from '@siberiacancode/reactuse';
 
 export interface UseHoverOptions {
   enabled?: boolean;
@@ -71,10 +71,16 @@ export interface UseHoverReturn {
 export interface UseHover {
   (target: HookTarget, callback?: (event: Event) => void): UseHoverReturn;
   (target: HookTarget, options?: UseHoverOptions): UseHoverReturn;
-  <Target extends Element>(callback?: (event: Event) => void, target?: never): {
+  <Target extends Element>(
+    callback?: (event: Event) => void,
+    target?: never
+  ): {
     ref: StateRef<Target>;
   } & UseHoverReturn;
-  <Target extends Element>(options?: UseHoverOptions, target?: never): {
+  <Target extends Element>(
+    options?: UseHoverOptions,
+    target?: never
+  ): {
     ref: StateRef<Target>;
   } & UseHoverReturn;
 }

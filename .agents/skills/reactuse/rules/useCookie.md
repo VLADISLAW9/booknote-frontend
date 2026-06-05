@@ -11,24 +11,20 @@ Reads and writes a cookie value.
 ## Usage
 
 ```ts
-import { useCookie } from "@siberiacancode/reactuse";
+import { useCookie } from '@siberiacancode/reactuse';
 
-const cookie = useCookie("theme", "");
+const cookie = useCookie('theme', '');
 ```
 
 ## Example
 
 ```tsx
-const themeCookie = useCookie<"light" | "dark">("theme", {
-  initialValue: "light",
+const themeCookie = useCookie<'light' | 'dark'>('theme', {
+  initialValue: 'light'
 });
 
 return (
-  <button
-    onClick={() =>
-      themeCookie.set(themeCookie.value === "light" ? "dark" : "light")
-    }
-  >
+  <button onClick={() => themeCookie.set(themeCookie.value === 'light' ? 'dark' : 'light')}>
     Theme: {themeCookie.value}
   </button>
 );
@@ -37,64 +33,64 @@ return (
 `domain`:
 
 ```tsx
-const cookie = useCookie("theme", { domain: ".example.com" });
+const cookie = useCookie('theme', { domain: '.example.com' });
 ```
 
 `expires`:
 
 ```tsx
-const cookie = useCookie("theme", { expires: new Date(Date.now() + 86400000) });
+const cookie = useCookie('theme', { expires: new Date(Date.now() + 86400000) });
 ```
 
 `httpOnly`:
 
 ```tsx
-const cookie = useCookie("theme", { httpOnly: true });
+const cookie = useCookie('theme', { httpOnly: true });
 ```
 
 `initialValue`:
 
 ```tsx
-const cookie = useCookie("theme", { initialValue: "" });
+const cookie = useCookie('theme', { initialValue: '' });
 ```
 
 `maxAge`:
 
 ```tsx
-const cookie = useCookie("theme", { maxAge: 3600 });
+const cookie = useCookie('theme', { maxAge: 3600 });
 ```
 
 `path`:
 
 ```tsx
-const cookie = useCookie("theme", { path: "/" });
+const cookie = useCookie('theme', { path: '/' });
 ```
 
 `sameSite`:
 
 ```tsx
-const cookie = useCookie("theme", { sameSite: "Lax" });
+const cookie = useCookie('theme', { sameSite: 'Lax' });
 ```
 
 `secure`:
 
 ```tsx
-const cookie = useCookie("theme", { secure: true });
+const cookie = useCookie('theme', { secure: true });
 ```
 
 `deserializer`:
 
 ```tsx
-const cookie = useCookie("user", {
-  deserializer: (value) => JSON.parse(value),
+const cookie = useCookie('user', {
+  deserializer: (value) => JSON.parse(value)
 });
 ```
 
 `serializer`:
 
 ```tsx
-const cookie = useCookie("user", {
-  serializer: (value) => JSON.stringify(value),
+const cookie = useCookie('user', {
+  serializer: (value) => JSON.stringify(value)
 });
 ```
 
@@ -106,7 +102,7 @@ export interface RemoveCookieParams {
   expires?: Date;
   maxAge?: number;
   path?: string;
-  sameSite?: "Lax" | "None" | "Strict";
+  sameSite?: 'Lax' | 'None' | 'Strict';
   secure?: boolean;
 }
 export interface SetCookieParams {
@@ -115,7 +111,7 @@ export interface SetCookieParams {
   httpOnly?: boolean;
   maxAge?: number;
   path?: string;
-  sameSite?: "Lax" | "None" | "Strict";
+  sameSite?: 'Lax' | 'None' | 'Strict';
   secure?: boolean;
 }
 export type UseCookieInitialValue<Value> = (() => Value) | Value;
@@ -126,7 +122,7 @@ export interface UseCookieOptions<Value> {
   initialValue?: UseCookieInitialValue<Value>;
   maxAge?: number;
   path?: string;
-  sameSite?: "Lax" | "None" | "Strict";
+  sameSite?: 'Lax' | 'None' | 'Strict';
   secure?: boolean;
   deserializer?: (value: string) => Value;
   serializer?: (value: Value) => string;
@@ -143,13 +139,8 @@ export interface UseCookie {
       initialValue: UseCookieInitialValue<Value>;
     }
   ): UseCookieReturn<Value>;
-  <Value>(key: string, options?: UseCookieOptions<Value>): UseCookieReturn<
-    Value | undefined
-  >;
-  <Value>(
-    key: string,
-    initialValue: UseCookieInitialValue<Value>
-  ): UseCookieReturn<Value>;
+  <Value>(key: string, options?: UseCookieOptions<Value>): UseCookieReturn<Value | undefined>;
+  <Value>(key: string, initialValue: UseCookieInitialValue<Value>): UseCookieReturn<Value>;
   <Value>(key: string): UseCookieReturn<Value | undefined>;
 }
 export declare const useCookie: UseCookie;
