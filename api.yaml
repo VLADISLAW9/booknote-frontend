@@ -257,11 +257,11 @@ components:
           nullable: true
         startedAt:
           type: object
-          example: '2026-06-01'
+          example: 2026-06-01
           nullable: true
         finishedAt:
           type: object
-          example: '2026-06-30'
+          example: 2026-06-30
           nullable: true
     CreateBookDto:
       type: object
@@ -303,10 +303,10 @@ components:
           example: Book about software architecture.
         startedAt:
           type: string
-          example: '2026-06-01'
+          example: 2026-06-01
         finishedAt:
           type: string
-          example: '2026-06-30'
+          example: 2026-06-30
       required:
         - title
         - author

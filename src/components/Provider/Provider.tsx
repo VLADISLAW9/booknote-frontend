@@ -1,9 +1,13 @@
 import type { ReactNode } from 'react';
 
-import { ThemeProvider } from './components';
+import { QueryProvider, ThemeProvider } from './components';
 
 interface ProviderProps {
   children: ReactNode;
 }
 
-export const Provider = ({ children }: ProviderProps) => <ThemeProvider>{children}</ThemeProvider>;
+export const Provider = ({ children }: ProviderProps) => (
+  <QueryProvider>
+    <ThemeProvider>{children}</ThemeProvider>
+  </QueryProvider>
+);

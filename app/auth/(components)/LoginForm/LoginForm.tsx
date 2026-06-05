@@ -4,7 +4,7 @@ import { LockIcon, MailIcon } from 'lucide-react';
 import { useLoginForm } from './hooks';
 
 export const LoginForm = () => {
-  const { login, state, functions } = useLoginForm();
+  const { form, state, functions } = useLoginForm();
 
   return (
     <form onSubmit={functions.onSubmit}>
@@ -16,8 +16,8 @@ export const LoginForm = () => {
           placeholder='Email'
           size='xl'
           type='email'
-          {...login.register('email')}
-          error={login.formState.errors.email?.message}
+          {...form.register('email')}
+          error={form.formState.errors.email?.message}
         />
         <PasswordInput
           disabled={state.loading}
@@ -26,8 +26,8 @@ export const LoginForm = () => {
           placeholder='Password'
           size='xl'
           type='password'
-          {...login.register('password')}
-          error={login.formState.errors.password?.message}
+          {...form.register('password')}
+          error={form.formState.errors.password?.message}
         />
         <Button loading={state.loading} mt='xl' size='xl' type='submit'>
           Войти

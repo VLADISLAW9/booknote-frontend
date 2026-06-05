@@ -3,7 +3,7 @@
 import { Card, Center, SegmentedControl, Stack } from '@mantine/core';
 import { useState } from 'react';
 
-import { LoginForm } from './(components)/LoginForm/LoginForm';
+import { LoginForm, SignupForm } from './(components)';
 
 type AUTH_MODE = 'login' | 'signup';
 
@@ -23,6 +23,7 @@ const AuthPage = () => {
           onChange={setSegmentedValue}
         />
         {segmentedValue === 'login' && <LoginForm />}
+        {segmentedValue === 'signup' && <SignupForm />}
       </Center>
     </Card>
   );

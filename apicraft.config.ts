@@ -6,6 +6,7 @@ export default apicraft([
     output: 'generated/api',
     instance: { name: 'fetches', runtimeInstancePath: './src/utils/api/instance' },
     nameBy: 'path',
+    plugins: ['tanstack'],
     groupBy: 'tags'
   }
 ]);

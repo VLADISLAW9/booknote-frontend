@@ -20,5 +20,5 @@ export const useLoginForm = () => {
     console.log(data);
   });
 
-  return { login: loginForm, state: { loading: false }, functions: { onSubmit } };
+  return { form: loginForm, state: { loading: false }, functions: { onSubmit } };
 };
