@@ -1,4 +1,5 @@
 export const ROUTES = {
-  HOME: '/home',
-  AUTH: '/auth'
+  BOOKS: '/books',
+  AUTH: '/auth',
+  BOOK: '/books/:id'
 } as const;

@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
 
-import { usePostAuthRegisterMutation } from '@/generated/api';
+import { usePostApiAuthRegisterMutation } from '@/generated/api';
 import { ROUTES } from '@/src/utils/constants';
 
 const signupFormSchema = z
@@ -20,7 +20,7 @@ const signupFormSchema = z
 
 export const useSignupForm = () => {
   const router = useRouter();
-  const postAuthRegisterMutation = usePostAuthRegisterMutation();
+  const postAuthRegisterMutation = usePostApiAuthRegisterMutation();
 
   const signupForm = useForm({
     resolver: zodResolver(signupFormSchema),
@@ -39,7 +39,7 @@ export const useSignupForm = () => {
 
     if (!postAuthRegisterMutationResponse.data.success) return;
 
-    router.push(ROUTES.HOME);
+    router.push(ROUTES.BOOKS);
   });
 
   return { form: signupForm, state: { loading: false }, functions: { onSubmit } };

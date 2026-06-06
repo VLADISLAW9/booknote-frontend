@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
 
-import { usePostAuthLoginMutation } from '@/generated/api';
+import { usePostApiAuthLoginMutation } from '@/generated/api';
 import { ROUTES } from '@/src/utils/constants';
 
 const loginFormSchema = z.object({
@@ -13,7 +13,7 @@ const loginFormSchema = z.object({
 
 export const useLoginForm = () => {
   const router = useRouter();
-  const postAuthLoginMutation = usePostAuthLoginMutation();
+  const postAuthLoginMutation = usePostApiAuthLoginMutation();
 
   const loginForm = useForm({
     resolver: zodResolver(loginFormSchema),
@@ -28,7 +28,7 @@ export const useLoginForm = () => {
 
     if (!postAuthLoginMutationResponse.data.success) return;
 
-    router.push(ROUTES.HOME);
+    router.push(ROUTES.BOOKS);
   });
 
   return {

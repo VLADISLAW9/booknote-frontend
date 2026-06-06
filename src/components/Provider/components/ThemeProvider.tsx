@@ -1,7 +1,7 @@
 import type { MantineColorsTuple } from '@mantine/core';
 import type { ReactNode } from 'react';
 
-import { createTheme, MantineProvider } from '@mantine/core';
+import { Button, createTheme, MantineProvider } from '@mantine/core';
 
 const PRIMARY_COLORS: MantineColorsTuple = [
   '#e7fdf5',

@@ -13,11 +13,11 @@ import { LibraryBigIcon, PlusIcon, UserIcon } from 'lucide-react';
 
 import { Logotype } from '@/src/components';
 
-interface RootLayoutProps {
+interface BooksLayoutProps {
   children: ReactNode;
 }
 
-const RootLayout = ({ children }: RootLayoutProps) => (
+const BooksLayout = ({ children }: BooksLayoutProps) => (
   <html>
     <body>
       <AppShell footer={{ height: 80 }} header={{ height: 80 }} padding='30'>
@@ -59,4 +59,4 @@ const RootLayout = ({ children }: RootLayoutProps) => (
   </html>
 );
 
-export default RootLayout;
+export default BooksLayout;
