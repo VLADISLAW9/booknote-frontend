@@ -1,15 +1,6 @@
 'use client';
 
-import {
-  Button,
-  Flex,
-  InputLabel,
-  NumberInput,
-  Select,
-  Stack,
-  Textarea,
-  TextInput
-} from '@mantine/core';
+import { Button, InputLabel, NumberInput, Select, Stack, Textarea, TextInput } from '@mantine/core';
 import { Controller } from 'react-hook-form';
 
 import type { ReadingStatus } from '@/generated/api';
