@@ -1,6 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
+
+import { usePostAuthLoginMutation } from '@/generated/api';
+import { ROUTES } from '@/src/utils/constants';
 
 const loginFormSchema = z.object({
   email: z.email({ message: 'Некорректный email' }).min(1, { message: 'Обязательное поле' }),
@@ -8,6 +12,9 @@ const loginFormSchema = z.object({
 });
 
 export const useLoginForm = () => {
+  const router = useRouter();
+  const postAuthLoginMutation = usePostAuthLoginMutation();
+
   const loginForm = useForm({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
@@ -16,9 +23,17 @@ export const useLoginForm = () => {
     }
   });
 
-  const onSubmit = loginForm.handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = loginForm.handleSubmit(async (data) => {
+    const postAuthLoginMutationResponse = await postAuthLoginMutation.mutateAsync({ body: data });
+
+    if (!postAuthLoginMutationResponse.data.success) return;
+
+    router.push(ROUTES.HOME);
   });
 
-  return { form: loginForm, state: { loading: false }, functions: { onSubmit } };
+  return {
+    form: loginForm,
+    state: { loading: postAuthLoginMutation.isPending },
+    functions: { onSubmit }
+  };
 };

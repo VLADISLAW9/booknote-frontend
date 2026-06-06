@@ -1,9 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
 
 import { usePostAuthRegisterMutation } from '@/generated/api';
-import { LOCAL_STORAGE_KEYS } from '@/src/utils/constants/localStorage';
+import { ROUTES } from '@/src/utils/constants';
 
 const signupFormSchema = z
   .object({
@@ -18,6 +19,7 @@ const signupFormSchema = z
   });
 
 export const useSignupForm = () => {
+  const router = useRouter();
   const postAuthRegisterMutation = usePostAuthRegisterMutation();
 
   const signupForm = useForm({
@@ -37,10 +39,7 @@ export const useSignupForm = () => {
 
     if (!postAuthRegisterMutationResponse.data.success) return;
 
-    localStorage.setItem(
-      LOCAL_STORAGE_KEYS.ACCESS_TOKEN,
-      postAuthRegisterMutationResponse.data.data.accessToken
-    );
+    router.push(ROUTES.HOME);
   });
 
   return { form: signupForm, state: { loading: false }, functions: { onSubmit } };

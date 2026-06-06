@@ -11,9 +11,9 @@ export const LoginForm = () => {
       <Stack gap='lg'>
         <TextInput
           disabled={state.loading}
-          label={<InputLabel mb='xs'>Email</InputLabel>}
+          label={<InputLabel mb='xs'>Почта</InputLabel>}
           leftSection={<MailIcon />}
-          placeholder='Email'
+          placeholder='Введите почту'
           size='xl'
           type='email'
           {...form.register('email')}
@@ -21,9 +21,9 @@ export const LoginForm = () => {
         />
         <PasswordInput
           disabled={state.loading}
-          label={<InputLabel mb='xs'>Password</InputLabel>}
+          label={<InputLabel mb='xs'>Пароль</InputLabel>}
           leftSection={<LockIcon />}
-          placeholder='Password'
+          placeholder='Введите пароль'
           size='xl'
           type='password'
           {...form.register('password')}

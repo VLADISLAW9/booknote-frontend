@@ -2,16 +2,16 @@ import type { NextRequest } from 'next/server';
 
 import { NextResponse } from 'next/server';
 
-import { COOKIES_KEYS, ROUTES } from './src/utils/constants';
+import { COOKIE_KEYS, ROUTES } from './src/utils/constants';
 
-export const proxy = ({ cookies, nextUrl }: NextRequest) => {
-  const authToken = cookies.get(COOKIES_KEYS.ACCESS_TOKEN)?.value;
+export const proxy = async (request: NextRequest) => {
+  const authToken = request.cookies.get(COOKIE_KEYS.ACCESS_TOKEN)?.value;
 
-  if (authToken || nextUrl.pathname === ROUTES.AUTH) {
+  if (authToken || request.nextUrl.pathname === ROUTES.AUTH) {
     return NextResponse.next();
   }
 
-  const loginUrl = nextUrl.clone();
+  const loginUrl = request.nextUrl.clone();
 
   loginUrl.pathname = ROUTES.AUTH;
   loginUrl.search = '';

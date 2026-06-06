@@ -1,2 +1,1 @@
 export * from './Logotype';
-export * from './Provider';

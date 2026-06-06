@@ -1,3 +1,0 @@
-export const COOKIES_KEYS = {
-  ACCESS_TOKEN: 'access-token'
-} as const;
