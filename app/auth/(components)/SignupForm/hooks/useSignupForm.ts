@@ -18,18 +18,14 @@ const signupFormSchema = z
     path: ['confirmPassword']
   });
 
+type SignupFormSchema = z.infer<typeof signupFormSchema>;
+
 export const useSignupForm = () => {
   const router = useRouter();
   const postAuthRegisterMutation = usePostApiAuthRegisterMutation();
 
-  const signupForm = useForm({
-    resolver: zodResolver(signupFormSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-      name: '',
-      confirmPassword: ''
-    }
+  const signupForm = useForm<SignupFormSchema>({
+    resolver: zodResolver(signupFormSchema)
   });
 
   const onSubmit = signupForm.handleSubmit(async ({ email, name, password }) => {

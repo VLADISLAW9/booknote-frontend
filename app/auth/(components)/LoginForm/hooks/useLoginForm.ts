@@ -11,16 +11,14 @@ const loginFormSchema = z.object({
   password: z.string().min(1, { message: 'Обязательное поле' })
 });
 
+type LoginFormSchema = z.infer<typeof loginFormSchema>;
+
 export const useLoginForm = () => {
   const router = useRouter();
   const postAuthLoginMutation = usePostApiAuthLoginMutation();
 
-  const loginForm = useForm({
-    resolver: zodResolver(loginFormSchema),
-    defaultValues: {
-      email: '',
-      password: ''
-    }
+  const loginForm = useForm<LoginFormSchema>({
+    resolver: zodResolver(loginFormSchema)
   });
 
   const onSubmit = loginForm.handleSubmit(async (data) => {

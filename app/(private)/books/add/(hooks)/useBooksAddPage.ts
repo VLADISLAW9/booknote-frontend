@@ -27,8 +27,6 @@ const booksAddFormSchema = z.object({
   finishedAt: z.string()
 });
 
-const getOptionalValue = (value: string) => value || undefined;
-
 type BooksAddFormValues = z.infer<typeof booksAddFormSchema>;
 
 export const useBooksAddPage = () => {
@@ -36,35 +34,12 @@ export const useBooksAddPage = () => {
   const postApiBooksMutation = usePostApiBooksMutation();
 
   const booksAddForm = useForm<BooksAddFormValues>({
-    resolver: zodResolver(booksAddFormSchema),
-    defaultValues: {
-      title: '',
-      author: '',
-      genre: '',
-      totalPages: 0,
-      currentPage: 0,
-      readingStatus: 'Читаю',
-      cover: '',
-      annotation: '',
-      startedAt: '',
-      finishedAt: ''
-    }
+    resolver: zodResolver(booksAddFormSchema)
   });
 
   const onSubmit = booksAddForm.handleSubmit(async (data) => {
     const postApiBooksMutationResponse = await postApiBooksMutation.mutateAsync({
-      body: {
-        title: data.title,
-        author: data.author,
-        genre: data.genre,
-        totalPages: data.totalPages,
-        currentPage: data.currentPage,
-        readingStatus: data.readingStatus,
-        cover: getOptionalValue(data.cover),
-        annotation: getOptionalValue(data.annotation),
-        startedAt: getOptionalValue(data.startedAt),
-        finishedAt: getOptionalValue(data.finishedAt)
-      }
+      body: data
     });
 
     if (!postApiBooksMutationResponse.data.success) return;
