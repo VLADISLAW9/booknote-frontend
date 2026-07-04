@@ -30,9 +30,7 @@ export interface LoginDto {
 export type ReadingStatus = 'Не прочитано' | 'Прочитано' | 'Читаю';
 
 export interface BookResponseDto {
-  annotation?: {
-    [key: string]: unknown;
-  } | null;
+  annotation?: string | null;
   author: string;
   cover?: string | null;
   createdAt: string;
@@ -49,9 +47,7 @@ export interface BookResponseDto {
 }
 
 export interface UpdateBookDto {
-  annotation?: {
-    [key: string]: unknown;
-  } | null;
+  annotation?: string | null;
   author?: string;
   cover?: string | null;
   currentPage?: number;

@@ -1,14 +1,4 @@
-import {
-  Badge,
-  Card,
-  Group,
-  Image,
-  Scroller,
-  SimpleGrid,
-  Text,
-  TextInput,
-  Title
-} from '@mantine/core';
+import { Badge, Group, Scroller, SimpleGrid, Text, TextInput, Title } from '@mantine/core';
 import { SearchIcon } from 'lucide-react';
 
 import { getApiBooks } from '@/generated/api';
@@ -31,7 +21,7 @@ const BooksPage = async () => {
       />
       <Scroller mt='lg' w='100%'>
         <Group gap='xs' wrap='nowrap'>
-          <Badge fullWidth p='lg' size='xl' variant='light' w='100%'>
+          <Badge fullWidth p='lg' size='xl' variant='light'>
             Все книги
           </Badge>
           <Badge fullWidth p='lg' size='xl' variant='light'>
