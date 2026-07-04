@@ -1,24 +1,10 @@
 import type { RequestConfig } from '@siberiacancode/fetches';
 
-const getServerCookieHeader = async () => {
-  if (typeof window !== 'undefined') return undefined;
-
-  const { cookies } = await import('next/headers');
-
-  return (await cookies()).toString();
-};
-
-const normalizeHeaders = (headers: RequestConfig['headers']): Record<string, string> => {
-  if (!headers) return {};
-  if (headers instanceof Headers) return Object.fromEntries(headers.entries());
-  if (Array.isArray(headers)) return Object.fromEntries(headers);
-
-  return headers;
-};
+import { getCookie } from '../../helpers';
 
 export const requestInterceptor = async (config: RequestConfig): Promise<RequestConfig> => {
-  const cookieHeader = await getServerCookieHeader();
-  const headers = normalizeHeaders(config.headers);
+  const cookieHeader = await getCookie();
+  const headers = config.headers as Record<string, string> | undefined;
 
   return {
     ...config,

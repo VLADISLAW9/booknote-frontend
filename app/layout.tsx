@@ -16,7 +16,7 @@ interface RootLayoutProps {
 }
 
 const RootLayout = ({ children }: RootLayoutProps) => (
-  <html lang='en' {...mantineHtmlProps}>
+  <html lang='ru' {...mantineHtmlProps}>
     <head>
       <ColorSchemeScript />
     </head>

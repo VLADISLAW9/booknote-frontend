@@ -1,7 +1,7 @@
 import type { MantineColorsTuple } from '@mantine/core';
 import type { ReactNode } from 'react';
 
-import { Button, createTheme, MantineProvider } from '@mantine/core';
+import { createTheme, MantineProvider } from '@mantine/core';
 
 const PRIMARY_COLORS: MantineColorsTuple = [
   '#e7fdf5',
@@ -16,16 +16,16 @@ const PRIMARY_COLORS: MantineColorsTuple = [
   '#0c8862'
 ];
 
+const theme = createTheme({
+  defaultRadius: 'xl',
+  colors: { primary: PRIMARY_COLORS },
+  primaryColor: 'primary'
+});
+
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const theme = createTheme({
-    defaultRadius: 'xl',
-    colors: { primary: PRIMARY_COLORS },
-    primaryColor: 'primary'
-  });
-
-  return <MantineProvider theme={theme}>{children}</MantineProvider>;
-};
+export const ThemeProvider = ({ children }: ThemeProviderProps) => (
+  <MantineProvider theme={theme}>{children}</MantineProvider>
+);
