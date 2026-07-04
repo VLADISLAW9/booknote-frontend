@@ -49,6 +49,7 @@ const BooksPage = async () => {
             author={book.author}
             cover={book.cover}
             finishedAt={book.finishedAt}
+            id={book.id}
             startedAt={book.startedAt}
             title={book.title}
           />
