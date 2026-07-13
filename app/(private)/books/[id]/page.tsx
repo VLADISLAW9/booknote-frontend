@@ -1,5 +1,5 @@
 import { Button, Card, Group, Image, Progress, SimpleGrid, Stack, Text } from '@mantine/core';
-import { Calendar, EditIcon, ShapesIcon } from 'lucide-react';
+import { Calendar, ShapesIcon } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -7,6 +7,7 @@ import { getApiBookById } from '@/generated/api';
 import { ROUTES } from '@/src/utils/constants';
 
 import { getReadingPercentage } from '../(helpers)';
+import { ChangeProgressButton } from './(components)/ChangeProgressButton/ChangeProgressButton';
 
 const NOT_FOUND_COVER =
   'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png';
@@ -27,10 +28,10 @@ const BookPage = async (props: BookPageProps) => {
 
   if (!book) return notFound();
 
-  const readingPercentage =
-    book.finishedAt && book.startedAt
-      ? getReadingPercentage({ finishedAt: book.finishedAt, startedAt: book.startedAt })
-      : 0;
+  const readingPercentage = getReadingPercentage({
+    currentPage: book.currentPage,
+    totalPages: book.totalPages
+  });
 
   const finishedAtDate = book.finishedAt
     ? new Date(book.finishedAt).toLocaleDateString('ru-RU', {
@@ -82,9 +83,7 @@ const BookPage = async (props: BookPageProps) => {
           </Text>
         </Group>
         <Progress mt='md' value={readingPercentage} />
-        <Button leftSection={<EditIcon />} mt='lg' size='lg' variant='light'>
-          Изменить прогресс
-        </Button>
+        <ChangeProgressButton totalPages={book.totalPages} />
       </Card>
 
       <SimpleGrid cols={2} mt='lg' spacing='xs' w='100%'>

@@ -38,10 +38,11 @@ const BooksPage = async () => {
             key={book.id}
             author={book.author}
             cover={book.cover}
+            currentPage={book.currentPage}
             finishedAt={book.finishedAt}
             id={book.id}
-            startedAt={book.startedAt}
             title={book.title}
+            totalPages={book.totalPages}
           />
         ))}
       </SimpleGrid>

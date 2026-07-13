@@ -1,20 +1,16 @@
 interface GetReadingPercentageParams {
-  finishedAt: string;
-  startedAt: string;
+  currentPage: number;
+  totalPages: number;
 }
 
-export const getReadingPercentage = ({ finishedAt, startedAt }: GetReadingPercentageParams) => {
-  const start = new Date(startedAt).getTime();
-  const finish = new Date(finishedAt).getTime();
+export const getReadingPercentage = ({ currentPage, totalPages }: GetReadingPercentageParams) => {
+  if (totalPages <= 0) return 0;
 
-  const now = Date.now();
+  if (currentPage <= 0) return 0;
 
-  if (now < start) return 0;
-  if (now > finish) return 100;
+  if (currentPage >= totalPages) return 100;
 
-  const totalDuration = finish - start;
-  const timePassed = now - start;
+  const percentage = (currentPage / totalPages) * 100;
 
-  const percentage = (timePassed / totalDuration) * 100;
   return Math.round(percentage * 100) / 100;
 };
